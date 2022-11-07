@@ -1,0 +1,31 @@
+$bordStd: 1px solid rgb(190, 190, 190);
+$boxShadow: 0px 5px 15px rgb(146, 140, 140);
+$bordRad: 30px;
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorBlue: blue;
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.keyboard {
+  display: flex;
+  background-color: $colorBlack;
+  color: $colorWhite;
+  border: $bordStd;
+  box-shadow: $boxShadow;
+  border-radius: $bordRad;
+  margin: 50px auto;
+  width: 700px;
+  height: 300px;
+}
+.up-panel {
+  display: flex;
+  border: $bordStd;
+  width: 660px;
+  height: 22px;
+  margin: 15px auto;
+}
