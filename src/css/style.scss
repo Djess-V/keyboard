@@ -1,18 +1,28 @@
-$bordStd: 1px solid rgb(190, 190, 190);
+$bordStd: 1px solid grey;
 $boxShadow: 0px 5px 15px rgb(146, 140, 140);
 $bordRad: 30px;
 $colorBlack: #000;
 $colorWhite: #fff;
+$colorGrey: rgb(82, 82, 82);
 $colorBlue: blue;
+$heightUpPan: 20px;
+$heightDownPan: 225px;
 
-body {
+@mixin buttonStdUpPanel {
+  background-color: $colorGrey;
+  border: $bordStd;
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: $colorWhite;
 }
 
 .keyboard {
   display: flex;
+  flex-direction: column;
   background-color: $colorBlack;
   color: $colorWhite;
   border: $bordStd;
@@ -21,11 +31,141 @@ body {
   margin: 50px auto;
   width: 700px;
   height: 300px;
-}
-.up-panel {
-  display: flex;
-  border: $bordStd;
-  width: 660px;
-  height: 22px;
-  margin: 15px auto;
+
+  & .up-panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 660px;
+    height: $heightUpPan;
+    margin: 15px auto;
+
+    & .leftPanel {
+      display: flex;
+
+      & .mouseBtn {
+        @include buttonStdUpPanel;
+        border-radius: $bordRad;
+        width: 26px;
+        height: 24px;
+        margin-top: -3px;
+        padding-top: 2px;
+      }
+
+      & .soundBtn {
+        @include buttonStdUpPanel;
+        margin-left: 25px;
+        border-radius: $bordRad 0px 0px $bordRad;
+        width: 50px;
+      }
+
+      & .homeBtn {
+        @include buttonStdUpPanel;
+        margin-left: 2px;
+        width: 50px;
+      }
+
+      & .blockBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include buttonStdUpPanel;
+        margin-left: 2px;
+        border-radius: 0px $bordRad $bordRad 0px;
+        width: 50px;
+
+        & p {
+          font-size: 5.5pt;
+        }
+      }
+
+      & .offBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include buttonStdUpPanel;
+        margin-left: 25px;
+        border-radius: $bordRad;
+        width: 50px;
+
+        & p {
+          font-size: 5.5pt;
+        }
+      }
+    }
+
+    & .rightPanel {
+      display: flex;
+      margin-right: 30px;
+      margin-top: 25px;
+
+      & .emblem {
+        display: flex;
+        align-self: flex-end;
+
+        & p {
+          margin-left: 5px;
+          font-size: x-large;
+        }
+      }
+    }
+  }
+
+  & .down-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: $bordStd; */
+    width: 660px;
+    height: $heightDownPan;
+    margin: 5px auto;
+
+    & .central-panel {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border: $bordStd;
+      width: 500px;
+      height: $heightDownPan;
+    }
+
+    & .mouse-panel {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      width: 150px;
+      height: 170px;
+
+      & .mouse-table {
+        background-image: url("../assets/abstract.jpg");
+        border: 2px grey;
+        border-style: solid solid none solid;
+        border-radius: $bordRad $bordRad 0px 0px;
+        height: 130px;
+      }
+
+      & .mouseButtons {
+        display: flex;
+        flex-direction: row;
+        height: 40px;
+
+        & .mouseBtnLeft {
+          width: 74px;
+          background-color: $colorGrey;
+          border: 2px grey;
+          border-style: solid solid inset solid;
+          border-radius: 0px 0px 0px $bordRad;
+        }
+
+        & .mouseBtnRight {
+          background-color: $colorGrey;
+          border: 2px grey;
+          border-style: solid inset inset solid;
+          border-radius: 0px 0px $bordRad 0px;
+          margin-left: 2px;
+          width: 74px;
+        }
+      }
+    }
+  }
 }

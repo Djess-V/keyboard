@@ -1,25 +1,142 @@
-body {
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: #fff;
 }
 
 .keyboard {
   display: flex;
+  flex-direction: column;
   background-color: #000;
   color: #fff;
-  border: 1px solid rgb(190, 190, 190);
+  border: 1px solid grey;
   box-shadow: 0px 5px 15px rgb(146, 140, 140);
   border-radius: 30px;
   margin: 50px auto;
   width: 700px;
   height: 300px;
 }
-
-.up-panel {
+.keyboard .up-panel {
   display: flex;
-  border: 1px solid rgb(190, 190, 190);
+  flex-direction: row;
+  justify-content: space-between;
   width: 660px;
-  height: 22px;
+  height: 20px;
   margin: 15px auto;
+}
+.keyboard .up-panel .leftPanel {
+  display: flex;
+}
+.keyboard .up-panel .leftPanel .mouseBtn {
+  background-color: rgb(82, 82, 82);
+  border: 1px solid grey;
+  border-radius: 30px;
+  width: 26px;
+  height: 24px;
+  margin-top: -3px;
+  padding-top: 2px;
+}
+.keyboard .up-panel .leftPanel .soundBtn {
+  background-color: rgb(82, 82, 82);
+  border: 1px solid grey;
+  margin-left: 25px;
+  border-radius: 30px 0px 0px 30px;
+  width: 50px;
+}
+.keyboard .up-panel .leftPanel .homeBtn {
+  background-color: rgb(82, 82, 82);
+  border: 1px solid grey;
+  margin-left: 2px;
+  width: 50px;
+}
+.keyboard .up-panel .leftPanel .blockBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(82, 82, 82);
+  border: 1px solid grey;
+  margin-left: 2px;
+  border-radius: 0px 30px 30px 0px;
+  width: 50px;
+}
+.keyboard .up-panel .leftPanel .blockBtn p {
+  font-size: 5.5pt;
+}
+.keyboard .up-panel .leftPanel .offBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(82, 82, 82);
+  border: 1px solid grey;
+  margin-left: 25px;
+  border-radius: 30px;
+  width: 50px;
+}
+.keyboard .up-panel .leftPanel .offBtn p {
+  font-size: 5.5pt;
+}
+.keyboard .up-panel .rightPanel {
+  display: flex;
+  margin-right: 30px;
+  margin-top: 25px;
+}
+.keyboard .up-panel .rightPanel .emblem {
+  display: flex;
+  align-self: flex-end;
+}
+.keyboard .up-panel .rightPanel .emblem p {
+  margin-left: 5px;
+  font-size: x-large;
+}
+.keyboard .down-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border: $bordStd; */
+  width: 660px;
+  height: 225px;
+  margin: 5px auto;
+}
+.keyboard .down-container .central-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid grey;
+  width: 500px;
+  height: 225px;
+}
+.keyboard .down-container .mouse-panel {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 170px;
+}
+.keyboard .down-container .mouse-panel .mouse-table {
+  background-image: url("../assets/abstract.jpg");
+  border: 2px grey;
+  border-style: solid solid none solid;
+  border-radius: 30px 30px 0px 0px;
+  height: 130px;
+}
+.keyboard .down-container .mouse-panel .mouseButtons {
+  display: flex;
+  flex-direction: row;
+  height: 40px;
+}
+.keyboard .down-container .mouse-panel .mouseButtons .mouseBtnLeft {
+  width: 74px;
+  background-color: rgb(82, 82, 82);
+  border: 2px grey;
+  border-style: solid solid inset solid;
+  border-radius: 0px 0px 0px 30px;
+}
+.keyboard .down-container .mouse-panel .mouseButtons .mouseBtnRight {
+  background-color: rgb(82, 82, 82);
+  border: 2px grey;
+  border-style: solid inset inset solid;
+  border-radius: 0px 0px 30px 0px;
+  margin-left: 2px;
+  width: 74px;
 }/*# sourceMappingURL=style.css.map */
