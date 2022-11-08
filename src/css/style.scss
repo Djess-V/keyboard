@@ -144,7 +144,7 @@ $heightDownPan: 210px;
           @include btnStdBg-cBrd;
           @include btnStnBrd-rad;
           padding-left: 6px;
-          width: 32.5px;
+          width: 32px;
           height: 23px;
           margin-right: 2px;
 
@@ -167,10 +167,38 @@ $heightDownPan: 210px;
       }
 
       & .block-2-Number {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin-top: 2px;
         width: 516px;
         height: 35px;
-        border: $bordStd;
+
+        & .btnClassStd {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-content: space-between;
+          @include btnStdBg-cBrd;
+          @include btnStnBrd-rad;
+          width: 33.5px;
+          height: 33px;
+          margin-right: 2px;
+
+          &:first-child {
+            width: 24px;
+
+            & .column2 {
+              align-self: end;
+            }
+          }
+
+          &:last-child {
+            width: 43px;
+            font-size: 8px;
+            padding: 9px 0px 0px 2px;
+          }
+        }
       }
 
       & .block-3-Enter {

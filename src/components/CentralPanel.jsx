@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonClassF from "./CentralPanel/ButtonClassF";
+import ButtonClassStd from "./CentralPanel/ButtonClassStd";
 import {
   TfiReddit,
   TfiTwitter,
@@ -21,7 +22,7 @@ const styleSVGCentralPanel = {
   color: "#ffffff",
 };
 
-const btnFSVG = [
+const btn1F = [
   ["Esc", ""],
   [<TfiReddit style={styleSVGCentralPanel} />, "F1"],
   [<TfiTwitter style={styleSVGCentralPanel} />, "F2"],
@@ -39,15 +40,36 @@ const btnFSVG = [
   ["Delete", "Print Scr"],
 ];
 
+const btn2Number = [
+  ["~", "`", "Ё"],
+  ["!", "1"],
+  ["@", "2", '"'],
+  ["#", "3", "№"],
+  ["$", "4", ";"],
+  ["%", "5"],
+  ["^", "6", ":"],
+  ["&", "7", "?"],
+  ["*", "8"],
+  ["(", "9"],
+  [")", "0"],
+  ["_", "-"],
+  ["+", "="],
+  ["Backspace"],
+];
+
 export default function CentralPanel() {
   return (
     <>
       <div className="block-1-Esc">
-        {btnFSVG.map((item, i) => (
+        {btn1F.map((item, i) => (
           <ButtonClassF key={i} data={item} />
         ))}
       </div>
-      <div className="block-2-Number"></div>
+      <div className="block-2-Number">
+        {btn2Number.map((item, i) => (
+          <ButtonClassStd key={i} data={item} />
+        ))}
+      </div>
       <div className="block-3-Enter">
         <div className="block-3-Tab"></div>
         <div className="block-3-CapsLock"></div>

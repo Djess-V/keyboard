@@ -119,7 +119,7 @@
   border: 1px solid grey;
   border-radius: 3px;
   padding-left: 6px;
-  width: 32.5px;
+  width: 32px;
   height: 23px;
   margin-right: 2px;
 }
@@ -136,10 +136,35 @@
   color: rgb(98, 190, 243);
 }
 .keyboard .down-container .central-panel .block-2-Number {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 2px;
   width: 516px;
   height: 35px;
+}
+.keyboard .down-container .central-panel .block-2-Number .btnClassStd {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: space-between;
+  background-color: rgb(82, 82, 82);
   border: 1px solid grey;
+  border-radius: 3px;
+  width: 33.5px;
+  height: 33px;
+  margin-right: 2px;
+}
+.keyboard .down-container .central-panel .block-2-Number .btnClassStd:first-child {
+  width: 24px;
+}
+.keyboard .down-container .central-panel .block-2-Number .btnClassStd:first-child .column2 {
+  align-self: end;
+}
+.keyboard .down-container .central-panel .block-2-Number .btnClassStd:last-child {
+  width: 43px;
+  font-size: 8px;
+  padding: 9px 0px 0px 2px;
 }
 .keyboard .down-container .central-panel .block-3-Enter {
   margin-top: 2px;
