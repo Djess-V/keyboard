@@ -7,28 +7,27 @@ import {
   TfiPowerOff,
   TfiApple,
 } from "react-icons/tfi";
-
-const styleSVGUpPanel = { width: "14px", height: "17px", color: "#ffffff" };
+import { styleSVG } from "../data/data";
 
 export default function UpPanel() {
   return (
     <>
       <div className="leftPanel">
         <button className="mouseBtn">
-          <TfiMouseAlt style={styleSVGUpPanel} />
+          <TfiMouseAlt style={styleSVG} />
         </button>
         <button className="soundBtn">
-          <TfiMusicAlt style={styleSVGUpPanel} />
+          <TfiMusicAlt style={styleSVG} />
         </button>
         <button className="homeBtn">
-          <TfiHome style={styleSVGUpPanel} />
+          <TfiHome style={styleSVG} />
         </button>
         <button className="blockBtn">
-          <TfiLock style={styleSVGUpPanel} />
+          <TfiLock style={styleSVG} />
           <p>PC</p>
         </button>
         <button className="offBtn">
-          <TfiPowerOff style={styleSVGUpPanel} />
+          <TfiPowerOff style={styleSVG} />
           <p>PC</p>
         </button>
       </div>

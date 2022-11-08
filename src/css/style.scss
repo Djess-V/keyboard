@@ -157,6 +157,10 @@ $heightDownPan: 210px;
           &:nth-child(15) {
             font-size: 9px;
             padding: 1px;
+
+            & p {
+              font-size: 7px;
+            }
           }
 
           & p {
@@ -216,10 +220,80 @@ $heightDownPan: 210px;
       }
 
       & .block-5-Space {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin-top: 2px;
         width: 516px;
         height: 35px;
-        border: $bordStd;
+
+        p {
+          font-size: 8pt;
+        }
+
+        & button:first-child {
+          border-radius: 3px 3px 3px 15px;
+        }
+
+        & button:last-child {
+          border-radius: 3px 3px 15px 3px;
+        }
+
+        & button:nth-child(2) .column1 {
+          background-color: $colorBlue;
+          padding: 2px;
+          @include btnStnBrd-rad;
+
+          & p {
+            color: $colorBlack;
+          }
+        }
+
+        & button:nth-child(5) {
+          width: 167.5px;
+        }
+
+        & button:nth-child(7) .column1 {
+          margin-bottom: 2px;
+
+          & p {
+            padding: 1px;
+            display: inline-block;
+            padding-right: 1px;
+            font-size: 10px;
+          }
+        }
+
+        & button:nth-child(8) .column1 p,
+        & button:nth-child(10) .column1 p {
+          margin-top: 2px;
+        }
+
+        & button:nth-child(9) {
+          flex-direction: column;
+
+          & .column1 {
+            margin-bottom: 2px;
+
+            & p {
+              padding-right: 1px;
+              font-size: 10px;
+              display: inline;
+            }
+          }
+        }
+
+        & .btnClassStd {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          @include btnStdBg-cBrd;
+          @include btnStnBrd-rad;
+          width: 33.5px;
+          height: 33px;
+          margin-right: 2px;
+        }
       }
     }
 
