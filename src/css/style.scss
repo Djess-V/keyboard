@@ -4,13 +4,17 @@ $bordRad: 30px;
 $colorBlack: #000;
 $colorWhite: #fff;
 $colorGrey: rgb(82, 82, 82);
-$colorBlue: blue;
+$colorBlue: rgb(98, 190, 243);
 $heightUpPan: 20px;
-$heightDownPan: 225px;
+$heightDownPan: 210px;
 
-@mixin buttonStdUpPanel {
+@mixin btnStdBg-cBrd {
   background-color: $colorGrey;
   border: $bordStd;
+}
+
+@mixin btnStnBrd-rad {
+  border-radius: 3px;
 }
 
 * {
@@ -32,7 +36,7 @@ $heightDownPan: 225px;
   width: 700px;
   height: 300px;
 
-  & .up-panel {
+  .up-panel {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -44,7 +48,7 @@ $heightDownPan: 225px;
       display: flex;
 
       & .mouseBtn {
-        @include buttonStdUpPanel;
+        @include btnStdBg-cBrd;
         border-radius: $bordRad;
         width: 26px;
         height: 24px;
@@ -53,14 +57,14 @@ $heightDownPan: 225px;
       }
 
       & .soundBtn {
-        @include buttonStdUpPanel;
+        @include btnStdBg-cBrd;
         margin-left: 25px;
         border-radius: $bordRad 0px 0px $bordRad;
         width: 50px;
       }
 
       & .homeBtn {
-        @include buttonStdUpPanel;
+        @include btnStdBg-cBrd;
         margin-left: 2px;
         width: 50px;
       }
@@ -69,7 +73,7 @@ $heightDownPan: 225px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include buttonStdUpPanel;
+        @include btnStdBg-cBrd;
         margin-left: 2px;
         border-radius: 0px $bordRad $bordRad 0px;
         width: 50px;
@@ -83,7 +87,7 @@ $heightDownPan: 225px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        @include buttonStdUpPanel;
+        @include btnStdBg-cBrd;
         margin-left: 25px;
         border-radius: $bordRad;
         width: 50px;
@@ -96,8 +100,8 @@ $heightDownPan: 225px;
 
     & .rightPanel {
       display: flex;
-      margin-right: 30px;
-      margin-top: 25px;
+      margin-right: 24px;
+      margin-top: 37px;
 
       & .emblem {
         display: flex;
@@ -111,26 +115,89 @@ $heightDownPan: 225px;
     }
   }
 
-  & .down-container {
+  .down-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    /* border: $bordStd; */
     width: 660px;
     height: $heightDownPan;
-    margin: 5px auto;
+    margin: 15px auto;
 
-    & .central-panel {
+    .central-panel {
       display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      border: $bordStd;
-      width: 500px;
+      flex-direction: column;
+      width: 516px;
       height: $heightDownPan;
+      margin-left: -8px;
+
+      & .block-1-Esc {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 516px;
+        height: 25px;
+
+        & .btnClassF {
+          display: flex;
+          flex-direction: column;
+          align-items: space-around;
+          @include btnStdBg-cBrd;
+          @include btnStnBrd-rad;
+          padding-left: 6px;
+          width: 32.5px;
+          height: 23px;
+          margin-right: 2px;
+
+          &:first-child {
+            padding-left: 1px;
+            padding-top: 2px;
+          }
+
+          &:nth-child(14),
+          &:nth-child(15) {
+            font-size: 9px;
+            padding: 1px;
+          }
+
+          & p {
+            font-size: 5.5pt;
+            color: $colorBlue;
+          }
+        }
+      }
+
+      & .block-2-Number {
+        margin-top: 2px;
+        width: 516px;
+        height: 35px;
+        border: $bordStd;
+      }
+
+      & .block-3-Enter {
+        margin-top: 2px;
+        width: 516px;
+        height: 72px;
+        border: $bordStd;
+      }
+
+      & .block-4-Shift {
+        margin-top: 2px;
+        width: 516px;
+        height: 35px;
+        border: $bordStd;
+      }
+
+      & .block-5-Space {
+        margin-top: 2px;
+        width: 516px;
+        height: 35px;
+        border: $bordStd;
+      }
     }
 
-    & .mouse-panel {
+    .mouse-panel {
       margin-top: 20px;
+      margin-right: -8px;
       display: flex;
       flex-direction: column;
       width: 150px;
