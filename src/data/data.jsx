@@ -18,6 +18,7 @@ import {
   TfiArrowCircleDown,
   TfiArrowCircleRight,
   TfiArrowCircleUp,
+  TfiDirectionAlt,
 } from "react-icons/tfi";
 
 export const styleSVG = {
@@ -63,6 +64,38 @@ export const btn2Number = [
   ["_", "-"],
   ["+", "="],
   ["Backspace"],
+];
+
+export const btn3Tab = [
+  ["Tab", <TfiDirectionAlt style={styleSVGArrow} />],
+  ["Q", "", "Й"],
+  ["W", "", "Ц"],
+  ["E", "", "У"],
+  ["R", "", "К"],
+  ["T", "", "Е"],
+  ["Y", "", "Н"],
+  ["U", "", "Г"],
+  ["I", "", "Ш"],
+  ["O", "", "Щ"],
+  ["P", "", "З"],
+  ["{", "[", "Х"],
+  ["}", "]", "Ъ"],
+];
+
+export const btn3CapsLock = [
+  ["Caps", "Lock", "A"],
+  ["A", "", "Ф"],
+  ["S", "", "Ы"],
+  ["D", "", "В"],
+  ["F", "", "А"],
+  ["G", "", "П"],
+  ["H", "", "Р"],
+  ["J", "", "О"],
+  ["K", "", "Л"],
+  ["L", "", "Д"],
+  [":", ";", "Ж"],
+  ['"', "'", "Э"],
+  ["|", "\\", "/"],
 ];
 
 export const btn4Shift = [
