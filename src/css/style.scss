@@ -201,7 +201,15 @@ $heightDownPan: 210px;
             width: 43px;
             font-size: 8px;
             padding: 9px 0px 0px 2px;
+
+            & p {
+              font-size: 6pt;
+            }
           }
+        }
+
+        p {
+          font-size: 9pt;
         }
       }
 
@@ -213,10 +221,68 @@ $heightDownPan: 210px;
       }
 
       & .block-4-Shift {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
         margin-top: 2px;
         width: 516px;
         height: 35px;
-        border: $bordStd;
+
+        & .btnClassStd {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          @include btnStdBg-cBrd;
+          @include btnStnBrd-rad;
+          width: 33.5px;
+          height: 33px;
+          margin-right: 2px;
+        }
+
+        p {
+          font-size: 9pt;
+        }
+
+        & button:nth-child(n + 3):nth-child(-n + 9) {
+          flex-direction: column;
+
+          & .column1 {
+            margin-right: 15px;
+          }
+
+          & .column2 {
+            margin-left: 15px;
+          }
+        }
+
+        & button:nth-child(2),
+        & button:nth-child(10),
+        & button:nth-child(11) {
+          justify-content: space-evenly;
+
+          & .column2 {
+            margin-top: 14px;
+          }
+        }
+
+        & button:nth-child(12) {
+          justify-content: space-evenly;
+        }
+
+        & button:nth-child(13) {
+          flex-direction: column;
+
+          & .column1 {
+            margin-bottom: 2px;
+
+            & p {
+              padding-right: 1px;
+              font-size: 10px;
+              display: inline;
+            }
+          }
+        }
       }
 
       & .block-5-Space {
@@ -227,8 +293,20 @@ $heightDownPan: 210px;
         width: 516px;
         height: 35px;
 
+        & .btnClassStd {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          @include btnStdBg-cBrd;
+          @include btnStnBrd-rad;
+          width: 33.5px;
+          height: 33px;
+          margin-right: 2px;
+        }
+
         p {
-          font-size: 8pt;
+          font-size: 9pt;
         }
 
         & button:first-child {
@@ -245,12 +323,13 @@ $heightDownPan: 210px;
           @include btnStnBrd-rad;
 
           & p {
+            font-size: 7pt;
             color: $colorBlack;
           }
         }
 
         & button:nth-child(5) {
-          width: 167.5px;
+          width: 182px;
         }
 
         & button:nth-child(7) .column1 {
@@ -260,12 +339,17 @@ $heightDownPan: 210px;
             padding: 1px;
             display: inline-block;
             padding-right: 1px;
-            font-size: 10px;
+            font-size: 12px;
           }
+        }
+
+        & button:nth-child(7) .column2 {
+          margin-top: -10px;
         }
 
         & button:nth-child(8) .column1 p,
         & button:nth-child(10) .column1 p {
+          font-size: 7.5pt;
           margin-top: 2px;
         }
 
@@ -281,18 +365,6 @@ $heightDownPan: 210px;
               display: inline;
             }
           }
-        }
-
-        & .btnClassStd {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          @include btnStdBg-cBrd;
-          @include btnStnBrd-rad;
-          width: 33.5px;
-          height: 33px;
-          margin-right: 2px;
         }
       }
     }

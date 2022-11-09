@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonClassF from "./CentralPanel/ButtonClassF";
 import ButtonClassStd from "./CentralPanel/ButtonClassStd";
-import { btn1F, btn2Number, btn5Space } from "../data/data";
+import { btn1F, btn2Number, btn4Shift, btn5Space } from "../data/data";
 
 export default function CentralPanel() {
   return (
@@ -20,7 +20,11 @@ export default function CentralPanel() {
         <div className="block-3-Tab"></div>
         <div className="block-3-CapsLock"></div>
       </div>
-      <div className="block-4-Shift"></div>
+      <div className="block-4-Shift">
+        {btn4Shift.map((item, i) => (
+          <ButtonClassStd key={i} data={item} />
+        ))}
+      </div>
       <div className="block-5-Space">
         {btn5Space.map((item, i) => (
           <ButtonClassStd key={i} data={item} />

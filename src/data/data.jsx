@@ -17,18 +17,17 @@ import {
   TfiArrowCircleLeft,
   TfiArrowCircleDown,
   TfiArrowCircleRight,
+  TfiArrowCircleUp,
 } from "react-icons/tfi";
 
 export const styleSVG = {
-  width: "14px",
-  height: "17px",
-  color: "#ffffff",
+  width: "16px",
+  height: "16px",
 };
 
 export const styleSVGArrow = {
-  width: "11px",
-  height: "11px",
-  color: "#ffffff",
+  width: "12px",
+  height: "12px",
 };
 
 export const btn1F = [
@@ -66,22 +65,43 @@ export const btn2Number = [
   ["Backspace"],
 ];
 
+export const btn4Shift = [
+  ["Shift"],
+  ["|", "\\", "/"],
+  ["Z", "", "Я"],
+  ["X", "", "Ч"],
+  ["C", "", "С"],
+  ["V", "", "М"],
+  ["B", "", "И"],
+  ["N", "", "Т"],
+  ["M", "", "Ь"],
+  ["<", ",", "Б"],
+  [">", ".", "Ю"],
+  ["?", "/", ",", "."],
+  [
+    "Page",
+    <TfiArrowCircleUp
+      style={{
+        width: "7px",
+        height: "7px",
+      }}
+    />,
+    <TfiArrowCircleUp style={styleSVGArrow} />,
+  ],
+  ["Shift"],
+];
+
 export const btn5Space = [
   ["Ctrl"],
   ["FN"],
-  [<TfiMicrosoftAlt style={styleSVG} />],
+  [<TfiMicrosoftAlt style={styleSVGArrow} />],
   ["Alt"],
   [""],
   ["AltGr"],
   [
     "Ctrl",
-    <TfiAlignJustify
-      style={{
-        width: "8px",
-        height: "8px",
-        color: "#ffffff",
-      }}
-    />,
+    "",
+    <TfiAlignJustify fill="#62bef3" style={{ width: "7px", height: "10px" }} />,
   ],
   ["Home", <TfiArrowCircleLeft style={styleSVGArrow} />],
   [
@@ -90,7 +110,6 @@ export const btn5Space = [
       style={{
         width: "7px",
         height: "7px",
-        color: "#ffffff",
       }}
     />,
     <TfiArrowCircleDown style={styleSVGArrow} />,

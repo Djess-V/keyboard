@@ -169,6 +169,12 @@
   font-size: 8px;
   padding: 9px 0px 0px 2px;
 }
+.keyboard .down-container .central-panel .block-2-Number .btnClassStd:last-child p {
+  font-size: 6pt;
+}
+.keyboard .down-container .central-panel .block-2-Number p {
+  font-size: 9pt;
+}
 .keyboard .down-container .central-panel .block-3-Enter {
   margin-top: 2px;
   width: 516px;
@@ -176,10 +182,56 @@
   border: 1px solid grey;
 }
 .keyboard .down-container .central-panel .block-4-Shift {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 2px;
   width: 516px;
   height: 35px;
+}
+.keyboard .down-container .central-panel .block-4-Shift .btnClassStd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(82, 82, 82);
   border: 1px solid grey;
+  border-radius: 3px;
+  width: 33.5px;
+  height: 33px;
+  margin-right: 2px;
+}
+.keyboard .down-container .central-panel .block-4-Shift p {
+  font-size: 9pt;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(n+3):nth-child(-n+9) {
+  flex-direction: column;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(n+3):nth-child(-n+9) .column1 {
+  margin-right: 15px;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(n+3):nth-child(-n+9) .column2 {
+  margin-left: 15px;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(2), .keyboard .down-container .central-panel .block-4-Shift button:nth-child(10), .keyboard .down-container .central-panel .block-4-Shift button:nth-child(11) {
+  justify-content: space-evenly;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(2) .column2, .keyboard .down-container .central-panel .block-4-Shift button:nth-child(10) .column2, .keyboard .down-container .central-panel .block-4-Shift button:nth-child(11) .column2 {
+  margin-top: 14px;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(12) {
+  justify-content: space-evenly;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(13) {
+  flex-direction: column;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(13) .column1 {
+  margin-bottom: 2px;
+}
+.keyboard .down-container .central-panel .block-4-Shift button:nth-child(13) .column1 p {
+  padding-right: 1px;
+  font-size: 10px;
+  display: inline;
 }
 .keyboard .down-container .central-panel .block-5-Space {
   display: flex;
@@ -189,8 +241,20 @@
   width: 516px;
   height: 35px;
 }
+.keyboard .down-container .central-panel .block-5-Space .btnClassStd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(82, 82, 82);
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 33.5px;
+  height: 33px;
+  margin-right: 2px;
+}
 .keyboard .down-container .central-panel .block-5-Space p {
-  font-size: 8pt;
+  font-size: 9pt;
 }
 .keyboard .down-container .central-panel .block-5-Space button:first-child {
   border-radius: 3px 3px 3px 15px;
@@ -204,10 +268,11 @@
   border-radius: 3px;
 }
 .keyboard .down-container .central-panel .block-5-Space button:nth-child(2) .column1 p {
+  font-size: 7pt;
   color: #000;
 }
 .keyboard .down-container .central-panel .block-5-Space button:nth-child(5) {
-  width: 167.5px;
+  width: 182px;
 }
 .keyboard .down-container .central-panel .block-5-Space button:nth-child(7) .column1 {
   margin-bottom: 2px;
@@ -216,9 +281,13 @@
   padding: 1px;
   display: inline-block;
   padding-right: 1px;
-  font-size: 10px;
+  font-size: 12px;
+}
+.keyboard .down-container .central-panel .block-5-Space button:nth-child(7) .column2 {
+  margin-top: -10px;
 }
 .keyboard .down-container .central-panel .block-5-Space button:nth-child(8) .column1 p, .keyboard .down-container .central-panel .block-5-Space button:nth-child(10) .column1 p {
+  font-size: 7.5pt;
   margin-top: 2px;
 }
 .keyboard .down-container .central-panel .block-5-Space button:nth-child(9) {
@@ -231,18 +300,6 @@
   padding-right: 1px;
   font-size: 10px;
   display: inline;
-}
-.keyboard .down-container .central-panel .block-5-Space .btnClassStd {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(82, 82, 82);
-  border: 1px solid grey;
-  border-radius: 3px;
-  width: 33.5px;
-  height: 33px;
-  margin-right: 2px;
 }
 .keyboard .down-container .mouse-panel {
   margin-top: 20px;
