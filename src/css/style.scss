@@ -24,6 +24,14 @@ $heightDownPan: 210px;
   color: $colorWhite;
 }
 
+.button {
+  cursor: pointer;
+}
+
+.action {
+  visibility: hidden;
+}
+
 .keyboard {
   display: flex;
   flex-direction: column;
@@ -153,8 +161,8 @@ $heightDownPan: 210px;
             padding-top: 2px;
           }
 
-          &:nth-child(14),
-          &:nth-child(15) {
+          &:nth-child(15),
+          &:nth-child(16) {
             font-size: 9px;
             padding: 1px;
 
@@ -241,12 +249,46 @@ $heightDownPan: 210px;
           height: 33px;
           margin-right: 2px;
         }
+
+        & button:nth-child(1) {
+          width: 43px;
+          padding-right: 10px;
+        }
+
+        & button:nth-child(n + 2):nth-child(-n + 11) {
+          flex-direction: column;
+
+          & .column1 {
+            margin-right: 15px;
+          }
+
+          & .column2 {
+            margin-left: 15px;
+          }
+        }
+
+        & button:nth-child(12),
+        & button:nth-child(13) {
+          justify-content: space-evenly;
+
+          & .column1 {
+            margin-bottom: 3px;
+          }
+
+          & .column2 {
+            margin-top: 12px;
+          }
+        }
+
+        & button:nth-child(13) {
+          width: 24px;
+        }
       }
 
       & .block-3-CapsLock {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 62px repeat(11, 33.5px) 24px;
+        gap: 2px;
         grid-column: 1;
         grid-row: 2;
 
@@ -260,6 +302,57 @@ $heightDownPan: 210px;
           width: 33.5px;
           height: 33px;
           margin-right: 2px;
+        }
+
+        & button:nth-child(1) {
+          display: flex;
+          justify-content: space-around;
+          padding: 0px 6px;
+          width: 62px;
+
+          & .column1 {
+            font-size: 9pt;
+          }
+
+          & .column2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        & button:nth-child(n + 2):nth-child(-n + 10) {
+          flex-direction: column;
+
+          & .column1 {
+            margin-right: 13px;
+          }
+
+          & .column2 {
+            margin-left: 13px;
+          }
+        }
+
+        & button:nth-child(11),
+        & button:nth-child(12),
+        & button:nth-child(13) {
+          justify-content: space-evenly;
+
+          & .column1 {
+            margin-bottom: 3px;
+          }
+
+          & .column2 {
+            margin-top: 12px;
+          }
+        }
+
+        & button:nth-child(13) {
+          width: 32.5px;
+          z-index: 1;
         }
       }
 
@@ -283,6 +376,7 @@ $heightDownPan: 210px;
         #btnEnterLD {
           grid-column: 1;
           grid-row: 2;
+          z-index: -5;
         }
 
         #btnEnterRU {

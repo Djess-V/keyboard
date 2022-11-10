@@ -5,8 +5,8 @@ export default function MousePanel() {
     <>
       <div className="mouse-table"></div>
       <div className="mouseButtons">
-        <button className="mouseBtnLeft"></button>
-        <button className="mouseBtnRight"></button>
+        <button className="button mouseBtnLeft"></button>
+        <button className="button mouseBtnRight"></button>
       </div>
     </>
   );

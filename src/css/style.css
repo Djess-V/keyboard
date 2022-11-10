@@ -5,6 +5,14 @@
   color: #fff;
 }
 
+.button {
+  cursor: pointer;
+}
+
+.action {
+  visibility: hidden;
+}
+
 .keyboard {
   display: flex;
   flex-direction: column;
@@ -127,11 +135,11 @@
   padding-left: 1px;
   padding-top: 2px;
 }
-.keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(14), .keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(15) {
+.keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(15), .keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(16) {
   font-size: 9px;
   padding: 1px;
 }
-.keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(14) p, .keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(15) p {
+.keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(15) p, .keyboard .down-container .central-panel .block-1-Esc .btnClassF:nth-child(16) p {
   font-size: 7px;
 }
 .keyboard .down-container .central-panel .block-1-Esc .btnClassF p {
@@ -203,10 +211,35 @@
   height: 33px;
   margin-right: 2px;
 }
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(1) {
+  width: 43px;
+  padding-right: 10px;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(n+2):nth-child(-n+11) {
+  flex-direction: column;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(n+2):nth-child(-n+11) .column1 {
+  margin-right: 15px;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(n+2):nth-child(-n+11) .column2 {
+  margin-left: 15px;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(12), .keyboard .down-container .central-panel .block-3-Tab button:nth-child(13) {
+  justify-content: space-evenly;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(12) .column1, .keyboard .down-container .central-panel .block-3-Tab button:nth-child(13) .column1 {
+  margin-bottom: 3px;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(12) .column2, .keyboard .down-container .central-panel .block-3-Tab button:nth-child(13) .column2 {
+  margin-top: 12px;
+}
+.keyboard .down-container .central-panel .block-3-Tab button:nth-child(13) {
+  width: 24px;
+}
 .keyboard .down-container .central-panel .block-3-CapsLock {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 62px repeat(11, 33.5px) 24px;
+  gap: 2px;
   grid-column: 1;
   grid-row: 2;
 }
@@ -221,6 +254,45 @@
   width: 33.5px;
   height: 33px;
   margin-right: 2px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(1) {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 6px;
+  width: 62px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(1) .column1 {
+  font-size: 9pt;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(1) .column2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+  width: 14px;
+  height: 14px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(n+2):nth-child(-n+10) {
+  flex-direction: column;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(n+2):nth-child(-n+10) .column1 {
+  margin-right: 13px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(n+2):nth-child(-n+10) .column2 {
+  margin-left: 13px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(11), .keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(12), .keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(13) {
+  justify-content: space-evenly;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(11) .column1, .keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(12) .column1, .keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(13) .column1 {
+  margin-bottom: 3px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(11) .column2, .keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(12) .column2, .keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(13) .column2 {
+  margin-top: 12px;
+}
+.keyboard .down-container .central-panel .block-3-CapsLock button:nth-child(13) {
+  width: 32.5px;
+  z-index: 1;
 }
 .keyboard .down-container .central-panel .btnEnter {
   display: grid;
@@ -241,6 +313,7 @@
 .keyboard .down-container .central-panel .btnEnter #btnEnterLD {
   grid-column: 1;
   grid-row: 2;
+  z-index: -5;
 }
 .keyboard .down-container .central-panel .btnEnter #btnEnterRU {
   background-color: rgb(82, 82, 82);
