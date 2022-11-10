@@ -1,5 +1,10 @@
 import React from "react";
 import {
+  TfiMouseAlt,
+  TfiMusicAlt,
+  TfiHome,
+  TfiLock,
+  TfiPowerOff,
   TfiReddit,
   TfiTwitter,
   TfiStar,
@@ -30,6 +35,14 @@ export const styleSVGArrow = {
   width: "12px",
   height: "12px",
 };
+
+export const btnUpP = [
+  { data: [<TfiMouseAlt style={styleSVG} />], name: "mouseBtn", id: 1 },
+  { data: [<TfiMusicAlt style={styleSVG} />], name: "soundBtn", id: 2 },
+  { data: [<TfiHome style={styleSVG} />], name: "homeBtn", id: 3 },
+  { data: [<TfiLock style={styleSVG} />, "PC"], name: "blockBtn", id: 4 },
+  { data: [<TfiPowerOff style={styleSVG} />, "PC"], name: "offBtn", id: 5 },
+];
 
 export const btn1F = [
   { data: ["Esc", ""], id: 6 },
