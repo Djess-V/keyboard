@@ -1,5 +1,5 @@
 import React from "react";
-import Textarea from "./Textarea";
+import Display from "./Display";
 import UpPanel from "./UpPanel";
 import CentralPanel from "./CentralPanel";
 import MousePanel from "./MousePanel";
@@ -27,9 +27,9 @@ export default function App() {
 
   return (
     <>
-      <div class="wrapper">
-        <div class="computer">
-          <Textarea />
+      <div className="wrapper">
+        <div className="computer">
+          <Display />
           <div className="keyboard">
             <div className="up-panel">
               <UpPanel

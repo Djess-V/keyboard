@@ -1,7 +1,7 @@
 import React from "react";
-import ButtonClassF from "./Buttons/ButtonClassF";
-import ButtonClassStd from "./Buttons/ButtonClassStd";
-import ButtonEnter from "./Buttons/ButtonEnter";
+import ButtonClassF from "./buttons/ButtonClassF";
+import ButtonClassStd from "./buttons/ButtonClassStd";
+import ButtonEnter from "./buttons/ButtonEnter";
 import {
   btn1F,
   btn2Number,

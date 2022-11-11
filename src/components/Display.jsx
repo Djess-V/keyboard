@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Textarea() {
+export default function Display() {
   const [value, setValue] = React.useState("  ");
   const refTextarea = React.useRef();
 

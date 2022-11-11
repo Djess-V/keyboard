@@ -14,6 +14,11 @@
   visibility: hidden;
 }
 
+#activeBtnEnter {
+  background-color: rgb(30, 192, 130);
+  border-color: rgb(30, 192, 130);
+}
+
 .wrapper {
   background-image: url(../assets/picture.jpg);
   background-size: 100% auto;
@@ -397,7 +402,7 @@
   grid-column: 2;
   grid-row: 1/3;
 }
-.central-panel .btnEnter #btnEnterLU {
+.central-panel .btnEnter .btnEnterLU {
   background-color: rgb(82, 82, 82);
   border-color: grey;
   border-width: 1px;
@@ -406,12 +411,12 @@
   grid-column: 1;
   grid-row: 1;
 }
-.central-panel .btnEnter #btnEnterLD {
+.central-panel .btnEnter .btnEnterLD {
   grid-column: 1;
   grid-row: 2;
   z-index: -5;
 }
-.central-panel .btnEnter #btnEnterRU {
+.central-panel .btnEnter .btnEnterRU {
   background-color: rgb(82, 82, 82);
   border-color: grey;
   border-width: 1px;
@@ -422,10 +427,10 @@
   grid-column: 2;
   grid-row: 1;
 }
-.central-panel .btnEnter #btnEnterRU > p {
+.central-panel .btnEnter .btnEnterRU > p {
   margin-left: -5px;
 }
-.central-panel .btnEnter #btnEnterRD {
+.central-panel .btnEnter .btnEnterRD {
   background-color: rgb(82, 82, 82);
   border-color: grey;
   border-width: 1px;
