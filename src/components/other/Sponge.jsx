@@ -1,5 +1,4 @@
 import React from "react";
-import "../css/sponge.css";
 
 export default function Sponge() {
   return (

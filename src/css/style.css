@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -24,6 +25,7 @@
   background-size: 100% auto;
   display: grid;
   grid-template-columns: 1fr 800px;
+  grid-template-rows: 350px 1fr;
   width: 1920px;
   height: 1080px;
 }
@@ -32,7 +34,7 @@
   grid-column: 1;
 }
 
-.blockInput {
+.blockTextarea {
   box-shadow: 0 0 7px 2px rgb(146, 140, 140);
   background-color: #000;
   border: 2px solid rgb(30, 192, 130);
@@ -41,21 +43,21 @@
   margin-left: 400px;
   padding: 10px 10px 10px;
   width: 700px;
-  height: 184px;
+  height: 300px;
 }
-.blockInput > textarea {
+.blockTextarea > textarea {
   border: 2px solid rgb(30, 192, 130);
   border-radius: 20px;
   color: #000;
   caret-color: rgb(82, 82, 82);
   font-size: 16pt;
   width: 680px;
-  height: 160px;
+  height: 276px;
 }
-.blockInput > textarea:hover {
+.blockTextarea > textarea:hover {
   box-shadow: 0 0 5px 5px rgb(146, 140, 140);
 }
-.blockInput > textarea:focus {
+.blockTextarea > textarea:focus {
   outline: none;
 }
 
@@ -64,7 +66,7 @@
   flex-direction: column;
   background-color: #000;
   color: #fff;
-  border: 1px solid rgb(146, 140, 140);
+  border: 2px solid rgb(30, 192, 130);
   box-shadow: 0 0 15px 5px rgb(146, 140, 140);
   border-radius: 30px;
   margin-top: 0px;
@@ -619,4 +621,55 @@
 .mouse-panel .mouseButtons .mouseBtnRight:hover {
   background-color: rgb(30, 192, 130);
   border-color: rgb(30, 192, 130);
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 350px;
+}
+
+.note {
+  position: relative;
+  margin: 5px;
+  border-radius: 3px;
+  width: 170px;
+  height: 220px;
+  padding: 0px 10px;
+}
+.note span {
+  position: relative;
+  top: 190px;
+  left: 135px;
+}
+.note p {
+  font-family: "Caveat", cursive;
+  color: rgb(82, 82, 82);
+}
+
+.one {
+  top: 20px;
+  left: 50px;
+  transform: rotate(15deg);
+  background-color: rgb(241, 241, 117);
+}
+
+.two {
+  top: 120px;
+  background-color: rgb(233, 137, 12);
+}
+
+.three {
+  left: -30px;
+  transform: rotate(-25deg);
+  background-color: rgb(14, 232, 248);
+}
+
+.four {
+  top: 120px;
+  left: -80px;
+  transform: rotate(35deg);
+  background-color: rgb(55, 231, 39);
 }/*# sourceMappingURL=style.css.map */

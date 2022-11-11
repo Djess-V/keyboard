@@ -9,7 +9,7 @@ import {
   btn3CapsLock,
   btn4Shift,
   btn5Space,
-} from "../data/data";
+} from "../../data/data";
 
 export default function CentralPanel({
   onClick = (f) => f,

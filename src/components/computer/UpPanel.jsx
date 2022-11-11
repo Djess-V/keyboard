@@ -1,6 +1,6 @@
 import React from "react";
 import { TfiApple } from "react-icons/tfi";
-import { btnUpP } from "../data/data";
+import { btnUpP } from "../../data/data";
 
 export default function UpPanel({
   condition,

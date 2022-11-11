@@ -1,15 +1,15 @@
 import React from "react";
 
 export default function Display() {
-  const [value, setValue] = React.useState("  ");
+  const [value, setValue] = React.useState("  Hello, friends...");
   const refTextarea = React.useRef();
 
   React.useEffect(() => {
-    refTextarea.current.selectionStart = refTextarea.current.selectionEnd = 2;
+    refTextarea.current.selectionStart = refTextarea.current.selectionEnd = 16;
   }, []);
 
   return (
-    <div className="blockInput">
+    <div className="blockTextarea">
       <textarea
         ref={refTextarea}
         autoFocus

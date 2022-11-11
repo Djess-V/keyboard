@@ -1,5 +1,6 @@
 @import "variable";
 @import "mixins";
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
 
 * {
   padding: 0;
@@ -27,6 +28,7 @@
   background-size: 100% auto;
   display: grid;
   grid-template-columns: 1fr 800px;
+  grid-template-rows: 350px 1fr;
   width: 1920px;
   height: 1080px;
 }
@@ -35,7 +37,7 @@
   grid-column: 1;
 }
 
-.blockInput {
+.blockTextarea {
   box-shadow: 0 0 7px 2px $colorGrey2;
   background-color: $colorBlack;
   border: 2px solid $colorGreen;
@@ -44,7 +46,7 @@
   margin-left: 400px;
   padding: 10px 10px 10px;
   width: 700px;
-  height: 184px;
+  height: 300px;
 
   & > textarea {
     border: 2px solid $colorGreen;
@@ -53,7 +55,7 @@
     caret-color: $colorGrey;
     font-size: 16pt;
     width: 680px;
-    height: 160px;
+    height: 276px;
 
     &:hover {
       box-shadow: 0 0 5px 5px $colorGrey2;
@@ -70,7 +72,7 @@
   flex-direction: column;
   background-color: $colorBlack;
   color: $colorWhite;
-  border: $bordStd;
+  border: 2px solid $colorGreen;
   box-shadow: $boxShadow;
   border-radius: $bordRad;
   margin-top: 0px;
@@ -612,4 +614,57 @@
       width: 74px;
     }
   }
+}
+
+.notes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 350px;
+}
+
+.note {
+  position: relative;
+  margin: 5px;
+  border-radius: 3px;
+  width: 170px;
+  height: 220px;
+  padding: 0px 10px;
+
+  span {
+    position: relative;
+    top: 190px;
+    left: 135px;
+  }
+
+  p {
+    font-family: "Caveat", cursive;
+    color: $colorGrey;
+  }
+}
+
+.one {
+  top: 20px;
+  left: 50px;
+  transform: rotate(15deg);
+  background-color: rgb(241, 241, 117);
+}
+
+.two {
+  top: 120px;
+  background-color: rgb(233, 137, 12);
+}
+
+.three {
+  left: -30px;
+  transform: rotate(-25deg);
+  background-color: rgb(14, 232, 248);
+}
+
+.four {
+  top: 120px;
+  left: -80px;
+  transform: rotate(35deg);
+  background-color: rgb(55, 231, 39);
 }
