@@ -404,6 +404,9 @@
   grid-column: 2;
   grid-row: 1/3;
 }
+.central-panel .btnEnter p {
+  font-size: 9pt;
+}
 .central-panel .btnEnter .btnEnterLU {
   background-color: rgb(82, 82, 82);
   border-color: grey;
@@ -646,6 +649,7 @@
 }
 .note p {
   color: rgb(82, 82, 82);
+  font-size: 9pt;
 }
 
 .one {

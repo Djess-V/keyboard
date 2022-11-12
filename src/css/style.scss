@@ -392,6 +392,10 @@
     grid-column: 2;
     grid-row: 1/3;
 
+    p {
+      font-size: 9pt;
+    }
+
     .btnEnterLU {
       background-color: $colorGrey;
       border-color: grey;
@@ -640,6 +644,7 @@
 
   p {
     color: $colorGrey;
+    font-size: 9pt;
   }
 }
 
