@@ -15,6 +15,10 @@
   border-color: rgb(30, 192, 130);
 }
 
+p {
+  font-size: 9pt;
+}
+
 .wrapper {
   background-image: url(../assets/picture.jpg);
   background-size: 100% auto;
