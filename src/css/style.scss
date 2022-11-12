@@ -577,6 +577,11 @@
   }
 }
 
+.mouse-table {
+  background-image: url(../assets/abstract.jpg);
+  background-size: 100%;
+}
+
 .mouse-panel {
   margin-top: 20px;
   margin-right: -8px;
@@ -586,8 +591,6 @@
   height: 170px;
 
   .mouse-table {
-    background-image: url(../assets/abstract.jpg);
-    background-size: 100% auto;
     border: 2px grey;
     border-style: solid solid none solid;
     border-radius: $bordRad $bordRad 0px 0px;

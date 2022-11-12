@@ -5,7 +5,7 @@ export default function Display() {
   const refTextarea = React.useRef();
 
   React.useEffect(() => {
-    refTextarea.current.selectionStart = refTextarea.current.selectionEnd = 16;
+    refTextarea.current.selectionStart = refTextarea.current.selectionEnd = 19;
   }, []);
 
   return (
