@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -591,7 +590,8 @@
   height: 170px;
 }
 .mouse-panel .mouse-table {
-  background-image: url("../assets/abstract.jpg");
+  background-image: url(../assets/abstract.jpg);
+  background-size: 100% auto;
   border: 2px grey;
   border-style: solid solid none solid;
   border-radius: 30px 30px 0px 0px;
