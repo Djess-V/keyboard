@@ -4,6 +4,7 @@
   box-sizing: border-box;
   color: #fff;
   font-family: "Times New Roman", Times, serif;
+  font-size: 9pt;
 }
 
 .action {
@@ -13,10 +14,6 @@
 #activeBtnEnter {
   background-color: rgb(30, 192, 130);
   border-color: rgb(30, 192, 130);
-}
-
-p {
-  font-size: 9pt;
 }
 
 .wrapper {
@@ -235,9 +232,6 @@ p {
   margin-top: 2px;
   width: 516px;
   height: 35px;
-}
-.centralPanel__blockNumbers p {
-  font-size: 9pt;
 }
 
 .blockNumbers__btnClassStd {
@@ -627,12 +621,7 @@ div[class^=note] {
   border-radius: 3px;
   width: 170px;
   height: 220px;
-  padding: 0px 10px;
-}
-div[class^=note] > span {
-  position: relative;
-  top: 190px;
-  left: 135px;
+  padding: 10px 10px;
 }
 div[class^=note] > p {
   color: rgb(82, 82, 82);
@@ -646,16 +635,44 @@ div[class^=note][class$="1"] {
 }
 div[class^=note][class$="2"] {
   top: 120px;
-  background-color: rgb(233, 137, 12);
+  background-color: rgb(14, 232, 248);
 }
 div[class^=note][class$="3"] {
   left: -30px;
   transform: rotate(-25deg);
-  background-color: rgb(14, 232, 248);
+  background-color: rgb(233, 137, 12);
 }
 div[class^=note][class$="4"] {
   top: 120px;
   left: -80px;
   transform: rotate(35deg);
   background-color: rgb(55, 231, 39);
+}
+div[class^=note] .image_1 {
+  position: absolute;
+  width: 51px;
+  height: 63px;
+  top: 150px;
+  left: 60px;
+}
+div[class^=note] .image_2 {
+  position: absolute;
+  width: 68px;
+  height: 63px;
+  top: 150px;
+  left: 50px;
+}
+div[class^=note] .image_3 {
+  position: absolute;
+  width: 51px;
+  height: 63px;
+  top: 150px;
+  left: 50px;
+}
+div[class^=note] .image_4 {
+  position: absolute;
+  width: 51px;
+  height: 63px;
+  top: 150px;
+  left: 50px;
 }/*# sourceMappingURL=style.css.map */
