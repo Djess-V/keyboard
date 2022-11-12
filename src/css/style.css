@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   color: #fff;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .button {
@@ -645,7 +645,6 @@
   left: 135px;
 }
 .note p {
-  font-family: "Caveat", cursive;
   color: rgb(82, 82, 82);
 }
 
