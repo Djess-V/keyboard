@@ -15,14 +15,12 @@
 }
 
 @mixin btnStd {
-  .btnClassStd {
-    display: flex;
-    flex-direction: row;
-    @include btnStdBg-cBrd;
-    @include btnStnBrd-rad;
-    @include btnActive;
-    width: 33.5px;
-    height: 33px;
-    margin-right: 2px;
-  }
+  display: flex;
+  flex-direction: row;
+  @include btnStdBg-cBrd;
+  @include btnStnBrd-rad;
+  @include btnActive;
+  width: 33.5px;
+  height: 33px;
+  margin-right: 2px;
 }

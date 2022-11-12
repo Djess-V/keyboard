@@ -9,7 +9,7 @@ export default function Display() {
   }, []);
 
   return (
-    <div className="blockTextarea">
+    <div className="computer__display">
       <textarea
         ref={refTextarea}
         autoFocus

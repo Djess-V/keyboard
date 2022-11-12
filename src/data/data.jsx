@@ -184,7 +184,7 @@ export const notesData = [
       `Но пусть она вас больше не тревожит;`,
       `Я не хочу печалить вас ничем...`,
     ],
-    modificator: "one",
+    modificator: 1,
   },
   {
     data: [
@@ -197,7 +197,7 @@ export const notesData = [
       `И жаворонки в небе`,
       `Уж подняли трезвон...`,
     ],
-    modificator: "two",
+    modificator: 2,
   },
   {
     data: [
@@ -206,7 +206,7 @@ export const notesData = [
     значит — это кому-нибудь нужно?`,
       `Значит — кто-то хочет, чтобы они были?`,
     ],
-    modificator: "three",
+    modificator: 3,
   },
   {
     data: [
@@ -219,6 +219,6 @@ export const notesData = [
     нашим детям в дар три слова:`,
       `Люди – родина моя...`,
     ],
-    modificator: "four",
+    modificator: 4,
   },
 ];

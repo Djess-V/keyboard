@@ -3,7 +3,7 @@ import { CiWheat } from "react-icons/ci";
 
 export default function Note({ data, modificator }) {
   return (
-    <div className={`note ${modificator}`}>
+    <div className={`note_${modificator}`}>
       <span>
         <CiWheat fill="#000000" style={{ width: "20px", height: "20px" }} />
       </span>

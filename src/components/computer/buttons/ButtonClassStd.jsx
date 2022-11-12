@@ -4,6 +4,7 @@ export default function ButtonClassStd({
   isAction = (f) => f,
   data,
   id,
+  block = "",
   onClick = (f) => f,
 }) {
   return (
@@ -11,7 +12,7 @@ export default function ButtonClassStd({
       <button
         data-id={id}
         onClick={() => onClick(id)}
-        className={`button btnClassStd ${isAction(id) ? "action" : ""}`}
+        className={`${block}__btnClassStd ${isAction(id) ? "action" : ""}`}
       >
         <div className="column1">
           <p>{data[0]}</p>

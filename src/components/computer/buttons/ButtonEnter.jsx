@@ -26,7 +26,7 @@ export default function ButtonEnter({
   return (
     <>
       <div
-        className={`button btnEnter ${isAction("86") ? "action" : ""}`}
+        className={`btnEnter ${isAction("86") ? "action" : ""}`}
         onClick={() => onClick("86")}
         data-id="86"
       >
@@ -34,14 +34,14 @@ export default function ButtonEnter({
           ref={refBtnEnterLU}
           onPointerOver={addActive}
           onPointerOut={addNotActive}
-          className="btnEnterLU"
+          className="btnEnter__LU"
         ></div>
-        <div className="btnEnterLD"></div>
+        <div className="btnEnter__LD"></div>
         <div
           ref={refBtnEnterRU}
           onPointerOver={addActive}
           onPointerOut={addNotActive}
-          className="btnEnterRU"
+          className="btnEnter__RU"
         >
           <p>Enter</p>
         </div>
@@ -49,7 +49,7 @@ export default function ButtonEnter({
           ref={refBtnEnterRD}
           onPointerOver={addActive}
           onPointerOut={addNotActive}
-          className="btnEnterRD"
+          className="btnEnter__RD"
         ></div>
       </div>
     </>

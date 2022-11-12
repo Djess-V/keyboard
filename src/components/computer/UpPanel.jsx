@@ -9,28 +9,31 @@ export default function UpPanel({
 }) {
   return (
     <>
-      <div className="leftPanel">
-        {btnUpP.map((item, i) => (
-          <button
-            key={i}
-            className={`button ${item.name} ${
-              isAction(item.id) ? "action" : ""
-            }`}
-            data-id={item.id}
-            onClick={() => onClick(item.id)}
-          >
-            {item.data[0]}
-            {item.data[1] && <p>{item.data[1]}</p>}
-          </button>
-        ))}
-      </div>
-      <div className="button rightPanel" onClick={() => onClick("100")}>
-        <div className="emblem">
-          <TfiApple
-            style={{ width: "25px", height: "25px" }}
-            title="Нажми на меня, чтобы вернуть кнопки!"
-          />
-          <p>Apple</p>
+      <div className="keyboard__upPanel">
+        <div className="keyboard__upPanel__leftPanel">
+          {btnUpP.map((item, i) => (
+            <button
+              key={i}
+              className={`${item.name} ${isAction(item.id) ? "action" : ""}`}
+              data-id={item.id}
+              onClick={() => onClick(item.id)}
+            >
+              {item.data[0]}
+              {item.data[1] && <p>{item.data[1]}</p>}
+            </button>
+          ))}
+        </div>
+        <div
+          className="keyboard__upPanel__rightPanel"
+          onClick={() => onClick("100")}
+        >
+          <div className="emblem">
+            <TfiApple
+              style={{ width: "25px", height: "25px" }}
+              title="Нажми на меня, чтобы вернуть кнопки!"
+            />
+            <p>Apple</p>
+          </div>
         </div>
       </div>
     </>

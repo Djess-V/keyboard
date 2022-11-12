@@ -17,74 +17,82 @@ export default function CentralPanel({
 }) {
   return (
     <>
-      <div className="block-1-Esc">
-        {btn1F.map((item, i) => (
-          <ButtonClassF
-            key={i}
-            data={item.data}
-            id={item.id}
-            onClick={onClick}
-            isAction={isAction}
-          />
-        ))}
-      </div>
-      <div className="block-2-Number">
-        {btn2Number.map((item, i) => (
-          <ButtonClassStd
-            key={i}
-            data={item.data}
-            id={item.id}
-            onClick={onClick}
-            isAction={isAction}
-          />
-        ))}
-      </div>
-      <div className="block-3">
-        <div className="block-3-Tab">
-          {btn3Tab.map((item, i) => (
-            <ButtonClassStd
+      <div className="keyboard__downContainer__centralPanel">
+        <div className="centralPanel__blockEsc">
+          {btn1F.map((item, i) => (
+            <ButtonClassF
               key={i}
               data={item.data}
               id={item.id}
+              block="blockEsc"
               onClick={onClick}
               isAction={isAction}
             />
           ))}
         </div>
-        <div className="block-3-CapsLock">
-          {btn3CapsLock.map((item, i) => (
+        <div className="centralPanel__blockNumbers">
+          {btn2Number.map((item, i) => (
             <ButtonClassStd
               key={i}
               data={item.data}
               id={item.id}
+              block="blockNumbers"
               onClick={onClick}
               isAction={isAction}
             />
           ))}
         </div>
-        <ButtonEnter onClick={onClick} isAction={isAction} />
-      </div>
-      <div className="block-4-Shift">
-        {btn4Shift.map((item, i) => (
-          <ButtonClassStd
-            key={i}
-            data={item.data}
-            id={item.id}
-            onClick={onClick}
-            isAction={isAction}
-          />
-        ))}
-      </div>
-      <div className="block-5-Space">
-        {btn5Space.map((item, i) => (
-          <ButtonClassStd
-            key={i}
-            data={item.data}
-            id={item.id}
-            onClick={onClick}
-            isAction={isAction}
-          />
-        ))}
+        <div className="centralPanel__containerEnter">
+          <div className="centralPanel__blockTab">
+            {btn3Tab.map((item, i) => (
+              <ButtonClassStd
+                key={i}
+                data={item.data}
+                id={item.id}
+                block="blockTab"
+                onClick={onClick}
+                isAction={isAction}
+              />
+            ))}
+          </div>
+          <div className="centralPanel__blockCapsLock">
+            {btn3CapsLock.map((item, i) => (
+              <ButtonClassStd
+                key={i}
+                data={item.data}
+                id={item.id}
+                block="blockCapsLock"
+                onClick={onClick}
+                isAction={isAction}
+              />
+            ))}
+          </div>
+          <ButtonEnter onClick={onClick} isAction={isAction} />
+        </div>
+        <div className="centralPanel__blockShift">
+          {btn4Shift.map((item, i) => (
+            <ButtonClassStd
+              key={i}
+              data={item.data}
+              id={item.id}
+              block="blockShift"
+              onClick={onClick}
+              isAction={isAction}
+            />
+          ))}
+        </div>
+        <div className="centralPanel__blockSpace">
+          {btn5Space.map((item, i) => (
+            <ButtonClassStd
+              key={i}
+              data={item.data}
+              id={item.id}
+              block="blockSpace"
+              onClick={onClick}
+              isAction={isAction}
+            />
+          ))}
+        </div>
       </div>
     </>
   );

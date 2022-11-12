@@ -1,9 +1,9 @@
 import React from "react";
 import Note from "./Note";
 
-export default function Notes({ info }) {
+export default function Papers({ info }) {
   return (
-    <div className="notes">
+    <div className="papers">
       {info.map((item) => (
         <Note
           key={item.modificator}
