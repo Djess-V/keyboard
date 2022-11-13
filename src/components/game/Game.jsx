@@ -128,6 +128,7 @@ export default class Game extends React.Component {
     return (
       <div className="game">
         <h1>Можно поиграть в крестики-нолики!</h1>
+        <h2>(ну, конечно можно и не играть...)</h2>
         <div className="game-board">
           <Board
             squares={current.squares}
@@ -136,7 +137,11 @@ export default class Game extends React.Component {
           />
         </div>
         <div>
-          <Info status={status} onClick={() => this.handleClickToStartGame()} />
+          <Info
+            moves={moves}
+            status={status}
+            onClick={() => this.handleClickToStartGame()}
+          />
           <Table moves={moves} handleClick={(e) => this.sortHistory(e)} />
         </div>
       </div>

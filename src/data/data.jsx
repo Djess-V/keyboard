@@ -223,3 +223,17 @@ export const notesData = [
     modificator: 4,
   },
 ];
+
+export const menuInfo = [
+  {
+    data: "Пусть кнопки на клавиатуре",
+    modificator: 1,
+  },
+  { data: "Перейти на следующую страницу", modificator: 2 },
+  { data: "Изменить фон компьютера", modificator: 3 },
+  {
+    data: "Загрузить данные с сервера и отобразить на компьютере",
+    modificator: 4,
+  },
+  { data: "Скинуться на чай...", modificator: 5 },
+];

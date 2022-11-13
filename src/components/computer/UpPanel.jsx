@@ -2,11 +2,7 @@ import React from "react";
 import { TfiApple } from "react-icons/tfi";
 import { btnUpP } from "../../data/data";
 
-export default function UpPanel({
-  condition,
-  onClick = (f) => f,
-  isAction = (f) => f,
-}) {
+export default function UpPanel({ isAction = (f) => f, onClick = (f) => f }) {
   return (
     <>
       <div className="keyboard__upPanel">
@@ -23,10 +19,7 @@ export default function UpPanel({
             </button>
           ))}
         </div>
-        <div
-          className="keyboard__upPanel__rightPanel"
-          onClick={() => onClick("100")}
-        >
+        <div className="keyboard__upPanel__rightPanel">
           <div className="emblem">
             <TfiApple
               style={{ width: "25px", height: "25px" }}

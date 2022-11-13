@@ -1,18 +1,9 @@
 @import "variable";
 
-ol,
-ul {
-  padding-left: 30px;
-}
-
 .board-row:after {
   clear: both;
   content: "";
   display: table;
-}
-
-.status {
-  margin-bottom: 10px;
 }
 
 .square {
@@ -31,10 +22,6 @@ ul {
   color: rgb(0, 0, 0);
 }
 
-.square:focus {
-  outline: none;
-}
-
 .winner {
   background-color: #ffff00;
 }
@@ -42,14 +29,21 @@ ul {
 .ordinary {
   background-color: rgb(10, 162, 233);
 }
-.kbd-navigation .square:focus {
-  background: #ddd;
-}
 
 .game {
   display: flex;
   flex-direction: column;
   width: 450px;
+
+  & > h1 {
+    font-size: 15pt;
+    margin: 15px auto 10px;
+  }
+
+  & > h2 {
+    font-size: 10pt;
+    margin: 0px auto 10px;
+  }
 }
 
 .game-board {
@@ -99,16 +93,8 @@ ul {
   text-align: center;
 }
 
-.block {
-  margin-top: 20px;
-}
-
-.context-button {
-  margin-bottom: 10px;
-}
-
-.example-state {
-  margin: 5px;
+.start-game-hidden {
+  opacity: 0;
 }
 
 table {

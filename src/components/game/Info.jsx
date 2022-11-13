@@ -7,8 +7,9 @@ export default function Info(props) {
       <div className="game-info-status">{props.status}</div>
       <Button
         modify="start-game"
-        desc="Начать игру!"
+        desc="Ещё разочек..."
         handle={() => props.onClick()}
+        moves={props.moves}
       />
     </div>
   );

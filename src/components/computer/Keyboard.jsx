@@ -3,19 +3,9 @@ import UpPanel from "./UpPanel";
 import CentralPanel from "./CentralPanel";
 import MousePanel from "./MousePanel";
 
-export default function Keyboard() {
-  const [condition, setCondition] = React.useState([]);
-
-  const handlerClick = (id) => {
-    if (id === "100") {
-      setCondition([]);
-    } else {
-      setCondition([...condition, id]);
-    }
-  };
-
+export default function Keyboard({ missingButtons, onClickButton = (f) => f }) {
   const isAction = (id) => {
-    for (let item of condition) {
+    for (let item of missingButtons) {
       if (item === id) {
         return true;
       }
@@ -26,14 +16,14 @@ export default function Keyboard() {
   return (
     <div className="computer__keyboard">
       <UpPanel
-        onClick={handlerClick}
-        condition={condition}
+        condition={missingButtons}
         isAction={isAction}
+        onClick={onClickButton}
       />
       <div className="keyboard__downContainer">
         <CentralPanel
-          onClick={handlerClick}
-          condition={condition}
+          onClick={onClickButton}
+          condition={missingButtons}
           isAction={isAction}
         />
         <MousePanel />
