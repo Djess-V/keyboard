@@ -41,20 +41,95 @@
   width: 700px;
   height: 300px;
 }
-.computer__display > textarea {
+
+.display_background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 680px 276px;
   border: 2px solid rgb(30, 192, 130);
   border-radius: 20px;
   color: #000;
-  caret-color: rgb(82, 82, 82);
+  border-color: rgb(82, 82, 82);
   font-size: 16pt;
   width: 680px;
   height: 276px;
 }
-.computer__display > textarea:hover {
-  box-shadow: 0 0 5px 5px rgb(146, 140, 140);
+.display_background > input {
+  border: 2px solid rgb(146, 140, 140);
+  border-radius: 7px;
+  color: #000;
+  margin-right: 5px;
+  font-size: 14pt;
+  width: 250px;
+  height: 30px;
 }
-.computer__display > textarea:focus {
+.display_background > input:hover {
+  box-shadow: 0 0 2px 2px rgb(146, 140, 140);
+}
+.display_background > input:focus {
   outline: none;
+}
+.display_background > button {
+  border: 2px solid rgb(146, 140, 140);
+  background-color: rgb(203, 228, 215);
+  font-weight: 500;
+  border-radius: 7px;
+  color: #000;
+  font-size: 12pt;
+  width: 80px;
+  height: 30px;
+}
+.display_background > button:hover {
+  box-shadow: 0 0 2px 2px rgb(146, 140, 140);
+}
+
+.miniImage {
+  width: 104px;
+  height: 78px;
+  margin: 7px;
+  border: 2px solid rgb(146, 140, 140);
+  border-radius: 7px;
+  background-size: auto 78px;
+  cursor: pointer;
+}
+
+.displayImage_0 {
+  background-image: url(../assets/display_background/derevia_gory_les.jpg);
+}
+
+.displayImage_1 {
+  background-image: url(../assets/display_background/dom_derevia_sneg.jpg);
+}
+
+.displayImage_2 {
+  background-image: url(../assets/display_background/izgorod_pole_derevia.jpg);
+}
+
+.displayImage_3 {
+  background-image: url(../assets/display_background/more_kamni_tuman.jpg);
+}
+
+.menu_modalDisplayBg {
+  position: absolute;
+  top: 100px;
+  left: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(146, 140, 140);
+  border-radius: 7px;
+  width: 500px;
+  height: 100px;
+  background-color: rgb(93, 182, 130);
+}
+.menu_modalDisplayBg > span {
+  position: absolute;
+  top: -3px;
+  right: 5px;
+  color: black;
+  font-size: 14pt;
+  cursor: pointer;
 }
 
 .computer__keyboard {
@@ -649,10 +724,10 @@ div[class^=note][class$="4"] {
 }
 div[class^=note] .image_1 {
   position: absolute;
-  width: 51px;
-  height: 63px;
-  top: 150px;
-  left: 60px;
+  width: 70px;
+  height: 70px;
+  top: 140px;
+  left: 45px;
 }
 div[class^=note] .image_2 {
   position: absolute;
@@ -665,7 +740,7 @@ div[class^=note] .image_3 {
   position: absolute;
   width: 51px;
   height: 63px;
-  top: 150px;
+  top: 140px;
   left: 50px;
 }
 div[class^=note] .image_4 {
@@ -688,8 +763,13 @@ div[class^=note] .image_4 {
   height: 350px;
   background-color: rgb(189, 103, 117);
 }
+.wrapper_menu > p {
+  margin: 10px 120px;
+  font-size: 20pt;
+  color: black;
+}
 .wrapper_menu > ul {
-  margin: 20px 10px 0px 25px;
+  margin: 10px 10px 0px 25px;
 }
 .wrapper_menu > ul > li {
   color: black;

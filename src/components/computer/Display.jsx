@@ -1,21 +1,24 @@
 import React from "react";
 
-export default function Display() {
-  const [value, setValue] = React.useState("  Hello, friends...");
-  const refTextarea = React.useRef();
+export default function Display({ indexDisplayImage }) {
+  const [value, setValue] = React.useState(" Hello, friends...");
+  const refInput = React.useRef();
 
   React.useEffect(() => {
-    refTextarea.current.selectionStart = refTextarea.current.selectionEnd = 19;
+    refInput.current.selectionStart = refInput.current.selectionEnd = 18;
   }, []);
 
   return (
     <div className="computer__display">
-      <textarea
-        ref={refTextarea}
-        autoFocus
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-      ></textarea>
+      <div className={`display_background displayImage_${indexDisplayImage}`}>
+        <input
+          ref={refInput}
+          autoFocus
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        ></input>
+        <button>Поиск</button>
+      </div>
     </div>
   );
 }

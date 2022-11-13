@@ -1,21 +1,43 @@
 import React from "react";
+import ModalDisplayBg from "./ModalDisplayBg";
 
-export default function Menu({ info, handleClick = (f) => f, buttonAction }) {
+export default function Menu({
+  info,
+  isChangeBackground,
+  closeModalDisplayBg = (f) => f,
+  handleClick = (f) => f,
+  handlerClickModalDisplayBg = (f) => f,
+  buttonAction,
+}) {
   return (
-    <ul>
-      {info.map((item) => (
-        <li
-          key={item.modificator}
-          onClick={() => handleClick(item.modificator)}
-        >
-          {item.modificator === 1 &&
-            `${buttonAction ? "Вернуть кнопки!" : ""} ${item.data} ${
+    <>
+      <p>Меню</p>
+      <ul>
+        {info.map((item, i) => {
+          let str;
+
+          if (i === 0) {
+            str = `${buttonAction ? "Вернуть кнопки!" : ""} ${item} ${
               buttonAction
                 ? "больше не пропадают!"
                 : "начнут пропадать при нажатии!"
-            }`}
-        </li>
-      ))}
-    </ul>
+            }`;
+          } else {
+            str = item;
+          }
+          return (
+            <li key={item} onClick={() => handleClick(i)}>
+              {str}
+            </li>
+          );
+        })}
+      </ul>
+      {isChangeBackground && (
+        <ModalDisplayBg
+          closeModalDisplayBg={closeModalDisplayBg}
+          handlerClickModalDisplayBg={handlerClickModalDisplayBg}
+        />
+      )}
+    </>
   );
 }

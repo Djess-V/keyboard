@@ -9,6 +9,8 @@ import { notesData, menuInfo } from "../data/data";
 export default function Wrapper() {
   const [buttonAction, setButtonAction] = React.useState(false);
   const [missingButtons, setMissingButtons] = React.useState([]);
+  const [isChangeBackground, setIsChangeBackground] = React.useState(false);
+  const [indexDisplayImage, setIndexDisplayImage] = React.useState(0);
 
   const handlerClick = (id) => {
     if (buttonAction) {
@@ -18,21 +20,26 @@ export default function Wrapper() {
     }
   };
 
-  const onClickMenuButton = (modificator) => {
-    switch (modificator) {
-      case 1:
+  const handlerClickModalDisplayBg = (index) => {
+    setIsChangeBackground(false);
+    setIndexDisplayImage(index);
+  };
+
+  const onClickMenuButton = (item) => {
+    switch (item) {
+      case 0:
         setButtonAction(!buttonAction);
         break;
-      case 2:
+      case 1:
         //...
+        break;
+      case 2:
+        setIsChangeBackground(true);
         break;
       case 3:
         //...
         break;
       case 4:
-        //...
-        break;
-      case 5:
       //...
     }
   };
@@ -48,6 +55,7 @@ export default function Wrapper() {
       <div className="wrapper_game_computer">
         <Game />
         <Computer
+          indexDisplayImage={indexDisplayImage}
           missingButtons={missingButtons}
           onClickButton={handlerClick}
         />
@@ -55,8 +63,11 @@ export default function Wrapper() {
       <div className="wrapper_menu">
         <Menu
           buttonAction={buttonAction}
+          isChangeBackground={isChangeBackground}
+          closeModalDisplayBg={() => setIsChangeBackground(false)}
           info={menuInfo}
           handleClick={onClickMenuButton}
+          handlerClickModalDisplayBg={handlerClickModalDisplayBg}
         />
       </div>
       <Papers info={notesData} />
