@@ -29,7 +29,8 @@
   height: 1080px;
 }
 
-.computer {
+.wrapper_game_computer {
+  display: flex;
   grid-column: 1;
 }
 
@@ -38,8 +39,7 @@
   background-color: $colorBlack;
   border: 2px solid $colorGreen;
   border-radius: 30px;
-  margin-top: 10px;
-  margin-left: 400px;
+  margin: 10px 0px 0px;
   padding: 10px 10px 10px;
   width: 700px;
   height: 300px;
@@ -72,7 +72,6 @@
   box-shadow: $boxShadow;
   border-radius: $bordRad;
   margin-top: 0px;
-  margin-left: 400px;
   width: 700px;
   height: 300px;
   cursor: pointer;
