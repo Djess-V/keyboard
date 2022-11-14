@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ButtonClassF({
-  isAction = (f) => f,
+  isHidden = (f) => f,
   data,
   id,
   block = "",
@@ -12,7 +12,7 @@ export default function ButtonClassF({
       <button
         data-id={id}
         onClick={() => onClick(id)}
-        className={`${block}__btnClassF ${isAction(id) ? "action" : ""}`}
+        className={`${block}__btnClassF ${isHidden(id) ? "hidden" : ""}`}
       >
         {data[0]}
         <p>{data[1]}</p>

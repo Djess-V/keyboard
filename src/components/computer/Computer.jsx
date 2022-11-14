@@ -6,7 +6,7 @@ import { symbolId, serviceButtonsId } from "../../data/data";
 export default function Computer({
   indexDisplayImage,
   missingButtons,
-  buttonAction,
+  buttonHidden,
   startMissingButtons = (f) => f,
 }) {
   const [symbol, setSymbol] = React.useState("");
@@ -15,7 +15,7 @@ export default function Computer({
   const [onAlt, setOnAlt] = React.useState(false);
 
   const onClickButton = (id) => {
-    if (buttonAction) {
+    if (buttonHidden) {
       startMissingButtons(id);
     } else {
       let flagServiceButtons = false;
@@ -42,11 +42,11 @@ export default function Computer({
   };
 
   React.useEffect(() => {
-    if (buttonAction) {
+    if (buttonHidden) {
       setOnCapsLock(false);
       setOnShift(false);
     }
-  }, [buttonAction]);
+  }, [buttonHidden]);
 
   return (
     <div className="computer">
@@ -76,14 +76,31 @@ function printText(id, onShift, onCapsLock, onAlt) {
       } else if (onShift && !onCapsLock && onAlt) {
         return item.data[1];
       } else if (!onShift && onCapsLock && !onAlt) {
-        return item.data[3];
+        if (id >= 22 && id <= 34) {
+          return item.data[2];
+        } else {
+          return item.data[3];
+        }
       } else if (!onShift && onCapsLock && onAlt) {
-        return item.data[1];
+        if (id >= 22 && id <= 34) {
+          return item.data[0];
+        } else {
+          return item.data[1];
+        }
       } else if (onShift && onCapsLock && !onAlt) {
-        return item.data[2];
+        if (id >= 22 && id <= 34) {
+          return item.data[3];
+        } else {
+          return item.data[2];
+        }
       } else if (onShift && onCapsLock && onAlt) {
-        return item.data[0];
+        if (id >= 22 && id <= 34) {
+          return item.data[1];
+        } else {
+          return item.data[0];
+        }
       }
     }
   }
+  return "";
 }

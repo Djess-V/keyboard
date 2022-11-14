@@ -14,7 +14,7 @@ import {
 export default function CentralPanel({
   onShift,
   onClick = (f) => f,
-  isAction = (f) => f,
+  isHidden = (f) => f,
 }) {
   return (
     <>
@@ -27,7 +27,7 @@ export default function CentralPanel({
               id={item.id}
               block="blockEsc"
               onClick={onClick}
-              isAction={isAction}
+              isHidden={isHidden}
             />
           ))}
         </div>
@@ -39,7 +39,7 @@ export default function CentralPanel({
               id={item.id}
               block="blockNumbers"
               onClick={onClick}
-              isAction={isAction}
+              isHidden={isHidden}
             />
           ))}
         </div>
@@ -52,7 +52,7 @@ export default function CentralPanel({
                 id={item.id}
                 block="blockTab"
                 onClick={onClick}
-                isAction={isAction}
+                isHidden={isHidden}
               />
             ))}
           </div>
@@ -64,11 +64,11 @@ export default function CentralPanel({
                 id={item.id}
                 block="blockCapsLock"
                 onClick={onClick}
-                isAction={isAction}
+                isHidden={isHidden}
               />
             ))}
           </div>
-          <ButtonEnter onClick={onClick} isAction={isAction} />
+          <ButtonEnter onClick={onClick} isHidden={isHidden} />
         </div>
         <div className="centralPanel__blockShift">
           {btn4Shift.map((item, i) => (
@@ -79,7 +79,7 @@ export default function CentralPanel({
               id={item.id}
               block="blockShift"
               onClick={onClick}
-              isAction={isAction}
+              isHidden={isHidden}
             />
           ))}
         </div>
@@ -91,7 +91,7 @@ export default function CentralPanel({
               id={item.id}
               block="blockSpace"
               onClick={onClick}
-              isAction={isAction}
+              isHidden={isHidden}
             />
           ))}
         </div>

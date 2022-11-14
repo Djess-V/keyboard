@@ -7,7 +7,7 @@
   font-size: 9pt;
 }
 
-.action {
+.hidden {
   visibility: hidden;
 }
 
@@ -55,6 +55,7 @@
 }
 
 .display_background {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,15 +86,20 @@
 .display_background > button {
   border: 2px solid rgb(146, 140, 140);
   background-color: rgb(203, 228, 215);
-  font-weight: 500;
   border-radius: 7px;
   color: #000;
-  font-size: 12pt;
+  font-size: 10pt;
   width: 80px;
   height: 30px;
 }
 .display_background > button:hover {
   box-shadow: 0 0 2px 2px rgb(146, 140, 140);
+}
+
+.clear {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 
 .displayImage_0 {

@@ -4,7 +4,7 @@ import { btnUpP } from "../../data/data";
 
 export default function UpPanel({
   onAlt,
-  isAction = (f) => f,
+  isHidden = (f) => f,
   onClick = (f) => f,
 }) {
   return (
@@ -14,7 +14,7 @@ export default function UpPanel({
           {btnUpP.map((item, i) => (
             <button
               key={i}
-              className={`${item.name} ${isAction(item.id) ? "action" : ""}`}
+              className={`${item.name} ${isHidden(item.id) ? "hidden" : ""}`}
               data-id={item.id}
               onClick={() => onClick(item.id)}
             >

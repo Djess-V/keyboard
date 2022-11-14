@@ -22,6 +22,9 @@ export default function Display({ symbol, indexDisplayImage }) {
           onChange={(e) => setValue(e.target.value)}
         ></input>
         <button>Поиск</button>
+        <button className="clear" onClick={() => setValue("")}>
+          Очистить
+        </button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ButtonClassStd({
   onShift,
-  isAction = (f) => f,
+  isHidden = (f) => f,
   data,
   id,
   block = "",
@@ -13,7 +13,7 @@ export default function ButtonClassStd({
       <button
         data-id={id}
         onClick={() => onClick(id)}
-        className={`${block}__btnClassStd ${isAction(id) ? "action" : ""} ${
+        className={`${block}__btnClassStd ${isHidden(id) ? "hidden" : ""} ${
           onShift && (id === 62 || id === 75) ? "onShift" : ""
         }`}
       >

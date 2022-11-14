@@ -10,7 +10,7 @@ export default function Keyboard({
   missingButtons,
   onClickButton = (f) => f,
 }) {
-  const isAction = (id) => {
+  const isHidden = (id) => {
     for (let item of missingButtons) {
       if (item === id) {
         return true;
@@ -24,7 +24,7 @@ export default function Keyboard({
       <UpPanel
         onAlt={onAlt}
         condition={missingButtons}
-        isAction={isAction}
+        isHidden={isHidden}
         onClick={onClickButton}
       />
       <div className="keyboard__downContainer">
@@ -32,7 +32,7 @@ export default function Keyboard({
           onShift={onShift}
           onClick={onClickButton}
           condition={missingButtons}
-          isAction={isAction}
+          isHidden={isHidden}
         />
         <MousePanel onCapsLock={onCapsLock} />
       </div>

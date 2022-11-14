@@ -7,7 +7,7 @@ import Sponge from "./other/Sponge";
 import { notesData, menuInfo } from "../data/data";
 
 export default function Wrapper() {
-  const [buttonAction, setButtonAction] = React.useState(false);
+  const [buttonHidden, setButtonHidden] = React.useState(false);
   const [missingButtons, setMissingButtons] = React.useState([]);
   const [isChangeBackground, setIsChangeBackground] = React.useState(false);
   const [indexDisplayImage, setIndexDisplayImage] = React.useState(0);
@@ -24,7 +24,7 @@ export default function Wrapper() {
   const onClickMenuButton = (item) => {
     switch (item) {
       case 0:
-        setButtonAction(!buttonAction);
+        setButtonHidden(!buttonHidden);
         break;
       case 1:
         //...
@@ -41,10 +41,10 @@ export default function Wrapper() {
   };
 
   React.useEffect(() => {
-    if (!buttonAction) {
+    if (!buttonHidden) {
       setMissingButtons([]);
     }
-  }, [buttonAction]);
+  }, [buttonHidden]);
 
   return (
     <div className="wrapper">
@@ -54,12 +54,12 @@ export default function Wrapper() {
           indexDisplayImage={indexDisplayImage}
           missingButtons={missingButtons}
           startMissingButtons={startMissingButtons}
-          buttonAction={buttonAction}
+          buttonHidden={buttonHidden}
         />
       </div>
       <div className="wrapper_menu">
         <Menu
-          buttonAction={buttonAction}
+          buttonHidden={buttonHidden}
           isChangeBackground={isChangeBackground}
           closeModalDisplayBg={() => setIsChangeBackground(false)}
           info={menuInfo}

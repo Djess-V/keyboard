@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ButtonEnter({
   onClick = (f) => f,
-  isAction = (f) => f,
+  isHidden = (f) => f,
 }) {
   const [active, setActive] = React.useState("notActive");
   const refBtnEnterLU = React.useRef();
@@ -26,7 +26,7 @@ export default function ButtonEnter({
   return (
     <>
       <div
-        className={`btnEnter ${isAction("86") ? "action" : ""}`}
+        className={`btnEnter ${isHidden("86") ? "hidden" : ""}`}
         onClick={() => onClick("86")}
         data-id="86"
       >

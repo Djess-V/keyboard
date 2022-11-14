@@ -7,7 +7,7 @@ export default function Menu({
   closeModalDisplayBg = (f) => f,
   handleClick = (f) => f,
   handlerClickModalDisplayBg = (f) => f,
-  buttonAction,
+  buttonHidden,
 }) {
   return (
     <>
@@ -17,8 +17,8 @@ export default function Menu({
           let str;
 
           if (i === 0) {
-            str = `${buttonAction ? "Вернуть кнопки!" : ""} ${item} ${
-              buttonAction
+            str = `${buttonHidden ? "Вернуть кнопки!" : ""} ${item} ${
+              buttonHidden
                 ? "больше не пропадают!"
                 : "начнут пропадать при нажатии!"
             }`;
