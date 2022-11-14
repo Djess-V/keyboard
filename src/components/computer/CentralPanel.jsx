@@ -12,6 +12,7 @@ import {
 } from "../../data/data";
 
 export default function CentralPanel({
+  onComputer,
   onShift,
   onClick = (f) => f,
   isHidden = (f) => f,
@@ -23,6 +24,7 @@ export default function CentralPanel({
           {btn1F.map((item, i) => (
             <ButtonClassF
               key={i}
+              onComputer={onComputer}
               data={item.data}
               id={item.id}
               block="blockEsc"
@@ -35,6 +37,7 @@ export default function CentralPanel({
           {btn2Number.map((item, i) => (
             <ButtonClassStd
               key={i}
+              onComputer={onComputer}
               data={item.data}
               id={item.id}
               block="blockNumbers"
@@ -48,6 +51,7 @@ export default function CentralPanel({
             {btn3Tab.map((item, i) => (
               <ButtonClassStd
                 key={i}
+                onComputer={onComputer}
                 data={item.data}
                 id={item.id}
                 block="blockTab"
@@ -60,6 +64,7 @@ export default function CentralPanel({
             {btn3CapsLock.map((item, i) => (
               <ButtonClassStd
                 key={i}
+                onComputer={onComputer}
                 data={item.data}
                 id={item.id}
                 block="blockCapsLock"
@@ -68,11 +73,16 @@ export default function CentralPanel({
               />
             ))}
           </div>
-          <ButtonEnter onClick={onClick} isHidden={isHidden} />
+          <ButtonEnter
+            onComputer={onComputer}
+            onClick={onClick}
+            isHidden={isHidden}
+          />
         </div>
         <div className="centralPanel__blockShift">
           {btn4Shift.map((item, i) => (
             <ButtonClassStd
+              onComputer={onComputer}
               onShift={onShift}
               key={i}
               data={item.data}
@@ -87,6 +97,7 @@ export default function CentralPanel({
           {btn5Space.map((item, i) => (
             <ButtonClassStd
               key={i}
+              onComputer={onComputer}
               data={item.data}
               id={item.id}
               block="blockSpace"

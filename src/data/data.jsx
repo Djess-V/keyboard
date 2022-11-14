@@ -233,6 +233,11 @@ export const menuInfo = [
 ];
 
 export const symbolId = [
+  { data: [], id: 1 },
+  { data: [], id: 2 },
+  { data: [], id: 3 },
+  { data: [], id: 4 },
+  { data: [], id: 5 },
   { data: ["`ё`", "Ё", "`", "~"], id: 22 },
   { data: ["1", "!", "1", "!"], id: 23 },
   { data: ["2", '"', "2", "@"], id: 24 },
@@ -284,9 +289,10 @@ export const symbolId = [
   { data: ["ю", "Ю", ".", ">"], id: 72 },
   { data: [".", ",", "/", "?"], id: 73 },
   { data: [], id: 75 },
+  { data: [], id: 78 },
   { data: [], id: 79 },
   { data: [" ", " ", " ", " "], id: 80 },
   { data: [], id: 81 },
 ];
 
-export const serviceButtonsId = [49, 62, 75, 79, 81];
+export const serviceButtonsId = [1, 2, 3, 4, 5, 49, 62, 75, 78, 79, 81];

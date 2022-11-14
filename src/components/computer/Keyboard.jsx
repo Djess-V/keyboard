@@ -4,6 +4,10 @@ import CentralPanel from "./CentralPanel";
 import MousePanel from "./MousePanel";
 
 export default function Keyboard({
+  onMouse,
+  onMusic,
+  onLock,
+  onComputer,
   onCapsLock,
   onAlt,
   onShift,
@@ -22,6 +26,10 @@ export default function Keyboard({
   return (
     <div className="computer__keyboard">
       <UpPanel
+        onMouse={onMouse}
+        onMusic={onMusic}
+        onLock={onLock}
+        onComputer={onComputer}
         onAlt={onAlt}
         condition={missingButtons}
         isHidden={isHidden}
@@ -29,12 +37,13 @@ export default function Keyboard({
       />
       <div className="keyboard__downContainer">
         <CentralPanel
+          onComputer={onComputer}
           onShift={onShift}
           onClick={onClickButton}
           condition={missingButtons}
           isHidden={isHidden}
         />
-        <MousePanel onCapsLock={onCapsLock} />
+        <MousePanel onComputer={onComputer} onCapsLock={onCapsLock} />
       </div>
     </div>
   );

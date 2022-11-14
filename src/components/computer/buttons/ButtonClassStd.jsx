@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function ButtonClassStd({
+  onComputer,
   onShift,
   isHidden = (f) => f,
   data,
@@ -14,8 +15,8 @@ export default function ButtonClassStd({
         data-id={id}
         onClick={() => onClick(id)}
         className={`${block}__btnClassStd ${isHidden(id) ? "hidden" : ""} ${
-          onShift && (id === 62 || id === 75) ? "onShift" : ""
-        }`}
+          onShift && (id === 62 || id === 75) && onComputer ? "onShift" : ""
+        } ${onComputer ? "onComputer" : ""}`}
       >
         <div className="column1">
           <p>{data[0]}</p>

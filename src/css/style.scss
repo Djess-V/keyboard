@@ -19,6 +19,16 @@
   border-color: $colorGreen;
 }
 
+button:not([class~="onComputer"]):hover {
+  background-color: $colorGrey;
+  border-color: $colorGrey2;
+}
+
+button[class~="onComputer"]:hover {
+  background-color: $colorGreen;
+  border-color: $colorGreen;
+}
+
 .suspense > h1 {
   color: black;
 }
@@ -55,6 +65,10 @@
   padding: 10px 10px 10px;
   width: 700px;
   height: 300px;
+}
+
+#display_lock {
+  background-color: $colorWhite;
 }
 
 .display_background {
@@ -104,6 +118,11 @@
   }
 }
 
+audio {
+  position: absolute;
+  top: 170px;
+}
+
 .clear {
   position: absolute;
   bottom: 10px;
@@ -124,6 +143,20 @@
 
 .displayImage_3 {
   background-image: url(../assets/display_background/more_kamni_tuman.jpg);
+}
+
+.display_lock {
+  background-image: url(../assets/lock.png);
+}
+
+.display_mouse {
+  background-image: url(../assets/crazy-mouse.gif);
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  bottom: 2px;
+  left: 0px;
+  transition: left 10s cubic-bezier(0, 0, 1, 1);
 }
 
 .computer__keyboard {
@@ -155,7 +188,6 @@
 
   .mouseBtn {
     @include btnStdBg-cBrd;
-    @include btnActive;
     border-radius: $bordRad;
     width: 26px;
     height: 24px;
@@ -166,7 +198,6 @@
 
   .soundBtn {
     @include btnStdBg-cBrd;
-    @include btnActive;
     margin-left: 25px;
     border-radius: $bordRad 0px 0px $bordRad;
     width: 50px;
@@ -175,7 +206,6 @@
 
   .homeBtn {
     @include btnStdBg-cBrd;
-    @include btnActive;
     margin-left: 2px;
     width: 50px;
     cursor: pointer;
@@ -186,7 +216,6 @@
     flex-direction: column;
     align-items: center;
     @include btnStdBg-cBrd;
-    @include btnActive;
     margin-left: 2px;
     border-radius: 0px $bordRad $bordRad 0px;
     width: 50px;
@@ -197,12 +226,15 @@
     }
   }
 
+  #onLock {
+    background-color: $colorGreen;
+  }
+
   .offBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
     @include btnStdBg-cBrd;
-    @include btnActive;
     margin-left: 25px;
     border-radius: $bordRad;
     width: 50px;
@@ -212,6 +244,13 @@
       font-size: 5.5pt;
     }
   }
+}
+
+#onComputer,
+#onLock,
+#onMusic,
+#onMouse {
+  background-color: $colorGreen;
 }
 
 .keyboard__upPanel__rightPanel {
@@ -684,14 +723,14 @@
 .mousePanel__buttons__left {
   width: 74px;
   background-color: $colorGrey;
-  border: 2px grey;
+  border: 2px $colorGrey2;
   border-style: solid solid inset solid;
   border-radius: 0px 0px 0px $bordRad;
 }
 
 .mousePanel__buttons__right {
   background-color: $colorGrey;
-  border: 2px grey;
+  border: 2px $colorGrey2;
   border-style: solid inset inset solid;
   border-radius: 0px 0px $bordRad 0px;
   margin-left: 2px;

@@ -13,6 +13,10 @@ export default function Computer({
   const [onShift, setOnShift] = React.useState(false);
   const [onCapsLock, setOnCapsLock] = React.useState(false);
   const [onAlt, setOnAlt] = React.useState(false);
+  const [onComputer, setOnComputer] = React.useState(true);
+  const [onLock, setOnLock] = React.useState(false);
+  const [onMusic, setOnMusic] = React.useState(false);
+  const [onMouse, setOnMouse] = React.useState(false);
 
   const onClickButton = (id) => {
     if (buttonHidden) {
@@ -32,10 +36,27 @@ export default function Computer({
   };
 
   const changeCase = (id) => {
-    if (id === 49) {
+    if (id === 1) {
+      setOnMouse(!onMouse);
+    } else if (id === 2) {
+      setOnMusic(!onMusic);
+    } else if (id === 3) {
+      window.location.reload();
+    } else if (id === 4) {
+      setOnLock(!onLock);
+    } else if (id === 5) {
+      setOnComputer(!onComputer);
+      setOnShift(false);
+      setOnCapsLock(false);
+      setOnLock(false);
+      setOnMusic(false);
+      setOnMouse(false);
+    } else if (id === 49) {
       setOnCapsLock(!onCapsLock);
     } else if (id === 62 || id === 75) {
       setOnShift(!onShift);
+    } else if (id === 78) {
+      window.open("https://www.microsoft.ru/", "_blank");
     } else if (id === 79 || id === 81) {
       setOnAlt(!onAlt);
     }
@@ -50,8 +71,20 @@ export default function Computer({
 
   return (
     <div className="computer">
-      <Display symbol={symbol} indexDisplayImage={indexDisplayImage} />
+      <Display
+        onMouse={onMouse}
+        mouseOff={() => setOnMouse(false)}
+        onMusic={onMusic}
+        onLock={onLock}
+        onComputer={onComputer}
+        symbol={symbol}
+        indexDisplayImage={indexDisplayImage}
+      />
       <Keyboard
+        onMouse={onMouse}
+        onMusic={onMusic}
+        onLock={onLock}
+        onComputer={onComputer}
         onCapsLock={onCapsLock}
         onAlt={onAlt}
         onShift={onShift}
