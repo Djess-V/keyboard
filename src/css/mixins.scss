@@ -1,6 +1,7 @@
 @mixin btnStdBg-cBrd {
   background-color: $colorGrey;
   border: $bordStd;
+  cursor: pointer;
 }
 
 @mixin btnStnBrd-rad {

@@ -12,6 +12,7 @@ import {
 } from "../../data/data";
 
 export default function CentralPanel({
+  onShift,
   onClick = (f) => f,
   isAction = (f) => f,
 }) {
@@ -72,6 +73,7 @@ export default function CentralPanel({
         <div className="centralPanel__blockShift">
           {btn4Shift.map((item, i) => (
             <ButtonClassStd
+              onShift={onShift}
               key={i}
               data={item.data}
               id={item.id}

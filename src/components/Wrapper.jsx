@@ -12,12 +12,8 @@ export default function Wrapper() {
   const [isChangeBackground, setIsChangeBackground] = React.useState(false);
   const [indexDisplayImage, setIndexDisplayImage] = React.useState(0);
 
-  const handlerClick = (id) => {
-    if (buttonAction) {
-      setMissingButtons([...missingButtons, id]);
-    } else {
-      /*  */
-    }
+  const startMissingButtons = (id) => {
+    setMissingButtons([...missingButtons, id]);
   };
 
   const handlerClickModalDisplayBg = (index) => {
@@ -57,7 +53,8 @@ export default function Wrapper() {
         <Computer
           indexDisplayImage={indexDisplayImage}
           missingButtons={missingButtons}
-          onClickButton={handlerClick}
+          startMissingButtons={startMissingButtons}
+          buttonAction={buttonAction}
         />
       </div>
       <div className="wrapper_menu">

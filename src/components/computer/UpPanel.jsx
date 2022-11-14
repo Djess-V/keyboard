@@ -2,7 +2,11 @@ import React from "react";
 import { TfiApple } from "react-icons/tfi";
 import { btnUpP } from "../../data/data";
 
-export default function UpPanel({ isAction = (f) => f, onClick = (f) => f }) {
+export default function UpPanel({
+  onAlt,
+  isAction = (f) => f,
+  onClick = (f) => f,
+}) {
   return (
     <>
       <div className="keyboard__upPanel">
@@ -26,6 +30,12 @@ export default function UpPanel({ isAction = (f) => f, onClick = (f) => f }) {
               title="Нажми на меня, чтобы вернуть кнопки!"
             />
             <p>Apple</p>
+          </div>
+        </div>
+        <div className="upPanel_message">
+          <div className="upPanel_message_layout">{onAlt ? "RUS" : "EN"}</div>
+          <div className="upPanel_message_message">
+            Для изменения раскладки клавиатуры нажмите Alt
           </div>
         </div>
       </div>

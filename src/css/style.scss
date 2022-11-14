@@ -19,6 +19,18 @@
   border-color: $colorGreen;
 }
 
+.suspense > h1 {
+  color: black;
+}
+
+#error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .wrapper {
   background-image: url(../assets/picture.jpg);
   background-size: 100% auto;
@@ -92,16 +104,6 @@
   }
 }
 
-.miniImage {
-  width: 104px;
-  height: 78px;
-  margin: 7px;
-  border: 2px solid $colorGrey2;
-  border-radius: 7px;
-  background-size: auto 78px;
-  cursor: pointer;
-}
-
 .displayImage_0 {
   background-image: url(../assets/display_background/derevia_gory_les.jpg);
 }
@@ -116,29 +118,6 @@
 
 .displayImage_3 {
   background-image: url(../assets/display_background/more_kamni_tuman.jpg);
-}
-
-.menu_modalDisplayBg {
-  position: absolute;
-  top: 100px;
-  left: 270px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid $colorGrey2;
-  border-radius: 7px;
-  width: 500px;
-  height: 100px;
-  background-color: rgb(93, 182, 130);
-
-  & > span {
-    position: absolute;
-    top: -3px;
-    right: 5px;
-    color: black;
-    font-size: 14pt;
-    cursor: pointer;
-  }
 }
 
 .computer__keyboard {
@@ -156,6 +135,7 @@
 }
 
 .keyboard__upPanel {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -175,6 +155,7 @@
     height: 24px;
     margin-top: -3px;
     padding-top: 2px;
+    cursor: pointer;
   }
 
   .soundBtn {
@@ -183,6 +164,7 @@
     margin-left: 25px;
     border-radius: $bordRad 0px 0px $bordRad;
     width: 50px;
+    cursor: pointer;
   }
 
   .homeBtn {
@@ -190,6 +172,7 @@
     @include btnActive;
     margin-left: 2px;
     width: 50px;
+    cursor: pointer;
   }
 
   .blockBtn {
@@ -201,6 +184,7 @@
     margin-left: 2px;
     border-radius: 0px $bordRad $bordRad 0px;
     width: 50px;
+    cursor: pointer;
 
     & > p {
       font-size: 5.5pt;
@@ -216,6 +200,7 @@
     margin-left: 25px;
     border-radius: $bordRad;
     width: 50px;
+    cursor: pointer;
 
     & > p {
       font-size: 5.5pt;
@@ -238,6 +223,37 @@
       font-size: 18pt;
     }
   }
+}
+
+.upPanel_message {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-align: center;
+  left: 288px;
+  width: 250px;
+  height: 33px;
+}
+
+.upPanel_message_layout {
+  background-color: rgb(93, 182, 130);
+  border: 1px solid $colorGrey2;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  width: 30px;
+}
+
+.upPanel_message_message {
+  background-color: rgb(93, 182, 130);
+  border: 1px solid $colorGrey2;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  margin-left: 10px;
+  width: 145px;
 }
 
 .keyboard__downContainer {
@@ -558,6 +574,11 @@
   }
 }
 
+.onShift {
+  background-color: $colorGreen;
+  border: 2px inset;
+}
+
 .centralPanel__blockSpace {
   display: flex;
   flex-direction: row;
@@ -632,12 +653,11 @@
 }
 
 .keyboard__downContainer__mousePanel {
-  margin-top: 20px;
   margin-right: -8px;
   display: flex;
   flex-direction: column;
   width: 150px;
-  height: 170px;
+  height: 220px;
 }
 
 .downContainer__mousePanel__board {
@@ -675,6 +695,16 @@
 .mousePanel__buttons__left,
 .mousePanel__buttons__right {
   @include btnActive;
+}
+
+.downContainer__mousePanel__message {
+  background-color: rgb(93, 182, 130);
+  border: 1px solid $colorGrey2;
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  width: 145px;
 }
 
 .papers {
@@ -763,7 +793,7 @@ div[class^="note"] {
   grid-row: 2;
   position: relative;
   border-radius: 5px;
-  box-shadow: 0px 0px 15px 5px black;
+  box-shadow: 0px 0px 10px 3px black;
   top: 330px;
   left: 50px;
   width: 310px;
@@ -785,6 +815,45 @@ div[class^="note"] {
       padding: 5px;
       list-style-type: square;
       cursor: pointer;
+
+      &:hover {
+        box-shadow: 0 0 10px 3px black;
+        background-color: lightpink;
+      }
     }
   }
+}
+
+.menu_modalDisplayBg {
+  position: absolute;
+  top: 100px;
+  left: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $colorGrey2;
+  box-shadow: 0 0 10px 3px black;
+  border-radius: 7px;
+  width: 500px;
+  height: 100px;
+  background-color: rgb(93, 182, 130);
+
+  & > span {
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    color: black;
+    font-size: 14pt;
+    cursor: pointer;
+  }
+}
+
+.miniImage {
+  width: 104px;
+  height: 78px;
+  margin: 7px;
+  border: 2px solid $colorGrey2;
+  border-radius: 7px;
+  background-size: auto 78px;
+  cursor: pointer;
 }
