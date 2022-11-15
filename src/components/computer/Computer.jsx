@@ -17,6 +17,7 @@ export default function Computer({
   const [onLock, setOnLock] = React.useState(false);
   const [onMusic, setOnMusic] = React.useState(false);
   const [onMouse, setOnMouse] = React.useState(false);
+  const [mouseDirection, setMouseDirection] = React.useState("");
 
   const onClickButton = (id) => {
     if (buttonHidden) {
@@ -62,6 +63,13 @@ export default function Computer({
     }
   };
 
+  const mouseMove = (direction) => {
+    setMouseDirection(direction);
+    if (!direction) {
+      setOnMouse(false);
+    }
+  };
+
   React.useEffect(() => {
     if (buttonHidden) {
       setOnCapsLock(false);
@@ -69,11 +77,18 @@ export default function Computer({
     }
   }, [buttonHidden]);
 
+  React.useEffect(() => {
+    if (!onMouse) {
+      setMouseDirection("");
+    }
+  }, [onMouse]);
+
   return (
     <div className="computer">
       <Display
+        mouseDirection={mouseDirection}
         onMouse={onMouse}
-        mouseOff={() => setOnMouse(false)}
+        mouseMove={mouseMove}
         onMusic={onMusic}
         onLock={onLock}
         onComputer={onComputer}

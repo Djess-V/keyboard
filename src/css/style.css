@@ -148,7 +148,127 @@ audio {
   height: 120px;
   bottom: 2px;
   left: 0px;
-  transition: left 10s cubic-bezier(0, 0, 1, 1);
+}
+
+@-webkit-keyframes rotateUp {
+  from {
+    transform: ratate(0);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotateUp {
+  from {
+    transform: ratate(0);
+  }
+  to {
+    transform: rotate(-90deg);
+  }
+}
+@-webkit-keyframes rotateLeft {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotateLeft {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+@-webkit-keyframes rotateDown {
+  from {
+    transform: ratate(-180deg);
+  }
+  to {
+    transform: rotate(-270deg);
+  }
+}
+@keyframes rotateDown {
+  from {
+    transform: ratate(-180deg);
+  }
+  to {
+    transform: rotate(-270deg);
+  }
+}
+@-webkit-keyframes rotateRight {
+  from {
+    transform: ratate(-270deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes rotateRight {
+  from {
+    transform: ratate(-270deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.moveRightMouse {
+  left: 555px;
+  transition: left 8s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseUp {
+  left: 555px;
+  -webkit-animation: rotateUp 4s infinite alternate;
+          animation: rotateUp 4s infinite alternate;
+}
+
+.moveUpMouse {
+  transform: rotate(-90deg);
+  left: 555px;
+  bottom: 150px;
+  transition: bottom 4s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseLeft {
+  transform: rotate(-90deg);
+  left: 555px;
+  bottom: 150px;
+  -webkit-animation: rotateLeft 4s infinite alternate;
+          animation: rotateLeft 4s infinite alternate;
+}
+
+.moveLeftMouse {
+  transform: rotate(-180deg);
+  left: 0px;
+  bottom: 150px;
+  transition: left 8s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseDown {
+  transform: rotate(-180deg);
+  left: 0px;
+  bottom: 150px;
+  -webkit-animation: rotateDown 4s infinite alternate;
+          animation: rotateDown 4s infinite alternate;
+}
+
+.moveDownMouse {
+  transform: rotate(-270deg);
+  left: 0px;
+  bottom: 0px;
+  transition: bottom 4s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseRight {
+  transform: rotate(-270deg);
+  left: 0px;
+  bottom: 0px;
+  -webkit-animation: rotateRight 4s infinite alternate;
+          animation: rotateRight 4s infinite alternate;
 }
 
 .computer__keyboard {

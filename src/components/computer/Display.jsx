@@ -1,4 +1,5 @@
 import React from "react";
+import audio from "../../assets/mp3/lady_gaga_-_shallow.mp3";
 
 export default function Display({
   onMouse,
@@ -7,7 +8,8 @@ export default function Display({
   symbol,
   indexDisplayImage,
   onComputer,
-  mouseOff = (f) => f,
+  mouseMove = (f) => f,
+  mouseDirection,
 }) {
   const [value, setValue] = React.useState(` Hello, friends...`);
   const refInput = React.useRef();
@@ -38,21 +40,42 @@ export default function Display({
             Очистить
           </button>
           {onMusic && (
-            <audio
-              controls
-              src="../../src/assets/mp3/lady_gaga_-_shallow.mp3"
-              autoPlay
-            >
+            <audio controls src={audio} autoPlay>
               Ваш браузер не поддерживает элемент <code>audio</code>.
             </audio>
           )}
           {onMouse && (
             <div
               ref={refMouse}
-              className="display_mouse"
+              className={`display_mouse ${onMouse ? mouseDirection : ""}`}
               onPointerOver={() => {
-                refMouse.current.style.left = "480px";
-                setTimeout(mouseOff, 10500);
+                setTimeout(() => {
+                  mouseMove("moveRightMouse");
+                  setTimeout(() => {
+                    mouseMove("rotateMouseUp");
+                    setTimeout(() => {
+                      mouseMove("moveUpMouse");
+                      setTimeout(() => {
+                        mouseMove("rotateMouseLeft");
+                        setTimeout(() => {
+                          mouseMove("moveLeftMouse");
+                          setTimeout(() => {
+                            mouseMove("rotateMouseDown");
+                            setTimeout(() => {
+                              mouseMove("moveDownMouse");
+                              setTimeout(() => {
+                                mouseMove("rotateMouseRight");
+                                setTimeout(() => {
+                                  mouseMove("");
+                                }, 6000);
+                              }, 4000);
+                            }, 4000);
+                          }, 8000);
+                        }, 4000);
+                      }, 4000);
+                    }, 4000);
+                  }, 8000);
+                }, 0);
               }}
             ></div>
           )}
