@@ -9,15 +9,22 @@ export default function Computer({
   buttonHidden,
   startMissingButtons = (f) => f,
 }) {
-  const [symbol, setSymbol] = React.useState("");
+  const [onComputer, setOnComputer] = React.useState(true);
   const [onShift, setOnShift] = React.useState(false);
   const [onCapsLock, setOnCapsLock] = React.useState(false);
   const [onAlt, setOnAlt] = React.useState(false);
-  const [onComputer, setOnComputer] = React.useState(true);
   const [onLock, setOnLock] = React.useState(false);
+  const [onHome, setOnHome] = React.useState(true);
   const [onMusic, setOnMusic] = React.useState(false);
   const [onMouse, setOnMouse] = React.useState(false);
   const [mouseDirection, setMouseDirection] = React.useState("");
+  const [timerCanselMouse, setTimerCanselMouse] = React.useState(0);
+  const [symbol, setSymbol] = React.useState("");
+  const [pressedButton, setPressedButton] = React.useState(0);
+  const [pressedButtonLeft, setPressedButtonLeft] = React.useState(0);
+  const [pressedButtonRight, setPressedButtonRight] = React.useState(0);
+  const [pressedButtonDelete, setPressedButtonDelete] = React.useState(0);
+  const [pressedButtonBackspace, setPressedButtonBackspace] = React.useState(0);
 
   const onClickButton = (id) => {
     if (buttonHidden) {
@@ -32,6 +39,7 @@ export default function Computer({
       }
       if (!flagServiceButtons) {
         setSymbol(printText(id, onShift, onCapsLock, onAlt));
+        setPressedButton(pressedButton + 1);
       }
     }
   };
@@ -42,7 +50,9 @@ export default function Computer({
     } else if (id === 2) {
       setOnMusic(!onMusic);
     } else if (id === 3) {
-      window.location.reload();
+      if (onHome) {
+        window.location.reload();
+      }
     } else if (id === 4) {
       setOnLock(!onLock);
     } else if (id === 5) {
@@ -50,8 +60,19 @@ export default function Computer({
       setOnShift(false);
       setOnCapsLock(false);
       setOnLock(false);
+      setOnHome(!onHome);
       setOnMusic(false);
       setOnMouse(false);
+      setSymbol("");
+      setPressedButton(0);
+      setPressedButtonLeft(0);
+      setPressedButtonRight(0);
+      setPressedButtonDelete(0);
+      setPressedButtonBackspace(0);
+    } else if (id === 21) {
+      setPressedButtonDelete(pressedButtonDelete + 1);
+    } else if (id === 35) {
+      setPressedButtonBackspace(pressedButtonBackspace + 1);
     } else if (id === 49) {
       setOnCapsLock(!onCapsLock);
     } else if (id === 62 || id === 75) {
@@ -60,6 +81,10 @@ export default function Computer({
       window.open("https://www.microsoft.ru/", "_blank");
     } else if (id === 79 || id === 81) {
       setOnAlt(!onAlt);
+    } else if (id === 83) {
+      setPressedButtonLeft(pressedButtonLeft + 1);
+    } else if (id === 85) {
+      setPressedButtonRight(pressedButtonRight + 1);
     }
   };
 
@@ -79,6 +104,7 @@ export default function Computer({
 
   React.useEffect(() => {
     if (!onMouse) {
+      clearTimeout(timerCanselMouse);
       setMouseDirection("");
     }
   }, [onMouse]);
@@ -89,11 +115,17 @@ export default function Computer({
         mouseDirection={mouseDirection}
         onMouse={onMouse}
         mouseMove={mouseMove}
+        canselMouseMove={(timer) => setTimerCanselMouse(timer)}
         onMusic={onMusic}
         onLock={onLock}
         onComputer={onComputer}
         symbol={symbol}
+        pressedButton={pressedButton}
         indexDisplayImage={indexDisplayImage}
+        pressedButtonLeft={pressedButtonLeft}
+        pressedButtonRight={pressedButtonRight}
+        pressedButtonDelete={pressedButtonDelete}
+        pressedButtonBackspace={pressedButtonBackspace}
       />
       <Keyboard
         onMouse={onMouse}

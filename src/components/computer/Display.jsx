@@ -1,44 +1,38 @@
 import React from "react";
 import audio from "../../assets/mp3/lady_gaga_-_shallow.mp3";
+import SearchPanel from "./SearchPanel";
 
 export default function Display({
   onMouse,
   onMusic,
   onLock,
   symbol,
+  pressedButton,
   indexDisplayImage,
   onComputer,
   mouseMove = (f) => f,
+  canselMouseMove = (f) => f,
   mouseDirection,
+  pressedButtonLeft,
+  pressedButtonRight,
+  pressedButtonDelete,
+  pressedButtonBackspace,
 }) {
-  const [value, setValue] = React.useState(` Hello, friends...`);
-  const refInput = React.useRef();
   const refMouse = React.useRef();
-
-  React.useEffect(() => {
-    if (refInput.current) {
-      refInput.current.selectionStart = refInput.current.selectionEnd = 18;
-    }
-  }, [refInput.current]);
-
-  React.useEffect(() => {
-    setValue(value + symbol);
-  }, [symbol]);
+  let timerMoveMouse;
 
   return (
     <div className={`computer__display`}>
       {onComputer && !onLock && (
         <div className={`display_background displayImage_${indexDisplayImage}`}>
-          <input
-            ref={refInput}
-            autoFocus
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          ></input>
-          <button>Поиск</button>
-          <button className="clear" onClick={() => setValue("")}>
-            Очистить
-          </button>
+          <SearchPanel
+            pressedButton={pressedButton}
+            pressedButtonBackspace={pressedButtonBackspace}
+            pressedButtonDelete={pressedButtonDelete}
+            pressedButtonLeft={pressedButtonLeft}
+            pressedButtonRight={pressedButtonRight}
+            symbol={symbol}
+          />
           {onMusic && (
             <audio controls src={audio} autoPlay>
               Ваш браузер не поддерживает элемент <code>audio</code>.
@@ -49,33 +43,59 @@ export default function Display({
               ref={refMouse}
               className={`display_mouse ${onMouse ? mouseDirection : ""}`}
               onPointerOver={() => {
-                setTimeout(() => {
-                  mouseMove("moveRightMouse");
-                  setTimeout(() => {
-                    mouseMove("rotateMouseUp");
-                    setTimeout(() => {
-                      mouseMove("moveUpMouse");
-                      setTimeout(() => {
-                        mouseMove("rotateMouseLeft");
-                        setTimeout(() => {
-                          mouseMove("moveLeftMouse");
-                          setTimeout(() => {
-                            mouseMove("rotateMouseDown");
-                            setTimeout(() => {
-                              mouseMove("moveDownMouse");
-                              setTimeout(() => {
-                                mouseMove("rotateMouseRight");
-                                setTimeout(() => {
-                                  mouseMove("");
-                                }, 6000);
+                if (!mouseDirection) {
+                  timerMoveMouse = setTimeout(() => {
+                    mouseMove("moveRightMouse");
+                    timerMoveMouse = setTimeout(() => {
+                      mouseMove("rotateMouseUp");
+                      timerMoveMouse = setTimeout(() => {
+                        mouseMove("moveUpMouse");
+                        timerMoveMouse = setTimeout(() => {
+                          mouseMove("rotateMouseLeft");
+                          timerMoveMouse = setTimeout(() => {
+                            mouseMove("moveLeftMouse");
+                            timerMoveMouse = setTimeout(() => {
+                              mouseMove("rotateMouseDown");
+                              timerMoveMouse = setTimeout(() => {
+                                mouseMove("moveDownMouse");
+                                timerMoveMouse = setTimeout(() => {
+                                  mouseMove("rotateMouseRight");
+                                  timerMoveMouse = setTimeout(() => {
+                                    mouseMove("");
+                                  }, 4100);
+                                }, 4000);
                               }, 4000);
-                            }, 4000);
-                          }, 8000);
+                            }, 8000);
+                          }, 4000);
                         }, 4000);
                       }, 4000);
-                    }, 4000);
-                  }, 8000);
-                }, 0);
+                    }, 8000);
+                  }, 0);
+                  setTimeout(() => {
+                    canselMouseMove(timerMoveMouse);
+                    setTimeout(() => {
+                      canselMouseMove(timerMoveMouse);
+                      setTimeout(() => {
+                        canselMouseMove(timerMoveMouse);
+                        setTimeout(() => {
+                          canselMouseMove(timerMoveMouse);
+                          setTimeout(() => {
+                            canselMouseMove(timerMoveMouse);
+                            setTimeout(() => {
+                              canselMouseMove(timerMoveMouse);
+                              setTimeout(() => {
+                                canselMouseMove(timerMoveMouse);
+                                setTimeout(() => {
+                                  canselMouseMove(timerMoveMouse);
+                                }, 4500);
+                              }, 4500);
+                            }, 8500);
+                          }, 4500);
+                        }, 4500);
+                      }, 4500);
+                    }, 8500);
+                  }, 500);
+                }
               }}
             ></div>
           )}

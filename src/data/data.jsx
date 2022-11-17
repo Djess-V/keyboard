@@ -238,7 +238,8 @@ export const symbolId = [
   { data: [], id: 3 },
   { data: [], id: 4 },
   { data: [], id: 5 },
-  { data: ["`ё`", "Ё", "`", "~"], id: 22 },
+  { data: [], id: 21 },
+  { data: ["ё", "Ё", "`", "~"], id: 22 },
   { data: ["1", "!", "1", "!"], id: 23 },
   { data: ["2", '"', "2", "@"], id: 24 },
   { data: ["3", "№", "3", "#"], id: 25 },
@@ -251,6 +252,7 @@ export const symbolId = [
   { data: ["0", ")", "0", ")"], id: 32 },
   { data: ["-", "_", "-", "_"], id: 33 },
   { data: ["=", "+", "=", "+"], id: 34 },
+  { data: [], id: 35 },
   { data: ["й", "Й", "q", "Q"], id: 37 },
   { data: ["ц", "Ц", "w", "W"], id: 38 },
   { data: ["у", "У", "e", "E"], id: 39 },
@@ -293,6 +295,10 @@ export const symbolId = [
   { data: [], id: 79 },
   { data: [" ", " ", " ", " "], id: 80 },
   { data: [], id: 81 },
+  { data: [], id: 83 },
+  { data: [], id: 85 },
 ];
 
-export const serviceButtonsId = [1, 2, 3, 4, 5, 49, 62, 75, 78, 79, 81];
+export const serviceButtonsId = [
+  1, 2, 3, 4, 5, 21, 35, 49, 62, 75, 78, 79, 81, 83, 85,
+];
