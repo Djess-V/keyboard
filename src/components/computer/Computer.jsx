@@ -21,6 +21,7 @@ export default function Computer({
   const [timerCanselMouse, setTimerCanselMouse] = React.useState(0);
   const [symbol, setSymbol] = React.useState("");
   const [pressedButton, setPressedButton] = React.useState(0);
+  const [pressedButtonTab, setPressedButtonTab] = React.useState(0);
   const [pressedButtonLeft, setPressedButtonLeft] = React.useState(0);
   const [pressedButtonRight, setPressedButtonRight] = React.useState(0);
   const [pressedButtonDelete, setPressedButtonDelete] = React.useState(0);
@@ -73,6 +74,8 @@ export default function Computer({
       setPressedButtonDelete(pressedButtonDelete + 1);
     } else if (id === 35) {
       setPressedButtonBackspace(pressedButtonBackspace + 1);
+    } else if (id === 36) {
+      setPressedButtonTab(pressedButtonTab + 1);
     } else if (id === 49) {
       setOnCapsLock(!onCapsLock);
     } else if (id === 62 || id === 75) {
@@ -122,6 +125,7 @@ export default function Computer({
         symbol={symbol}
         pressedButton={pressedButton}
         indexDisplayImage={indexDisplayImage}
+        pressedButtonTab={pressedButtonTab}
         pressedButtonLeft={pressedButtonLeft}
         pressedButtonRight={pressedButtonRight}
         pressedButtonDelete={pressedButtonDelete}

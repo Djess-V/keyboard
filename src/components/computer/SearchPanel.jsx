@@ -2,6 +2,7 @@ import React from "react";
 
 export default function SearchPanel({
   pressedButton,
+  pressedButtonTab,
   pressedButtonBackspace,
   pressedButtonDelete,
   pressedButtonLeft,
@@ -38,6 +39,22 @@ export default function SearchPanel({
       setCursorPosition(cursorPosition + 1);
     }
   }, [pressedButtonRight]);
+
+  React.useEffect(() => {
+    if (
+      pressedButtonTab > 0 && cursorPosition < valueInput.length &&
+      refInput.current
+    ) {
+      setValueInput(
+        valueInput.slice(0, cursorPosition) +
+          "  " +
+          valueInput.slice(cursorPosition)
+      );
+        setCursorPosition(cursorPosition + 2);
+      
+
+    }
+  }, [pressedButtonTab]);
 
   React.useEffect(() => {
     if (

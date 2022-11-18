@@ -13,6 +13,7 @@ export default function Display({
   mouseMove = (f) => f,
   canselMouseMove = (f) => f,
   mouseDirection,
+  pressedButtonTab,
   pressedButtonLeft,
   pressedButtonRight,
   pressedButtonDelete,
@@ -27,6 +28,7 @@ export default function Display({
         <div className={`display_background displayImage_${indexDisplayImage}`}>
           <SearchPanel
             pressedButton={pressedButton}
+            pressedButtonTab={pressedButtonTab}
             pressedButtonBackspace={pressedButtonBackspace}
             pressedButtonDelete={pressedButtonDelete}
             pressedButtonLeft={pressedButtonLeft}
