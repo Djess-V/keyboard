@@ -1,6 +1,6 @@
 import React from "react";
-import audio from "../../assets/mp3/lady_gaga_-_shallow.mp3";
 import SearchPanel from "./SearchPanel";
+import AudioMenu from "../other/AudioMenu";
 
 export default function Display({
   onMouse,
@@ -14,19 +14,30 @@ export default function Display({
   canselMouseMove = (f) => f,
   mouseDirection,
   pressedButtonTab,
+  pressedButtonUpDown,
   pressedButtonLeft,
   pressedButtonRight,
   pressedButtonDelete,
   pressedButtonBackspace,
+  pressedButtonEnter,
+  updateButtonEnter = f => f,
 }) {
+  const [ audioChoice, setAudioChoice ] = React.useState(null);
+  
   const refMouse = React.useRef();
   let timerMoveMouse;
+
+  React.useEffect(() => {
+    if (!onMusic) {
+      setAudioChoice(null);
+    }
+  }, [onMusic]);
 
   return (
     <div className={`computer__display`}>
       {onComputer && !onLock && (
         <div className={`display_background displayImage_${indexDisplayImage}`}>
-          <SearchPanel
+          {!onMusic && <SearchPanel
             pressedButton={pressedButton}
             pressedButtonTab={pressedButtonTab}
             pressedButtonBackspace={pressedButtonBackspace}
@@ -34,12 +45,13 @@ export default function Display({
             pressedButtonLeft={pressedButtonLeft}
             pressedButtonRight={pressedButtonRight}
             symbol={symbol}
-          />
+          />}
           {onMusic && (
-            <audio controls src={audio} autoPlay>
-              Ваш браузер не поддерживает элемент <code>audio</code>.
-            </audio>
+          <AudioMenu pressedButtonUpDown={pressedButtonUpDown} audioOnClick={(link) => setAudioChoice(link)} raiseAudio={(choice) => {setAudioChoice(choice); updateButtonEnter()}}/>
           )}
+          {(audioChoice || audioChoice === 0) && (pressedButtonEnter > 0) && onMusic && (<audio controls src={audioChoice} autoPlay/>)
+            
+          }
           {onMouse && (
             <div
               ref={refMouse}

@@ -11,6 +11,7 @@ import {
   TfiTarget,
   TfiSkype,
   TfiSettings,
+  TfiDribbble,
   TfiPalette,
   TfiPackage,
   TfiPaintRoller,
@@ -52,7 +53,7 @@ export const btn1F = [
   { data: [<TfiTarget style={styleSVG} />, "F4"], id: 10 },
   { data: [<TfiSkype style={styleSVG} />, "F5"], id: 11 },
   { data: [<TfiSettings style={styleSVG} />, "F6"], id: 12 },
-  { data: [<TfiSettings style={styleSVG} />, "F6"], id: 13 },
+  { data: [<TfiDribbble style={styleSVG} />, "F6"], id: 13 },
   { data: [<TfiPalette style={styleSVG} />, "F7"], id: 14 },
   { data: [<TfiPackage style={styleSVG} />, "F8"], id: 15 },
   { data: [<TfiPaintRoller style={styleSVG} />, "F9"], id: 16 },
@@ -291,15 +292,19 @@ export const symbolId = [
   { data: ["б", "Б", ",", "<"], id: 71 },
   { data: ["ю", "Ю", ".", ">"], id: 72 },
   { data: [".", ",", "/", "?"], id: 73 },
+  { data: [], id: 74,},
   { data: [], id: 75 },
+  { data: [], id: 77 },
   { data: [], id: 78 },
   { data: [], id: 79 },
   { data: [" ", " ", " ", " "], id: 80 },
   { data: [], id: 81 },
   { data: [], id: 83 },
+  { data: [], id: 84,},
   { data: [], id: 85 },
+  { data: [], id: 86 },
 ];
 
 export const serviceButtonsId = [
-  1, 2, 3, 4, 5, 21, 35,36, 49, 62, 75, 78, 79, 81, 83, 85,
+  1, 2, 3, 4, 5, 21, 35,36, 49, 62, 74, 75, 77, 78, 79, 81, 83, 84, 85, 86
 ];

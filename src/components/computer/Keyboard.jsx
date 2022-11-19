@@ -11,6 +11,7 @@ export default function Keyboard({
   onCapsLock,
   onAlt,
   onShift,
+  onFN,
   missingButtons,
   onClickButton = (f) => f,
 }) {
@@ -39,6 +40,9 @@ export default function Keyboard({
         <CentralPanel
           onComputer={onComputer}
           onShift={onShift}
+          onCapsLock={onCapsLock}
+          onAlt={onAlt}
+          onFN={onFN}
           onClick={onClickButton}
           condition={missingButtons}
           isHidden={isHidden}

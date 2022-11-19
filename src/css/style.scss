@@ -85,6 +85,11 @@ button[class~="onComputer"]:hover {
   width: 680px;
   height: 276px;
 
+  & > audio {
+    position: absolute;
+    top: 200px;
+  }
+
   & > input {
     border: 2px solid $colorGrey2;
     border-radius: 7px;
@@ -118,9 +123,45 @@ button[class~="onComputer"]:hover {
   }
 }
 
-audio {
+.audio_list_modal {
   position: absolute;
-  top: 170px;
+  padding: 10px;
+  border: 2px solid $colorGrey2;
+  box-shadow: 0 0 10px 3px black;
+  border-radius: 7px;
+  background-color: rgb(93, 182, 130);
+  top: 20px;
+
+  .songActive {
+    background-color: rgb(199, 195, 190);
+      border-radius: 3px;
+  }
+
+  & > h1 {
+    text-align: center;
+    font-size: 12pt;
+    color: black;
+  }
+
+  & > ul {
+    margin-top: 10px;
+
+    & > li {
+      list-style-type: none;
+      padding: 3px;
+
+      & > a {
+        font-size: 10pt;
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    & > li:hover {
+      background-color: rgb(199, 195, 190);
+      border-radius: 3px;
+    }
+  }
 }
 
 .clear {
@@ -594,13 +635,19 @@ audio {
   gap: 2px;
   grid-column: 1;
   grid-row: 2;
+
+  .buttonOn {
+    background-color: $colorGreen;
+    border: 2px inset;
+  }
+  
 }
 
 .blockCapsLock__btnClassStd {
   @include btnStd;
   justify-content: center;
   align-items: center;
-
+  
   &:nth-child(1) {
     display: flex;
     justify-content: space-around;
@@ -650,7 +697,7 @@ audio {
   &:nth-child(13) {
     width: 32.5px;
     z-index: 1;
-  }
+  }  
 }
 
 .centralPanel__blockShift {
@@ -660,6 +707,11 @@ audio {
   margin-top: 2px;
   width: 516px;
   height: 35px;
+
+  .buttonOn {
+    background-color: $colorGreen;
+    border: 2px inset;
+  }
 }
 
 .blockShift__btnClassStd {
@@ -708,11 +760,6 @@ audio {
   }
 }
 
-.onShift {
-  background-color: $colorGreen;
-  border: 2px inset;
-}
-
 .centralPanel__blockSpace {
   display: flex;
   flex-direction: row;
@@ -720,6 +767,11 @@ audio {
   margin-top: 2px;
   width: 516px;
   height: 35px;
+
+  .buttonOn {
+    background-color: $colorGreen;
+    border: 2px inset;
+  }
 }
 
 .blockSpace__btnClassStd {

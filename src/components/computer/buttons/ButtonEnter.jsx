@@ -30,7 +30,7 @@ export default function ButtonEnter({
         className={`btnEnter ${isHidden("86") ? "hidden" : ""} ${
           onComputer ? "onComputer" : ""
         }`}
-        onClick={() => onClick("86")}
+        onClick={() => onClick(86)}
         data-id="86"
       >
         <div

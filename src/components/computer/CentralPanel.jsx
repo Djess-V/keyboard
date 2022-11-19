@@ -14,6 +14,9 @@ import {
 export default function CentralPanel({
   onComputer,
   onShift,
+  onCapsLock,
+  onAlt,
+  onFN,
   onClick = (f) => f,
   isHidden = (f) => f,
 }) {
@@ -65,6 +68,7 @@ export default function CentralPanel({
               <ButtonClassStd
                 key={i}
                 onComputer={onComputer}
+                onCapsLock={onCapsLock}
                 data={item.data}
                 id={item.id}
                 block="blockCapsLock"
@@ -98,6 +102,8 @@ export default function CentralPanel({
             <ButtonClassStd
               key={i}
               onComputer={onComputer}
+              onFN={onFN}
+              onAlt={onAlt}
               data={item.data}
               id={item.id}
               block="blockSpace"

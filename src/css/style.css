@@ -82,6 +82,10 @@ button[class~=onComputer]:hover {
   width: 680px;
   height: 276px;
 }
+.display_background > audio {
+  position: absolute;
+  top: 200px;
+}
 .display_background > input {
   border: 2px solid rgb(146, 140, 140);
   border-radius: 7px;
@@ -110,9 +114,39 @@ button[class~=onComputer]:hover {
   box-shadow: 0 0 2px 2px rgb(146, 140, 140);
 }
 
-audio {
+.audio_list_modal {
   position: absolute;
-  top: 170px;
+  padding: 10px;
+  border: 2px solid rgb(146, 140, 140);
+  box-shadow: 0 0 10px 3px black;
+  border-radius: 7px;
+  background-color: rgb(93, 182, 130);
+  top: 20px;
+}
+.audio_list_modal .songActive {
+  background-color: rgb(199, 195, 190);
+  border-radius: 3px;
+}
+.audio_list_modal > h1 {
+  text-align: center;
+  font-size: 12pt;
+  color: black;
+}
+.audio_list_modal > ul {
+  margin-top: 10px;
+}
+.audio_list_modal > ul > li {
+  list-style-type: none;
+  padding: 3px;
+}
+.audio_list_modal > ul > li > a {
+  font-size: 10pt;
+  color: black;
+  text-decoration: none;
+}
+.audio_list_modal > ul > li:hover {
+  background-color: rgb(199, 195, 190);
+  border-radius: 3px;
 }
 
 .clear {
@@ -624,6 +658,10 @@ audio {
   grid-column: 1;
   grid-row: 2;
 }
+.centralPanel__blockCapsLock .buttonOn {
+  background-color: rgb(30, 192, 130);
+  border: 2px inset;
+}
 
 .blockCapsLock__btnClassStd {
   display: flex;
@@ -690,6 +728,10 @@ audio {
   width: 516px;
   height: 35px;
 }
+.centralPanel__blockShift .buttonOn {
+  background-color: rgb(30, 192, 130);
+  border: 2px inset;
+}
 
 .blockShift__btnClassStd {
   display: flex;
@@ -738,11 +780,6 @@ audio {
   display: inline;
 }
 
-.onShift {
-  background-color: rgb(30, 192, 130);
-  border: 2px inset;
-}
-
 .centralPanel__blockSpace {
   display: flex;
   flex-direction: row;
@@ -750,6 +787,10 @@ audio {
   margin-top: 2px;
   width: 516px;
   height: 35px;
+}
+.centralPanel__blockSpace .buttonOn {
+  background-color: rgb(30, 192, 130);
+  border: 2px inset;
 }
 
 .blockSpace__btnClassStd {
