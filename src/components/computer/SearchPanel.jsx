@@ -66,6 +66,9 @@ export default function SearchPanel({
         valueInput.slice(0, cursorPosition) +
           valueInput.slice(cursorPosition + 1)
       );
+      setTimeout(() => {refInput.current.selectionStart = refInput.current.selectionEnd =
+        cursorPosition;
+      refInput.current.focus();}, 0); 
     }
   }, [pressedButtonDelete]);
 

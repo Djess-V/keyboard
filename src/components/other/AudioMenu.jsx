@@ -36,7 +36,7 @@ export default function AudioMenu({ pressedButtonUpDown, audioOnClick = f => f, 
 
   return (
     <div className="audio_list_modal">
-      <h1>Выберите произведение:</h1>
+      <h1>Выберите композицию:</h1>
       <ul>{lis}</ul>
     </div>
   );
