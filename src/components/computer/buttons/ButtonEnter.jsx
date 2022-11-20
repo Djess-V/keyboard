@@ -4,6 +4,7 @@ export default function ButtonEnter({
   onComputer,
   onClick = (f) => f,
   isHidden = (f) => f,
+  pressedButton,
 }) {
   const [active, setActive] = React.useState("notActive");
   const refBtnEnterLU = React.useRef();
@@ -41,7 +42,7 @@ export default function ButtonEnter({
           onPointerOut={() => {
             onComputer && addNotActive();
           }}
-          className="btnEnter__LU"
+          className={`btnEnter__LU ${pressedButton ? "buttonPressed" : ""}`}
         ></div>
         <div className={`btnEnter__LD ${onComputer ? "onComputer" : ""}`}></div>
         <div
@@ -52,7 +53,8 @@ export default function ButtonEnter({
           onPointerOut={() => {
             onComputer && addNotActive();
           }}
-          className={`btnEnter__RU ${onComputer ? "onComputer" : ""}`}
+          className={`btnEnter__RU ${onComputer ? "onComputer" : ""} 
+          ${pressedButton ? "buttonPressed" : ""}`}
         >
           <p>Enter</p>
         </div>
@@ -64,7 +66,8 @@ export default function ButtonEnter({
           onPointerOut={() => {
             onComputer && addNotActive();
           }}
-          className={`btnEnter__RD ${onComputer ? "onComputer" : ""}`}
+          className={`btnEnter__RD ${onComputer ? "onComputer" : ""}
+          ${pressedButton ? "buttonPressed" : ""}`}
         ></div>
       </div>
     </>

@@ -21,6 +21,7 @@ export default function Display({
   pressedButtonBackspace,
   pressedButtonEnter,
   updateButtonEnter = f => f,
+  raiseButtonCode = f => f,
 }) {
   const [ audioChoice, setAudioChoice ] = React.useState(null);
   
@@ -45,6 +46,7 @@ export default function Display({
             pressedButtonLeft={pressedButtonLeft}
             pressedButtonRight={pressedButtonRight}
             symbol={symbol}
+            raiseButtonCode={raiseButtonCode}
           />}
           {onMusic && (
           <AudioMenu pressedButtonUpDown={pressedButtonUpDown} audioOnClick={(link) => setAudioChoice(link)} raiseAudio={(choice) => {setAudioChoice(choice); updateButtonEnter()}}/>

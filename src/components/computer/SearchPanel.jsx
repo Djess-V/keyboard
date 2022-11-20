@@ -8,10 +8,16 @@ export default function SearchPanel({
   pressedButtonLeft,
   pressedButtonRight,
   symbol,
+  raiseButtonCode = f => f,
 }) {
   const [valueInput, setValueInput] = React.useState("Hello, friends!");
   const [cursorPosition, setCursorPosition] = React.useState(0);
   const refInput = React.useRef();
+
+  const createQueryString = () => {
+    const substring = encodeURIComponent(valueInput);
+    return `https://www.google.com/search?q=${substring}`;
+  };
 
   React.useEffect(() => {
     if (refInput.current && symbol !== "") {
@@ -51,8 +57,6 @@ export default function SearchPanel({
           valueInput.slice(cursorPosition)
       );
         setCursorPosition(cursorPosition + 2);
-      
-
     }
   }, [pressedButtonTab]);
 
@@ -101,8 +105,10 @@ export default function SearchPanel({
         onBlur={(e) => {
           setCursorPosition(e.target.selectionEnd);
         }}
+        onKeyDown={(e) => raiseButtonCode(e)}
+        onKeyUp={(e) => raiseButtonCode(e)}
       ></input>
-      <button>Поиск</button>
+      <button onClick={() => window.open(createQueryString(), "_blank")}>Поиск</button>
       <button className="clear" onClick={() => setValueInput("")}>
         Очистить
       </button>

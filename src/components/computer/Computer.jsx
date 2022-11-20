@@ -29,6 +29,16 @@ export default function Computer({
   const [pressedButtonDelete, setPressedButtonDelete] = React.useState(0);
   const [pressedButtonBackspace, setPressedButtonBackspace] = React.useState(0);
   const [pressedButtonEnter, setPressedButtonEnter] = React.useState(0);
+  const [codeButtonDown, setCodeButtonDown] = React.useState(null);
+  const [codeButtonUp, setCodeButtonUp] = React.useState(null);
+
+  const changeCodeButtonDownUp = (e) => {
+    if (e.type === "keydown") {
+      setCodeButtonDown(e.code);
+    } else if (e.type === "keyup") {
+      setCodeButtonUp(e.code);
+    }
+  };
 
   const onClickButton = (id) => {
     if (buttonHidden) {
@@ -162,6 +172,7 @@ export default function Computer({
         pressedButtonBackspace={pressedButtonBackspace}
         pressedButtonEnter={pressedButtonEnter}
         updateButtonEnter={updateButtonEnter}
+        raiseButtonCode={changeCodeButtonDownUp}
       />
       <Keyboard
         onMouse={onMouse}
@@ -174,6 +185,8 @@ export default function Computer({
         onFN={onFN}
         missingButtons={missingButtons}
         onClickButton={onClickButton}
+        codeButtonDown={codeButtonDown}
+        codeButtonUp={codeButtonUp}
       />
     </div>
   );

@@ -7,6 +7,7 @@ export default function ButtonClassF({
   id,
   block = "",
   onClick = (f) => f,
+  pressedButton,
 }) {
   return (
     <>
@@ -15,7 +16,7 @@ export default function ButtonClassF({
         onClick={() => onClick(id)}
         className={`${block}__btnClassF ${isHidden(id) ? "hidden" : ""} ${
           onComputer ? "onComputer" : ""
-        }`}
+        } ${pressedButton ? "buttonPressed" : ""}`}        
       >
         {data[0]}
         <p>{data[1]}</p>

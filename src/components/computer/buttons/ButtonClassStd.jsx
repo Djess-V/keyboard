@@ -11,6 +11,7 @@ export default function ButtonClassStd({
   id,
   block = "",
   onClick = (f) => f,
+  pressedButton,
 }) {
   return (
     <>
@@ -22,7 +23,9 @@ export default function ButtonClassStd({
         ${onComputer ? "onComputer" : ""} 
         ${onFN && (id === 77) && onComputer ? "buttonOn" : ""}
         ${onCapsLock && (id === 49) && onComputer ? "buttonOn" : ""}
-        ${onAlt && (id === 79 || id === 81) && onComputer ? "buttonOn" : ""}`}
+        ${onAlt && (id === 79 || id === 81) && onComputer ? "buttonOn" : ""}
+        ${pressedButton ? "buttonPressed" : ""}`}
+        
       >
         <div className="column1">
           <p>{data[0]}</p>

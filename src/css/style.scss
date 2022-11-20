@@ -454,12 +454,18 @@ button[class~="onComputer"]:hover {
   justify-content: space-between;
   width: 516px;
   height: 25px;
+
+  & > button[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
 }
 
 .blockEsc__btnClassF {
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  justify-content: center;
+  align-content: space-around;
   @include btnStdBg-cBrd;
   @include btnStnBrd-rad;
   @include btnActive;
@@ -474,14 +480,16 @@ button[class~="onComputer"]:hover {
   }
 
   &:first-child {
-    padding-left: 1px;
+    padding-left: 5px;
     padding-top: 2px;
   }
 
-  &:nth-child(15),
-  &:nth-child(16) {
+
+  &:nth-child(14),
+  &:nth-child(15) {
     font-size: 9px;
     padding: 1px;
+    padding-left: 3px;
 
     p {
       font-size: 7px;
@@ -496,12 +504,18 @@ button[class~="onComputer"]:hover {
   margin-top: 2px;
   width: 516px;
   height: 35px;
+
+  & > button[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
 }
 
 .blockNumbers__btnClassStd {
   @include btnStd;
   justify-content: space-around;
 
+  
   &:first-child {
     width: 24px;
 
@@ -548,6 +562,11 @@ button[class~="onComputer"]:hover {
     grid-row: 1;
   }
 
+  div[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
+  
   .btnEnter__LD {
     grid-column: 1;
     grid-row: 2;
@@ -587,6 +606,11 @@ button[class~="onComputer"]:hover {
   justify-content: space-between;
   grid-column: 1;
   grid-row: 1;
+
+  & > button[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
 }
 
 .blockTab__btnClassStd {
@@ -635,6 +659,11 @@ button[class~="onComputer"]:hover {
   gap: 2px;
   grid-column: 1;
   grid-row: 2;
+
+  & > button[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
 
   .buttonOn {
     background-color: $colorGreen;
@@ -708,6 +737,11 @@ button[class~="onComputer"]:hover {
   width: 516px;
   height: 35px;
 
+  & > button[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
+
   .buttonOn {
     background-color: $colorGreen;
     border: 2px inset;
@@ -767,6 +801,11 @@ button[class~="onComputer"]:hover {
   margin-top: 2px;
   width: 516px;
   height: 35px;
+
+  & > button[class~='buttonPressed']  {
+    background-color: $colorGreen;
+    border-color: $colorGreen;
+  }
 
   .buttonOn {
     background-color: $colorGreen;

@@ -14,6 +14,8 @@ export default function Keyboard({
   onFN,
   missingButtons,
   onClickButton = (f) => f,
+  codeButtonDown,
+  codeButtonUp,
 }) {
   const isHidden = (id) => {
     for (let item of missingButtons) {
@@ -35,6 +37,8 @@ export default function Keyboard({
         condition={missingButtons}
         isHidden={isHidden}
         onClick={onClickButton}
+        codeButtonDown={codeButtonDown}
+        codeButtonUp={codeButtonUp}
       />
       <div className="keyboard__downContainer">
         <CentralPanel
@@ -46,6 +50,8 @@ export default function Keyboard({
           onClick={onClickButton}
           condition={missingButtons}
           isHidden={isHidden}
+          codeButtonDown={codeButtonDown}
+          codeButtonUp={codeButtonUp}
         />
         <MousePanel onComputer={onComputer} onCapsLock={onCapsLock} />
       </div>
