@@ -38,11 +38,10 @@ export default function Display({
   const lossOfFocusAudioMenu = () => {
     if (audioChoice) {
       const index = audioChoice.indexOf("assets");
-      const substring = audioChoice.slice(index + 7);
-      console.log(substring);
+      const substring1 = audioChoice.slice(index + 7);
       audioList.forEach((item, i) => {
-        console.log(item.link);
-        if (item.link === substring) {
+        const substring2 = item.link.slice(8);
+        if (substring2 === substring1) {
           returnFocusToSelectedSong(i);
         }
       });
