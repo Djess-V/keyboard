@@ -36,15 +36,17 @@ export default function Display({
   const refAudio = React.useRef();
 
   const lossOfFocusAudioMenu = () => {
-    console.log(audioChoice);
-    const index = audioChoice.indexOf("mp3");
-    const substring = audioChoice.slice(index + 4);
-    console.log(substring);
-    audioList.forEach((item, i) => {
-      if (item.link === substring) {
-        returnFocusToSelectedSong(i);
-      }
-    });
+    if (audioChoice) {
+      const index = audioChoice.indexOf("assets");
+      const substring = audioChoice.slice(index + 7);
+      console.log(substring);
+      audioList.forEach((item, i) => {
+        console.log(item.link);
+        if (item.link === substring) {
+          returnFocusToSelectedSong(i);
+        }
+      });
+    }
   };
 
   const refMouse = React.useRef();
