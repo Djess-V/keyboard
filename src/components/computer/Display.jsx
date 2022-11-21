@@ -36,8 +36,10 @@ export default function Display({
   const refAudio = React.useRef();
 
   const lossOfFocusAudioMenu = () => {
-    const index = audioChoice.indexOf("src");
-    const substring = audioChoice.slice(index - 1);
+    console.log(audioChoice);
+    const index = audioChoice.indexOf("mp3");
+    const substring = audioChoice.slice(index + 4);
+    console.log(substring);
     audioList.forEach((item, i) => {
       if (item.link === substring) {
         returnFocusToSelectedSong(i);
