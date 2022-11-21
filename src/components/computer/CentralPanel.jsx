@@ -16,6 +16,7 @@ export default function CentralPanel({
   onShift,
   onCapsLock,
   onAlt,
+  onCtrl,
   onFN,
   onClick = (f) => f,
   isHidden = (f) => f,
@@ -28,183 +29,194 @@ export default function CentralPanel({
         <div className="centralPanel__blockEsc">
           {btn1F.map((item, i) => {
             let pressedButton;
-             if (codeButtonDown === item.code) {
+            if (codeButtonDown === item.code) {
               pressedButton = true;
 
               if (codeButtonUp === item.code) {
                 pressedButton = false;
               }
-             } else {
+            } else {
               pressedButton = false;
-             }
+            }
 
-            return (            
-            <ButtonClassF
-              key={i}
-              onComputer={onComputer}
-              data={item.data}
-              id={item.id}
-              block="blockEsc"
-              onClick={onClick}
-              isHidden={isHidden}
-              pressedButton={pressedButton}
-            />
-          )})}
+            return (
+              <ButtonClassF
+                key={i}
+                onComputer={onComputer}
+                data={item.data}
+                id={item.id}
+                block="blockEsc"
+                onClick={onClick}
+                onFN={onFN}
+                isHidden={isHidden}
+                pressedButton={pressedButton}
+              />
+            );
+          })}
         </div>
         <div className="centralPanel__blockNumbers">
           {btn2Number.map((item, i) => {
             let pressedButton;
-             if (codeButtonDown === item.code) {
+            if (codeButtonDown === item.code) {
               pressedButton = true;
 
               if (codeButtonUp === item.code) {
                 pressedButton = false;
               }
-             } else {
+            } else {
               pressedButton = false;
-             }
+            }
 
             return (
-            <ButtonClassStd
-              key={i}
-              onComputer={onComputer}
-              data={item.data}
-              id={item.id}
-              block="blockNumbers"
-              onClick={onClick}
-              isHidden={isHidden}
-              pressedButton={pressedButton}
-            />
-          )})}
+              <ButtonClassStd
+                key={i}
+                onComputer={onComputer}
+                data={item.data}
+                id={item.id}
+                block="blockNumbers"
+                onClick={onClick}
+                isHidden={isHidden}
+                pressedButton={pressedButton}
+              />
+            );
+          })}
         </div>
         <div className="centralPanel__containerEnter">
           <div className="centralPanel__blockTab">
             {btn3Tab.map((item, i) => {
-            let pressedButton;
-             if (codeButtonDown === item.code) {
-              pressedButton = true;
+              let pressedButton;
+              if (codeButtonDown === item.code) {
+                pressedButton = true;
 
-              if (codeButtonUp === item.code) {
+                if (codeButtonUp === item.code) {
+                  pressedButton = false;
+                }
+              } else {
                 pressedButton = false;
               }
-             } else {
-              pressedButton = false;
-             }
 
-            return (
-              <ButtonClassStd
-                key={i}
-                onComputer={onComputer}
-                data={item.data}
-                id={item.id}
-                block="blockTab"
-                onClick={onClick}
-                isHidden={isHidden}
-                pressedButton={pressedButton}
-              />
-            )})}
+              return (
+                <ButtonClassStd
+                  key={i}
+                  onComputer={onComputer}
+                  data={item.data}
+                  id={item.id}
+                  block="blockTab"
+                  onClick={onClick}
+                  isHidden={isHidden}
+                  pressedButton={pressedButton}
+                />
+              );
+            })}
           </div>
           <div className="centralPanel__blockCapsLock">
             {btn3CapsLock.map((item, i) => {
+              let pressedButton;
+              if (codeButtonDown === item.code) {
+                pressedButton = true;
+
+                if (codeButtonUp === item.code) {
+                  pressedButton = false;
+                }
+              } else {
+                pressedButton = false;
+              }
+
+              return (
+                <ButtonClassStd
+                  key={i}
+                  onComputer={onComputer}
+                  onCapsLock={onCapsLock}
+                  data={item.data}
+                  id={item.id}
+                  block="blockCapsLock"
+                  onClick={onClick}
+                  isHidden={isHidden}
+                  pressedButton={pressedButton}
+                />
+              );
+            })}
+          </div>
+          {[...Array({ data: [], id: 86, code: "Enter" })].map((item, i) => {
             let pressedButton;
-             if (codeButtonDown === item.code) {
+            if (codeButtonDown === item.code) {
               pressedButton = true;
 
               if (codeButtonUp === item.code) {
                 pressedButton = false;
               }
-             } else {
+            } else {
               pressedButton = false;
-             }
+            }
 
             return (
-              <ButtonClassStd
-                key={i}
+              <ButtonEnter
+                key={item.id}
                 onComputer={onComputer}
-                onCapsLock={onCapsLock}
-                data={item.data}
-                id={item.id}
-                block="blockCapsLock"
                 onClick={onClick}
                 isHidden={isHidden}
                 pressedButton={pressedButton}
               />
-            )})}
-          </div>{[...Array({ data: [], id: 86, code: 'Enter' })].map((item,i) => {
-            let pressedButton;
-            if (codeButtonDown === item.code) {
-             pressedButton = true;
-
-             if (codeButtonUp === item.code) {
-               pressedButton = false;
-             }
-            } else {
-             pressedButton = false;
-            }
-
-            return (<ButtonEnter
-            key={item.id}
-            onComputer={onComputer}
-            onClick={onClick}
-            isHidden={isHidden}
-            pressedButton={pressedButton}
-          />)
+            );
           })}
         </div>
         <div className="centralPanel__blockShift">
           {btn4Shift.map((item, i) => {
             let pressedButton;
-             if (codeButtonDown === item.code) {
+            if (codeButtonDown === item.code) {
               pressedButton = true;
 
               if (codeButtonUp === item.code) {
                 pressedButton = false;
               }
-             } else {
+            } else {
               pressedButton = false;
-             }
+            }
 
             return (
-            <ButtonClassStd
-              onComputer={onComputer}
-              onShift={onShift}
-              key={i}
-              data={item.data}
-              id={item.id}
-              block="blockShift"
-              onClick={onClick}
-              isHidden={isHidden}
-              pressedButton={pressedButton}
-            />
-          )})}
+              <ButtonClassStd
+                onComputer={onComputer}
+                onShift={onShift}
+                key={i}
+                data={item.data}
+                id={item.id}
+                block="blockShift"
+                onClick={onClick}
+                isHidden={isHidden}
+                pressedButton={pressedButton}
+              />
+            );
+          })}
         </div>
         <div className="centralPanel__blockSpace">
           {btn5Space.map((item, i) => {
             let pressedButton;
-             if (codeButtonDown === item.code) {
+            if (codeButtonDown === item.code) {
               pressedButton = true;
 
               if (codeButtonUp === item.code) {
                 pressedButton = false;
               }
-             } else {
+            } else {
               pressedButton = false;
-             }
+            }
 
             return (
-            <ButtonClassStd
-              key={i}
-              onComputer={onComputer}
-              onFN={onFN}
-              onAlt={onAlt}
-              data={item.data}
-              id={item.id}
-              block="blockSpace"
-              onClick={onClick}
-              isHidden={isHidden}
-              pressedButton={pressedButton}
-            />
-          )})}
+              <ButtonClassStd
+                key={i}
+                onComputer={onComputer}
+                onFN={onFN}
+                onAlt={onAlt}
+                onCtrl={onCtrl}
+                data={item.data}
+                id={item.id}
+                block="blockSpace"
+                onClick={onClick}
+                isHidden={isHidden}
+                pressedButton={pressedButton}
+              />
+            );
+          })}
         </div>
       </div>
     </>

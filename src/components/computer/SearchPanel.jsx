@@ -8,7 +8,7 @@ export default function SearchPanel({
   pressedButtonLeft,
   pressedButtonRight,
   symbol,
-  raiseButtonCode = f => f,
+  raiseButtonCode = (f) => f,
 }) {
   const [valueInput, setValueInput] = React.useState("Hello, friends!");
   const [cursorPosition, setCursorPosition] = React.useState(0);
@@ -48,7 +48,8 @@ export default function SearchPanel({
 
   React.useEffect(() => {
     if (
-      pressedButtonTab > 0 && cursorPosition < valueInput.length &&
+      pressedButtonTab > 0 &&
+      cursorPosition < valueInput.length &&
       refInput.current
     ) {
       setValueInput(
@@ -56,7 +57,7 @@ export default function SearchPanel({
           "  " +
           valueInput.slice(cursorPosition)
       );
-        setCursorPosition(cursorPosition + 2);
+      setCursorPosition(cursorPosition + 2);
     }
   }, [pressedButtonTab]);
 
@@ -70,9 +71,11 @@ export default function SearchPanel({
         valueInput.slice(0, cursorPosition) +
           valueInput.slice(cursorPosition + 1)
       );
-      setTimeout(() => {refInput.current.selectionStart = refInput.current.selectionEnd =
-        cursorPosition;
-      refInput.current.focus();}, 0); 
+      setTimeout(() => {
+        refInput.current.selectionStart = refInput.current.selectionEnd =
+          cursorPosition;
+        refInput.current.focus();
+      }, 0);
     }
   }, [pressedButtonDelete]);
 
@@ -108,7 +111,9 @@ export default function SearchPanel({
         onKeyDown={(e) => raiseButtonCode(e)}
         onKeyUp={(e) => raiseButtonCode(e)}
       ></input>
-      <button onClick={() => window.open(createQueryString(), "_blank")}>Поиск</button>
+      <button onClick={() => window.open(createQueryString(), "_blank")}>
+        Поиск
+      </button>
       <button className="clear" onClick={() => setValueInput("")}>
         Очистить
       </button>

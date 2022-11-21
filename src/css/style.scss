@@ -125,7 +125,7 @@ button[class~="onComputer"]:hover {
 
 .audio_list_modal {
   position: absolute;
-  padding: 10px;
+  padding: 5px;
   border: 2px solid $colorGrey2;
   box-shadow: 0 0 10px 3px black;
   border-radius: 7px;
@@ -134,13 +134,14 @@ button[class~="onComputer"]:hover {
 
   .songActive {
     background-color: rgb(199, 195, 190);
-      border-radius: 3px;
+    border-radius: 3px;
   }
 
   & > h1 {
     text-align: center;
     font-size: 12pt;
     color: black;
+    margin-top: 5px;
   }
 
   & > ul {
@@ -148,7 +149,7 @@ button[class~="onComputer"]:hover {
 
     & > li {
       list-style-type: none;
-      padding: 3px;
+      margin: 5px;
 
       & > a {
         font-size: 10pt;
@@ -455,7 +456,7 @@ button[class~="onComputer"]:hover {
   width: 516px;
   height: 25px;
 
-  & > button[class~='buttonPressed']  {
+  & > button[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
@@ -484,7 +485,6 @@ button[class~="onComputer"]:hover {
     padding-top: 2px;
   }
 
-
   &:nth-child(14),
   &:nth-child(15) {
     font-size: 9px;
@@ -497,6 +497,10 @@ button[class~="onComputer"]:hover {
   }
 }
 
+.btn1F_F8 {
+  display: flex;
+}
+
 .centralPanel__blockNumbers {
   display: flex;
   flex-direction: row;
@@ -505,7 +509,7 @@ button[class~="onComputer"]:hover {
   width: 516px;
   height: 35px;
 
-  & > button[class~='buttonPressed']  {
+  & > button[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
@@ -515,7 +519,6 @@ button[class~="onComputer"]:hover {
   @include btnStd;
   justify-content: space-around;
 
-  
   &:first-child {
     width: 24px;
 
@@ -562,11 +565,11 @@ button[class~="onComputer"]:hover {
     grid-row: 1;
   }
 
-  div[class~='buttonPressed']  {
+  div[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
-  
+
   .btnEnter__LD {
     grid-column: 1;
     grid-row: 2;
@@ -607,7 +610,7 @@ button[class~="onComputer"]:hover {
   grid-column: 1;
   grid-row: 1;
 
-  & > button[class~='buttonPressed']  {
+  & > button[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
@@ -660,7 +663,7 @@ button[class~="onComputer"]:hover {
   grid-column: 1;
   grid-row: 2;
 
-  & > button[class~='buttonPressed']  {
+  & > button[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
@@ -669,14 +672,13 @@ button[class~="onComputer"]:hover {
     background-color: $colorGreen;
     border: 2px inset;
   }
-  
 }
 
 .blockCapsLock__btnClassStd {
   @include btnStd;
   justify-content: center;
   align-items: center;
-  
+
   &:nth-child(1) {
     display: flex;
     justify-content: space-around;
@@ -726,7 +728,7 @@ button[class~="onComputer"]:hover {
   &:nth-child(13) {
     width: 32.5px;
     z-index: 1;
-  }  
+  }
 }
 
 .centralPanel__blockShift {
@@ -737,7 +739,7 @@ button[class~="onComputer"]:hover {
   width: 516px;
   height: 35px;
 
-  & > button[class~='buttonPressed']  {
+  & > button[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
@@ -802,7 +804,7 @@ button[class~="onComputer"]:hover {
   width: 516px;
   height: 35px;
 
-  & > button[class~='buttonPressed']  {
+  & > button[class~="buttonPressed"] {
     background-color: $colorGreen;
     border-color: $colorGreen;
   }

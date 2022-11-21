@@ -1,15 +1,20 @@
 import React from "react";
 import SearchPanel from "./SearchPanel";
 import AudioMenu from "../other/AudioMenu";
+import { audioList } from "../other/AudioMenu";
 
 export default function Display({
   onMouse,
-  onMusic,
+  onMusicList,
   onLock,
   symbol,
   pressedButton,
   indexDisplayImage,
   onComputer,
+  onF8,
+  onF10,
+  onF11,
+  onF12,
   mouseMove = (f) => f,
   canselMouseMove = (f) => f,
   mouseDirection,
@@ -20,40 +25,133 @@ export default function Display({
   pressedButtonDelete,
   pressedButtonBackspace,
   pressedButtonEnter,
-  updateButtonEnter = f => f,
-  raiseButtonCode = f => f,
+  updateButtonEnter = (f) => f,
+  raiseSelectionPositionAudio = (f) => f,
+  raiseButtonCode = (f) => f,
+  returnFocusToSelectedSong = (f) => f,
 }) {
-  const [ audioChoice, setAudioChoice ] = React.useState(null);
-  
+  const [audioChoice, setAudioChoice] = React.useState(null);
+  const [onAudio, setOnAudio] = React.useState(false);
+  const [audioPause, setAudioPause] = React.useState(false);
+  const refAudio = React.useRef();
+
+  const lossOfFocusAudioMenu = () => {
+    const index = audioChoice.indexOf("src");
+    const substring = audioChoice.slice(index - 1);
+    audioList.forEach((item, i) => {
+      if (item.link === substring) {
+        returnFocusToSelectedSong(i);
+      }
+    });
+  };
+
   const refMouse = React.useRef();
   let timerMoveMouse;
 
   React.useEffect(() => {
-    if (!onMusic) {
+    if (!onMusicList) {
       setAudioChoice(null);
     }
-  }, [onMusic]);
+  }, [onMusicList]);
+
+  React.useEffect(() => {
+    if (pressedButtonEnter > 0) {
+      setOnAudio(false);
+    }
+  }, [pressedButtonEnter]);
+
+  React.useEffect(() => {
+    if (
+      (refAudio.current && !onF8 && audioPause) ||
+      (refAudio.current && onF8 && audioPause)
+    ) {
+      refAudio.current.play();
+    } else if (
+      (refAudio.current && onF8 && !audioPause) ||
+      (refAudio.current && !onF8 && !audioPause)
+    ) {
+      refAudio.current.pause();
+    }
+  }, [onF8]);
+
+  React.useEffect(() => {
+    if (refAudio.current) {
+      if (refAudio.current.volume <= 1 && refAudio.current.volume > 0) {
+        refAudio.current.volume = 0;
+      } else {
+        refAudio.current.volume = 1;
+      }
+    }
+  }, [onF10]);
+
+  React.useEffect(() => {
+    if (refAudio.current) {
+      if (refAudio.current.volume > 0.1) {
+        refAudio.current.volume -= 0.1;
+      } else if (
+        refAudio.current.volume >= 0 &&
+        refAudio.current.volume <= 0.1
+      ) {
+        refAudio.current.volume = 0;
+      }
+    }
+  }, [onF11]);
+
+  React.useEffect(() => {
+    if (refAudio.current) {
+      if (refAudio.current.volume >= 0 && refAudio.current.volume < 0.9) {
+        refAudio.current.volume += 0.1;
+      } else if (refAudio.current.volume >= 0.9) {
+        refAudio.current.volume = 1;
+      }
+    }
+  }, [onF12]);
 
   return (
     <div className={`computer__display`}>
       {onComputer && !onLock && (
         <div className={`display_background displayImage_${indexDisplayImage}`}>
-          {!onMusic && <SearchPanel
-            pressedButton={pressedButton}
-            pressedButtonTab={pressedButtonTab}
-            pressedButtonBackspace={pressedButtonBackspace}
-            pressedButtonDelete={pressedButtonDelete}
-            pressedButtonLeft={pressedButtonLeft}
-            pressedButtonRight={pressedButtonRight}
-            symbol={symbol}
-            raiseButtonCode={raiseButtonCode}
-          />}
-          {onMusic && (
-          <AudioMenu pressedButtonUpDown={pressedButtonUpDown} audioOnClick={(link) => setAudioChoice(link)} raiseAudio={(choice) => {setAudioChoice(choice); updateButtonEnter()}}/>
+          {!onMusicList && (
+            <SearchPanel
+              pressedButton={pressedButton}
+              pressedButtonTab={pressedButtonTab}
+              pressedButtonBackspace={pressedButtonBackspace}
+              pressedButtonDelete={pressedButtonDelete}
+              pressedButtonLeft={pressedButtonLeft}
+              pressedButtonRight={pressedButtonRight}
+              symbol={symbol}
+              raiseButtonCode={raiseButtonCode}
+            />
           )}
-          {(audioChoice || audioChoice === 0) && (pressedButtonEnter > 0) && onMusic && (<audio controls src={audioChoice} autoPlay/>)
-            
-          }
+          {onMusicList && (
+            <AudioMenu
+              pressedButtonUpDown={pressedButtonUpDown}
+              pressedButtonEnter={pressedButtonEnter}
+              raiseAudio={(choice) => {
+                if (typeof choice === "string") {
+                  setAudioChoice(choice);
+                } else {
+                  setAudioChoice(choice.target.href);
+                  updateButtonEnter();
+                }
+              }}
+              raiseSelectionPositionAudio={raiseSelectionPositionAudio}
+              onAudio={() => setOnAudio(true)}
+              lossOfFocusAudioMenu={lossOfFocusAudioMenu}
+            />
+          )}
+          {audioChoice &&
+            (pressedButtonEnter > 0 || onAudio) &&
+            onMusicList && (
+              <audio
+                ref={refAudio}
+                controls
+                src={audioChoice}
+                autoPlay
+                onPause={() => setAudioPause(true)}
+                onPlay={() => setAudioPause(false)}
+              />
+            )}
           {onMouse && (
             <div
               ref={refMouse}

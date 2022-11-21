@@ -10,6 +10,7 @@ export default function Keyboard({
   onComputer,
   onCapsLock,
   onAlt,
+  onCtrl,
   onShift,
   onFN,
   missingButtons,
@@ -46,6 +47,7 @@ export default function Keyboard({
           onShift={onShift}
           onCapsLock={onCapsLock}
           onAlt={onAlt}
+          onCtrl={onCtrl}
           onFN={onFN}
           onClick={onClickButton}
           condition={missingButtons}

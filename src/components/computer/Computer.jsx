@@ -14,12 +14,17 @@ export default function Computer({
   const [onFN, setOnFN] = React.useState(false);
   const [onCapsLock, setOnCapsLock] = React.useState(false);
   const [onAlt, setOnAlt] = React.useState(false);
+  const [onCtrl, setOnCtrl] = React.useState(false);
   const [onLock, setOnLock] = React.useState(false);
   const [onHome, setOnHome] = React.useState(true);
   const [onMusic, setOnMusic] = React.useState(false);
   const [onMouse, setOnMouse] = React.useState(false);
   const [mouseDirection, setMouseDirection] = React.useState("");
   const [timerCanselMouse, setTimerCanselMouse] = React.useState(0);
+  const [onF8, setOnF8] = React.useState(false);
+  const [onF10, setOnF10] = React.useState(false);
+  const [onF11, setOnF11] = React.useState(0);
+  const [onF12, setOnF12] = React.useState(0);
   const [symbol, setSymbol] = React.useState("");
   const [pressedButton, setPressedButton] = React.useState(0);
   const [pressedButtonTab, setPressedButtonTab] = React.useState(0);
@@ -65,6 +70,8 @@ export default function Computer({
       setOnMusic(!onMusic);
       setPressedButtonUpDown(0);
       setPressedButtonEnter(0);
+      setOnF11(0);
+      setOnF12(0);
     } else if (id === 3) {
       if (onHome) {
         window.location.reload();
@@ -74,12 +81,16 @@ export default function Computer({
     } else if (id === 5) {
       setOnComputer(!onComputer);
       setOnShift(false);
+      setOnAlt(false);
+      setOnCtrl(false);
       setOnFN(false);
       setOnCapsLock(false);
       setOnLock(false);
       setOnHome(!onHome);
       setOnMusic(false);
       setOnMouse(false);
+      setOnF11(0);
+      setOnF12(0);
       setSymbol("");
       setPressedButton(0);
       setPressedButtonTab(0);
@@ -89,6 +100,28 @@ export default function Computer({
       setPressedButtonDelete(0);
       setPressedButtonBackspace(0);
       setPressedButtonEnter(0);
+    } else if (id === 14) {
+      if (pressedButtonUpDown <= 0) {
+        setPressedButtonUpDown(0);
+      } else {
+        setPressedButtonUpDown(pressedButtonUpDown - 1);
+      }
+      setTimeout(() => setPressedButtonEnter(pressedButtonEnter + 1), 0);
+    } else if (id === 15) {
+      setOnF8(!onF8);
+    } else if (id === 16) {
+      if (pressedButtonUpDown >= 4) {
+        setPressedButtonUpDown(4);
+      } else {
+        setPressedButtonUpDown(pressedButtonUpDown + 1);
+      }
+      setTimeout(() => setPressedButtonEnter(pressedButtonEnter + 1), 0);
+    } else if (id === 17) {
+      setOnF10(!onF10);
+    } else if (id === 18) {
+      setOnF11(onF11 + 1);
+    } else if (id === 19) {
+      setOnF12(onF12 + 1);
     } else if (id === 21) {
       setPressedButtonDelete(pressedButtonDelete + 1);
     } else if (id === 35) {
@@ -97,17 +130,19 @@ export default function Computer({
       setPressedButtonTab(pressedButtonTab + 1);
     } else if (id === 49) {
       setOnCapsLock(!onCapsLock);
-    } else if (id === 62 || id === 75) {      
+    } else if (id === 62 || id === 75) {
       setOnShift(!onShift);
     } else if (id === 74) {
       if (pressedButtonUpDown <= 0) {
         setPressedButtonUpDown(0);
       } else {
         setPressedButtonUpDown(pressedButtonUpDown - 1);
-      } 
+      }
+    } else if (id === 76 || id === 82) {
+      setOnCtrl(!onCtrl);
     } else if (id === 77) {
       setOnFN(!onFN);
-    } else if (id === 78) {      
+    } else if (id === 78) {
       window.open("https://www.microsoft.ru/", "_blank");
     } else if (id === 79 || id === 81) {
       setOnAlt(!onAlt);
@@ -118,7 +153,7 @@ export default function Computer({
         setPressedButtonUpDown(4);
       } else {
         setPressedButtonUpDown(pressedButtonUpDown + 1);
-      }      
+      }
     } else if (id === 85) {
       setPressedButtonRight(pressedButtonRight + 1);
     } else if (id === 86) {
@@ -135,12 +170,14 @@ export default function Computer({
 
   const updateButtonEnter = () => {
     setPressedButtonEnter(0);
-  }
+  };
 
   React.useEffect(() => {
     if (buttonHidden) {
       setOnCapsLock(false);
       setOnShift(false);
+      setOnAlt(false);
+      setOnCtrl(false);
     }
   }, [buttonHidden]);
 
@@ -158,9 +195,13 @@ export default function Computer({
         onMouse={onMouse}
         mouseMove={mouseMove}
         canselMouseMove={(timer) => setTimerCanselMouse(timer)}
-        onMusic={onMusic}
+        onMusicList={onMusic}
         onLock={onLock}
         onComputer={onComputer}
+        onF8={onF8}
+        onF10={onF10}
+        onF11={onF11}
+        onF12={onF12}
         symbol={symbol}
         pressedButton={pressedButton}
         indexDisplayImage={indexDisplayImage}
@@ -172,7 +213,13 @@ export default function Computer({
         pressedButtonBackspace={pressedButtonBackspace}
         pressedButtonEnter={pressedButtonEnter}
         updateButtonEnter={updateButtonEnter}
+        raiseSelectionPositionAudio={(position) =>
+          setPressedButtonUpDown(position)
+        }
         raiseButtonCode={changeCodeButtonDownUp}
+        returnFocusToSelectedSong={(position) =>
+          setPressedButtonUpDown(position)
+        }
       />
       <Keyboard
         onMouse={onMouse}
@@ -181,6 +228,7 @@ export default function Computer({
         onComputer={onComputer}
         onCapsLock={onCapsLock}
         onAlt={onAlt}
+        onCtrl={onCtrl}
         onShift={onShift}
         onFN={onFN}
         missingButtons={missingButtons}
@@ -234,5 +282,3 @@ function printText(id, onShift, onCapsLock, onAlt) {
   }
   return "";
 }
-
-

@@ -116,7 +116,7 @@ button[class~=onComputer]:hover {
 
 .audio_list_modal {
   position: absolute;
-  padding: 10px;
+  padding: 5px;
   border: 2px solid rgb(146, 140, 140);
   box-shadow: 0 0 10px 3px black;
   border-radius: 7px;
@@ -131,13 +131,14 @@ button[class~=onComputer]:hover {
   text-align: center;
   font-size: 12pt;
   color: black;
+  margin-top: 5px;
 }
 .audio_list_modal > ul {
   margin-top: 10px;
 }
 .audio_list_modal > ul > li {
   list-style-type: none;
-  padding: 3px;
+  margin: 5px;
 }
 .audio_list_modal > ul > li > a {
   font-size: 10pt;
@@ -509,6 +510,10 @@ button[class~=onComputer]:hover {
 }
 .blockEsc__btnClassF:nth-child(14) p, .blockEsc__btnClassF:nth-child(15) p {
   font-size: 7px;
+}
+
+.btn1F_F8 {
+  display: flex;
 }
 
 .centralPanel__blockNumbers {

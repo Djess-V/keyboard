@@ -6,6 +6,7 @@ export default function ButtonClassStd({
   onCapsLock,
   onFN,
   onAlt,
+  onCtrl,
   isHidden = (f) => f,
   data,
   id,
@@ -16,16 +17,15 @@ export default function ButtonClassStd({
   return (
     <>
       <button
-        data-id={id}
         onClick={() => onClick(id)}
         className={`${block}__btnClassStd ${isHidden(id) ? "hidden" : ""} 
         ${onShift && (id === 62 || id === 75) && onComputer ? "buttonOn" : ""} 
         ${onComputer ? "onComputer" : ""} 
-        ${onFN && (id === 77) && onComputer ? "buttonOn" : ""}
-        ${onCapsLock && (id === 49) && onComputer ? "buttonOn" : ""}
+        ${onFN && id === 77 && onComputer ? "buttonOn" : ""}
+        ${onCapsLock && id === 49 && onComputer ? "buttonOn" : ""}
         ${onAlt && (id === 79 || id === 81) && onComputer ? "buttonOn" : ""}
+        ${onCtrl && (id === 76 || id === 82) && onComputer ? "buttonOn" : ""}
         ${pressedButton ? "buttonPressed" : ""}`}
-        
       >
         <div className="column1">
           <p>{data[0]}</p>

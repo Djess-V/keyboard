@@ -6,7 +6,6 @@ import {
   RouterProvider,
   Route,
 } from "react-router-dom";
-import { Rings } from "react-loading-icons";
 import ErrorPage from "./components/ErrorPage";
 import App from "./components/App";
 import "./css/style.css";
