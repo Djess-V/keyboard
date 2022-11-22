@@ -276,7 +276,7 @@
   color: $colorBlack;
   font-size: 16pt;
   width: 110px;
-  height: 110px;
+  height: 125px;
 
   &:hover {
     box-shadow: 0 0 2px 2px $colorGrey2;
@@ -311,6 +311,17 @@
         font-size: 6pt;
         color: black;
       }
+    }
+  }
+  tbody {
+    td {
+      border: none;
+      padding: 1px;
+      font-size: 6pt;
+      color: black;
+    }
+    td[class="anotherMonth"] {
+      font-weight: 100;
     }
   }
 }
