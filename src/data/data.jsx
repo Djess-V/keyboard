@@ -5,12 +5,6 @@ import {
   TfiHome,
   TfiLock,
   TfiPowerOff,
-  TfiReddit,
-  TfiTwitter,
-  TfiStar,
-  TfiTarget,
-  TfiSkype,
-  TfiDribbble,
   TfiMicrosoftAlt,
   TfiAlignJustify,
   TfiArrowCircleLeft,
@@ -21,6 +15,12 @@ import {
 } from "react-icons/tfi";
 
 import {
+  SlSocialVkontakte,
+  SlSocialYoutube,
+  SlSocialGithub,
+  SlCalculator,
+  SlCalender,
+  SlClock,
   SlControlRewind,
   SlControlPlay,
   SlControlPause,
@@ -30,17 +30,17 @@ import {
   SlVolume2,
 } from "react-icons/sl";
 
-export const styleSVG = {
+const styleSVG = {
   width: "16px",
   height: "16px",
 };
 
-export const styleSVGArrow = {
+const styleSVGArrow = {
   width: "12px",
   height: "12px",
 };
 
-export const btnUpP = [
+const btnUpP = [
   {
     data: [<TfiMouseAlt style={styleSVG} />],
     name: "mouseBtn",
@@ -75,14 +75,14 @@ const F8 = (
   </div>
 );
 
-export const btn1F = [
+const btn1F = [
   { data: ["Esc", ""], id: 6, code: "Escape" },
-  { data: [<TfiReddit style={styleSVG} />, "F1"], id: 7, code: "F1" },
-  { data: [<TfiTwitter style={styleSVG} />, "F2"], id: 8, code: "F2" },
-  { data: [<TfiStar style={styleSVG} />, "F3"], id: 9, code: "F3" },
-  { data: [<TfiTarget style={styleSVG} />, "F4"], id: 10, code: "F4" },
-  { data: [<TfiSkype style={styleSVG} />, "F5"], id: 11, code: "F5" },
-  { data: [<TfiDribbble style={styleSVG} />, "F6"], id: 13, code: "F6" },
+  { data: [<SlSocialVkontakte style={styleSVG} />, "F1"], id: 7, code: "F1" },
+  { data: [<SlSocialYoutube style={styleSVG} />, "F2"], id: 8, code: "F2" },
+  { data: [<SlSocialGithub style={styleSVG} />, "F3"], id: 9, code: "F3" },
+  { data: [<SlCalculator style={styleSVG} />, "F4"], id: 10, code: "F4" },
+  { data: [<SlClock style={styleSVG} />, "F5"], id: 11, code: "F5" },
+  { data: [<SlCalender style={styleSVG} />, "F6"], id: 13, code: "F6" },
   { data: [<SlControlRewind style={styleSVG} />, "F7"], id: 14, code: "F7" },
   { data: [F8, "F8"], id: 15, code: "F8" },
   { data: [<SlControlForward style={styleSVG} />, "F9"], id: 16, code: "F9" },
@@ -93,7 +93,7 @@ export const btn1F = [
   { data: ["Delete", "Print Scr"], id: 21, code: "Delete" },
 ];
 
-export const btn2Number = [
+const btn2Number = [
   { data: ["~", "`", "Ё"], id: 22, code: "Backquote" },
   { data: ["!", "1"], id: 23, code: "Digit1" },
   { data: ["@", "2", '"'], id: 24, code: "Digit2" },
@@ -110,7 +110,7 @@ export const btn2Number = [
   { data: ["Backspace"], id: 35, code: "Backspace" },
 ];
 
-export const btn3Tab = [
+const btn3Tab = [
   {
     data: ["Tab", <TfiDirectionAlt style={styleSVGArrow} />],
     id: 36,
@@ -130,7 +130,7 @@ export const btn3Tab = [
   { data: ["}", "]", "Ъ"], id: 48, code: "BracketRight" },
 ];
 
-export const btn3CapsLock = [
+const btn3CapsLock = [
   { data: ["Caps", "Lock", "A"], id: 49, code: "CapsLock" },
   { data: ["A", "", "Ф"], id: 50, code: "KeyA" },
   { data: ["S", "", "Ы"], id: 51, code: "KeyS" },
@@ -146,7 +146,7 @@ export const btn3CapsLock = [
   { data: ["|", "\\", "/"], id: 61, code: "Backslash" },
 ];
 
-export const btn4Shift = [
+const btn4Shift = [
   { data: ["Shift"], id: 62, code: "ShiftLeft" },
   { data: ["|", "\\", "/"], id: 63, code: "IntlBackslash" },
   { data: ["Z", "", "Я"], id: 64, code: "KeyZ" },
@@ -176,7 +176,7 @@ export const btn4Shift = [
   { data: ["Shift"], id: 75, code: "ShiftRight" },
 ];
 
-export const btn5Space = [
+const btn5Space = [
   { data: ["Ctrl"], id: 76, code: "ControlLeft" },
   { data: ["FN"], id: 77, code: "" },
   {
@@ -225,7 +225,7 @@ export const btn5Space = [
   },
 ];
 
-export const notesData = [
+const notesData = [
   {
     data: [
       `Я вас любил: любовь еще, быть может,`,
@@ -273,7 +273,7 @@ export const notesData = [
   },
 ];
 
-export const menuInfo = [
+const menuInfo = [
   "Пусть кнопки на клавиатуре",
   "Перейти на следующую страницу",
   "Поменять фон  рабочего стола компьютера",
@@ -281,7 +281,7 @@ export const menuInfo = [
   "Скинуться на чай...",
 ];
 
-export const symbolId = [
+const symbolId = [
   { data: [], id: 1, code: "" },
   { data: [], id: 2, code: "" },
   { data: [], id: 3, code: "" },
@@ -369,7 +369,22 @@ export const symbolId = [
   { data: [], id: 86, code: "Enter" },
 ];
 
-export const serviceButtonsId = [
-  1, 2, 3, 4, 5, 14, 15, 16, 17, 18, 19, 21, 35, 36, 49, 62, 74, 75, 77, 76, 78,
-  79, 81, 82, 83, 84, 85, 86,
+const serviceButtonsId = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 35, 36,
+  49, 62, 74, 75, 77, 76, 78, 79, 81, 82, 83, 84, 85, 86,
 ];
+
+export {
+  styleSVG,
+  btnUpP,
+  btn1F,
+  btn2Number,
+  btn3Tab,
+  btn3CapsLock,
+  btn4Shift,
+  btn5Space,
+  notesData,
+  menuInfo,
+  symbolId,
+  serviceButtonsId,
+};

@@ -111,10 +111,13 @@ export default function SearchPanel({
         onKeyDown={(e) => raiseButtonCode(e)}
         onKeyUp={(e) => raiseButtonCode(e)}
       ></input>
-      <button onClick={() => window.open(createQueryString(), "_blank")}>
+      <button
+        id="searchButton"
+        onClick={() => window.open(createQueryString(), "_blank")}
+      >
         Поиск
       </button>
-      <button className="clear" onClick={() => setValueInput("")}>
+      <button id="clearButton" onClick={() => setValueInput("")}>
         Очистить
       </button>
     </>

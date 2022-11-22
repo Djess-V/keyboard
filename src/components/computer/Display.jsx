@@ -1,6 +1,8 @@
 import React from "react";
 import SearchPanel from "./SearchPanel";
 import AudioMenu from "../other/AudioMenu";
+import Clock from "../other/Clock";
+import Calendar from "../other/Calendar";
 import { audioList } from "../other/AudioMenu";
 
 export default function Display({
@@ -11,6 +13,8 @@ export default function Display({
   pressedButton,
   indexDisplayImage,
   onComputer,
+  onClock,
+  onCalendar,
   onF8,
   onF10,
   onF11,
@@ -114,6 +118,8 @@ export default function Display({
     <div className={`computer__display`}>
       {onComputer && !onLock && (
         <div className={`display_background displayImage_${indexDisplayImage}`}>
+          {onClock && <Clock />}
+          {onCalendar && <Calendar />}
           {!onMusicList && (
             <SearchPanel
               pressedButton={pressedButton}

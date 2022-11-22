@@ -1,0 +1,316 @@
+.computer__display {
+  box-shadow: 0 0 7px 2px $colorGrey2;
+  background-color: $colorBlack;
+  border: 2px solid $colorGreen;
+  border-radius: 30px;
+  margin: 10px 0px 0px;
+  padding: 10px 10px 10px;
+  width: 700px;
+  height: 300px;
+}
+
+#display_lock {
+  background-color: $colorWhite;
+}
+
+.display_background {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: 680px 276px;
+  border: 2px solid $colorGreen;
+  border-radius: 20px;
+  color: $colorBlack;
+  border-color: $colorGrey;
+  font-size: 16pt;
+  width: 680px;
+  height: 276px;
+
+  & > audio {
+    position: absolute;
+    top: 200px;
+  }
+
+  & > input {
+    border: 2px solid $colorGrey2;
+    border-radius: 7px;
+    color: $colorBlack;
+    margin-right: 5px;
+    font-size: 14pt;
+    width: 250px;
+    height: 30px;
+
+    &:hover {
+      box-shadow: 0 0 2px 2px $colorGrey2;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.audio_list_modal {
+  position: absolute;
+  padding: 5px;
+  border: 2px solid $colorGrey2;
+  box-shadow: 0 0 10px 3px black;
+  border-radius: 7px;
+  background-color: rgb(93, 182, 130);
+  top: 20px;
+
+  .songActive {
+    background-color: rgb(199, 195, 190);
+    border-radius: 3px;
+  }
+
+  & > h1 {
+    text-align: center;
+    font-size: 12pt;
+    color: black;
+    margin-top: 5px;
+  }
+
+  & > ul {
+    margin-top: 10px;
+
+    & > li {
+      list-style-type: none;
+      margin: 5px;
+
+      & > a {
+        font-size: 10pt;
+        color: black;
+        text-decoration: none;
+      }
+    }
+
+    & > li:hover {
+      background-color: rgb(199, 195, 190);
+      border-radius: 3px;
+    }
+  }
+}
+
+#searchButton {
+  border: 2px solid $colorGrey2;
+  background-color: rgb(203, 228, 215);
+  border-radius: 3px;
+  color: $colorBlack;
+  font-size: 10pt;
+  width: 80px;
+  height: 30px;
+
+  &:hover {
+    box-shadow: 0 0 2px 2px $colorGrey2;
+  }
+}
+
+#clearButton {
+  border: 2px solid $colorGrey2;
+  background-color: rgb(203, 228, 215);
+  border-radius: 3px;
+  color: $colorBlack;
+  font-size: 10pt;
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+
+  &:hover {
+    box-shadow: 0 0 2px 2px $colorGrey2;
+  }
+}
+
+.displayImage_0 {
+  background-image: url(../assets/display_background/derevia_gory_les.jpg);
+}
+
+.displayImage_1 {
+  background-image: url(../assets/display_background/dom_derevia_sneg.jpg);
+}
+
+.displayImage_2 {
+  background-image: url(../assets/display_background/izgorod_pole_derevia.jpg);
+}
+
+.displayImage_3 {
+  background-image: url(../assets/display_background/more_kamni_tuman.jpg);
+}
+
+.display_lock {
+  background-image: url(../assets/lock.png);
+}
+
+.display_mouse {
+  background-image: url(../assets/crazy-mouse.gif);
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  bottom: 2px;
+  left: 0px;
+}
+
+@keyframes rotateUp {
+  from {
+    transform: ratate(0);
+  }
+
+  to {
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes rotateLeft {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes rotateDown {
+  from {
+    transform: ratate(-180deg);
+  }
+
+  to {
+    transform: rotate(-270deg);
+  }
+}
+
+@keyframes rotateRight {
+  from {
+    transform: ratate(-270deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.moveRightMouse {
+  left: 555px;
+  transition: left 8s cubic-bezier(0, 0, 1, 1);
+}
+.rotateMouseUp {
+  left: 555px;
+  animation: rotateUp 4s infinite alternate;
+}
+
+.moveUpMouse {
+  transform: rotate(-90deg);
+  left: 555px;
+  bottom: 150px;
+  transition: bottom 4s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseLeft {
+  transform: rotate(-90deg);
+  left: 555px;
+  bottom: 150px;
+  animation: rotateLeft 4s infinite alternate;
+}
+
+.moveLeftMouse {
+  transform: rotate(-180deg);
+  left: 0px;
+  bottom: 150px;
+  transition: left 8s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseDown {
+  transform: rotate(-180deg);
+  left: 0px;
+  bottom: 150px;
+  animation: rotateDown 4s infinite alternate;
+}
+
+.moveDownMouse {
+  transform: rotate(-270deg);
+  left: 0px;
+  bottom: 0px;
+  transition: bottom 4s cubic-bezier(0, 0, 1, 1);
+}
+
+.rotateMouseRight {
+  transform: rotate(-270deg);
+  left: 0px;
+  bottom: 00px;
+  animation: rotateRight 4s infinite alternate;
+}
+
+.display_clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 2px solid $colorGrey2;
+  top: 10px;
+  right: 10px;
+  background-color: rgb(223, 224, 224);
+  border-radius: 3px;
+  color: $colorBlack;
+  font-size: 16pt;
+  width: 110px;
+  height: 35px;
+
+  &:hover {
+    box-shadow: 0 0 2px 2px $colorGrey2;
+  }
+}
+
+.display_calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  border: 2px solid $colorGrey2;
+  border-radius: 3px;
+  top: 50px;
+  right: 10px;
+  background-color: rgb(223, 224, 224);
+  color: $colorBlack;
+  font-size: 16pt;
+  width: 110px;
+  height: 110px;
+
+  &:hover {
+    box-shadow: 0 0 2px 2px $colorGrey2;
+  }
+}
+
+#calendar_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2px 3px;
+  border-width: 1px;
+  border-color: $colorGrey2;
+  border-style: none none solid none;
+  width: 110px;
+
+  & > div {
+    font-size: 9pt;
+    color: black;
+  }
+}
+
+.calendar_table {
+  border: none;
+  background-color: rgb(223, 224, 224);
+  thead {
+    tr {
+      th {
+        border: none;
+        padding: 1px;
+        font-size: 6pt;
+        color: black;
+      }
+    }
+  }
+}
