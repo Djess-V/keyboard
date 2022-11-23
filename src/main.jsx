@@ -9,7 +9,7 @@ import {
 import ErrorPage from "./components/ErrorPage";
 import App from "./components/App";
 import "./css/style.css";
-import "./css/parts/game.css";
+import "./css/game.css";
 import "./css/parts/sponge.css";
 
 const router = createBrowserRouter(

@@ -129,7 +129,7 @@ export default class Game extends React.Component {
       <div className="game">
         <h1>Можно поиграть в крестики-нолики!</h1>
         <h2>(ну, конечно можно и не играть...)</h2>
-        <div className="game-board">
+        <div className="game_board">
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}

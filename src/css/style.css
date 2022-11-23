@@ -262,6 +262,56 @@
           animation: rotateRight 4s infinite alternate;
 }
 
+.display_calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 2px solid rgb(146, 140, 140);
+  top: 10px;
+  left: 10px;
+  background-color: rgb(223, 224, 224);
+  border-radius: 3px;
+  color: #000;
+  font-size: 16pt;
+  width: 120px;
+  height: 170px;
+}
+.display_calculator:hover {
+  box-shadow: 0 0 2px 2px rgb(146, 140, 140);
+}
+.display_calculator > input {
+  border: 1px solid rgb(146, 140, 140);
+  width: 110px;
+  height: 20px;
+}
+
+.calculator_memory {
+  border: 1px solid rgb(146, 140, 140);
+  width: 110px;
+  height: 15px;
+  margin: 5px 0;
+}
+
+.calculator_buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 26px);
+  grid-template-rows: repeat(6, 17px);
+  gap: 2px;
+  width: 110px;
+  height: 112px;
+}
+
+.calculator_button {
+  background-color: white;
+  color: black;
+  border: none;
+}
+.calculator_button:hover {
+  background-color: rgb(182, 182, 182);
+}
+
 .display_clock {
   display: flex;
   justify-content: center;
@@ -274,7 +324,7 @@
   border-radius: 3px;
   color: #000;
   font-size: 16pt;
-  width: 110px;
+  width: 120px;
   height: 35px;
 }
 .display_clock:hover {
@@ -293,8 +343,8 @@
   background-color: rgb(223, 224, 224);
   color: #000;
   font-size: 16pt;
-  width: 110px;
-  height: 125px;
+  width: 120px;
+  height: 130px;
 }
 .display_calendar:hover {
   box-shadow: 0 0 2px 2px rgb(146, 140, 140);
@@ -309,11 +359,21 @@
   border-width: 1px;
   border-color: rgb(146, 140, 140);
   border-style: none none solid none;
-  width: 110px;
+  width: 120px;
 }
 #calendar_header > div {
   font-size: 9pt;
   color: black;
+  text-align: center;
+}
+#calendar_header > div:first-child {
+  width: 80px;
+}
+
+#today {
+  background-color: rgb(107, 203, 228);
+  color: white;
+  border-radius: 3px;
 }
 
 .calendar_table {
@@ -325,12 +385,14 @@
   padding: 1px;
   font-size: 6pt;
   color: black;
+  text-align: center;
 }
 .calendar_table tbody td {
   border: none;
   padding: 1px;
   font-size: 6pt;
   color: black;
+  text-align: center;
 }
 .calendar_table tbody td[class=anotherMonth] {
   font-weight: 100;

@@ -19,29 +19,53 @@ const months = [
 
 export default function Calendar() {
   const dateNow = new Date();
-  const firstNumberOfMonth = new Date(
+  const firstNumberOfCurrentMonth = new Date(
     dateNow.getFullYear(),
     dateNow.getMonth(),
     1
   );
+
+  const [selectedDate, setSelectedDate] = React.useState(
+    firstNumberOfCurrentMonth
+  );
+  const firstNumberOfMonth = new Date(
+    selectedDate.getFullYear(),
+    selectedDate.getMonth(),
+    1
+  );
+
   let dayWeek = firstNumberOfMonth.getDay();
   if (dayWeek === 0) {
     dayWeek = 7;
   }
 
   let rows = [];
-  let passingValue;
+  let passingValue = 0;
 
   for (let i = 0; i < 6; i++) {
     let cells = [];
+    let searchDay = 1;
 
     if (i === 0) {
       cells = [...Array(7)].map((item, index) => {
         if (index + 1 === dayWeek) {
           if (index === 6) {
-            passingValue = searchDay;
+            passingValue = 1;
           }
-          return <td key={index}>1</td>;
+          return (
+            <td
+              id={`${
+                dateNow.getFullYear() === firstNumberOfMonth.getFullYear() &&
+                dateNow.getMonth() === firstNumberOfMonth.getMonth() &&
+                dateNow.getDate() === 1
+                  ? "today"
+                  : ""
+              }`}
+              key={index}
+            >
+              1
+            </td>
+          );
         } else {
           let searchDate;
           if (index + 1 < dayWeek) {
@@ -57,13 +81,20 @@ export default function Calendar() {
               firstNumberOfMonth.getDate() + (index + 1 - dayWeek)
             );
           }
-          const searchDay = searchDate.getDate();
+          searchDay = searchDate.getDate();
           if (index === 6) {
             passingValue = searchDay;
           }
           return (
             <td
               key={index}
+              id={`${
+                dateNow.getFullYear() === firstNumberOfMonth.getFullYear() &&
+                dateNow.getMonth() === firstNumberOfMonth.getMonth() &&
+                dateNow.getDate() === searchDay
+                  ? "today"
+                  : ""
+              }`}
               className={`${
                 searchDate.getMonth() !== firstNumberOfMonth.getMonth()
                   ? "anotherMonth"
@@ -86,6 +117,13 @@ export default function Calendar() {
         return (
           <td
             key={index}
+            id={`${
+              dateNow.getFullYear() === firstNumberOfMonth.getFullYear() &&
+              dateNow.getMonth() === firstNumberOfMonth.getMonth() &&
+              dateNow.getDate() === searchDay
+                ? "today"
+                : ""
+            }`}
             className={`${
               searchDate.getMonth() !== firstNumberOfMonth.getMonth()
                 ? "anotherMonth"
@@ -119,15 +157,35 @@ export default function Calendar() {
     <div className="display_calendar">
       <div id="calendar_header">
         <div>
-          {months[dateNow.getMonth()]} {dateNow.getFullYear()}
+          {months[selectedDate.getMonth()]} {selectedDate.getFullYear()}
         </div>
 
         <div>
-          <span>
+          <span
+            onClick={() =>
+              setSelectedDate(
+                new Date(
+                  selectedDate.getFullYear(),
+                  selectedDate.getMonth() + 1,
+                  selectedDate.getDate()
+                )
+              )
+            }
+          >
             <SlArrowUp id="sortUp" fill="#000000" />
           </span>
           {"  "}
-          <span>
+          <span
+            onClick={() =>
+              setSelectedDate(
+                new Date(
+                  selectedDate.getFullYear(),
+                  selectedDate.getMonth() - 1,
+                  selectedDate.getDate()
+                )
+              )
+            }
+          >
             <SlArrowDown id="sortDown" fill="#000000" />
           </span>
         </div>

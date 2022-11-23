@@ -21,6 +21,7 @@ export default function Computer({
   const [onMouse, setOnMouse] = React.useState(false);
   const [mouseDirection, setMouseDirection] = React.useState("");
   const [timerCanselMouse, setTimerCanselMouse] = React.useState(0);
+  const [onCalculator, setOnCalculator] = React.useState(false);
   const [onClock, setOnClock] = React.useState(false);
   const [onCalendar, setOnCalendar] = React.useState(false);
   const [onF8, setOnF8] = React.useState(false);
@@ -91,7 +92,9 @@ export default function Computer({
       setOnHome(!onHome);
       setOnMusic(false);
       setOnMouse(false);
+      setOnCalculator(false);
       setOnClock(false);
+      setOnCalendar(false);
       setOnF11(0);
       setOnF12(0);
       setSymbol("");
@@ -109,6 +112,8 @@ export default function Computer({
       window.open("https://www.youtube.com/", "_blank");
     } else if (id === 9) {
       window.open("https://github.com/Djess-V/", "_blank");
+    } else if (id === 10) {
+      setOnCalculator(!onCalculator);
     } else if (id === 11) {
       setOnClock(!onClock);
     } else if (id === 13) {
@@ -211,6 +216,7 @@ export default function Computer({
         onMusicList={onMusic}
         onLock={onLock}
         onComputer={onComputer}
+        onCalculator={onCalculator}
         onClock={onClock}
         onCalendar={onCalendar}
         onF8={onF8}

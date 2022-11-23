@@ -243,6 +243,59 @@
   animation: rotateRight 4s infinite alternate;
 }
 
+.display_calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border: 2px solid $colorGrey2;
+  top: 10px;
+  left: 10px;
+  background-color: rgb(223, 224, 224);
+  border-radius: 3px;
+  color: $colorBlack;
+  font-size: 16pt;
+  width: 120px;
+  height: 170px;
+
+  &:hover {
+    box-shadow: 0 0 2px 2px $colorGrey2;
+  }
+
+  & > input {
+    border: 1px solid $colorGrey2;
+    width: 110px;
+    height: 20px;
+  }
+}
+
+.calculator_memory {
+  border: 1px solid $colorGrey2;
+  width: 110px;
+  height: 15px;
+  margin: 5px 0;
+}
+
+.calculator_buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 26px);
+  grid-template-rows: repeat(6, 17px);
+  gap: 2px;
+  width: 110px;
+  height: 112px;
+}
+
+.calculator_button {
+  background-color: white;
+  color: black;
+  border: none;
+
+  &:hover {
+    background-color: rgb(182, 182, 182);
+  }
+}
+
 .display_clock {
   display: flex;
   justify-content: center;
@@ -255,7 +308,7 @@
   border-radius: 3px;
   color: $colorBlack;
   font-size: 16pt;
-  width: 110px;
+  width: 120px;
   height: 35px;
 
   &:hover {
@@ -275,8 +328,8 @@
   background-color: rgb(223, 224, 224);
   color: $colorBlack;
   font-size: 16pt;
-  width: 110px;
-  height: 125px;
+  width: 120px;
+  height: 130px;
 
   &:hover {
     box-shadow: 0 0 2px 2px $colorGrey2;
@@ -292,12 +345,23 @@
   border-width: 1px;
   border-color: $colorGrey2;
   border-style: none none solid none;
-  width: 110px;
+  width: 120px;
 
   & > div {
     font-size: 9pt;
     color: black;
+    text-align: center;
   }
+
+  & > div:first-child {
+    width: 80px;
+  }
+}
+
+#today {
+  background-color: rgb(107, 203, 228);
+  color: white;
+  border-radius: 3px;
 }
 
 .calendar_table {
@@ -310,6 +374,7 @@
         padding: 1px;
         font-size: 6pt;
         color: black;
+        text-align: center;
       }
     }
   }
@@ -319,6 +384,7 @@
       padding: 1px;
       font-size: 6pt;
       color: black;
+      text-align: center;
     }
     td[class="anotherMonth"] {
       font-weight: 100;

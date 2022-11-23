@@ -34,7 +34,7 @@ export default class Board extends React.Component {
         squares.push(this.renderSquare(current, status));
       }
       divs[i] = (
-        <div key={v4()} className="board-row">
+        <div key={v4()} className="board_row">
           {squares}
         </div>
       );
