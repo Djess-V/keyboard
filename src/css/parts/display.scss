@@ -255,7 +255,7 @@
   background-color: rgb(223, 224, 224);
   border-radius: 3px;
   color: $colorBlack;
-  font-size: 16pt;
+
   width: 120px;
   height: 170px;
 
@@ -263,18 +263,39 @@
     box-shadow: 0 0 2px 2px $colorGrey2;
   }
 
-  & > input {
-    border: 1px solid $colorGrey2;
+  #field {
+    background-color: rgb(201, 247, 247);
+    border: none;
+    border-radius: 3px;
+    color: black;
+    font-size: 13pt;
+    text-align: right;
     width: 110px;
     height: 20px;
+    margin: 5px 0;
+
+    &:hover {
+      outline: none;
+    }
+  }
+
+  * {
+    font-size: 8pt;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 }
 
-.calculator_memory {
-  border: 1px solid $colorGrey2;
+.calculator_tablo {
+  font-size: 6pt;
+  color: black;
+  text-align: right;
   width: 110px;
-  height: 15px;
-  margin: 5px 0;
+  height: 10px;
 }
 
 .calculator_buttons {
@@ -284,6 +305,11 @@
   gap: 2px;
   width: 110px;
   height: 112px;
+
+  button[class~="disabled_button"] {
+    background-color: rgb(231, 228, 228);
+    border: 1px solid rgb(206, 203, 203);
+  }
 }
 
 .calculator_button {
@@ -292,7 +318,8 @@
   border: none;
 
   &:hover {
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(231, 228, 228);
+    border: 1px solid rgb(206, 203, 203);
   }
 }
 
@@ -367,6 +394,8 @@
 .calendar_table {
   border: none;
   background-color: rgb(223, 224, 224);
+  cursor: pointer;
+
   thead {
     tr {
       th {
@@ -383,6 +412,7 @@
       border: none;
       padding: 1px;
       font-size: 6pt;
+      font-weight: 800;
       color: black;
       text-align: center;
     }

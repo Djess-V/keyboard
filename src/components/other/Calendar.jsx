@@ -34,6 +34,10 @@ export default function Calendar() {
     1
   );
 
+  const [activeDate, setActiveDate] = React.useState(null);
+
+  const clickDate = (number) => {};
+
   let dayWeek = firstNumberOfMonth.getDay();
   if (dayWeek === 0) {
     dayWeek = 7;
@@ -62,6 +66,7 @@ export default function Calendar() {
                   : ""
               }`}
               key={index}
+              onClick={() => clickDate(searchDay)}
             >
               1
             </td>

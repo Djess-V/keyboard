@@ -274,24 +274,41 @@
   background-color: rgb(223, 224, 224);
   border-radius: 3px;
   color: #000;
-  font-size: 16pt;
   width: 120px;
   height: 170px;
 }
 .display_calculator:hover {
   box-shadow: 0 0 2px 2px rgb(146, 140, 140);
 }
-.display_calculator > input {
-  border: 1px solid rgb(146, 140, 140);
+.display_calculator #field {
+  background-color: rgb(201, 247, 247);
+  border: none;
+  border-radius: 3px;
+  color: black;
+  font-size: 13pt;
+  text-align: right;
   width: 110px;
   height: 20px;
+  margin: 5px 0;
+}
+.display_calculator #field:hover {
+  outline: none;
+}
+.display_calculator * {
+  font-size: 8pt;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.calculator_memory {
-  border: 1px solid rgb(146, 140, 140);
+.calculator_tablo {
+  font-size: 6pt;
+  color: black;
+  text-align: right;
   width: 110px;
-  height: 15px;
-  margin: 5px 0;
+  height: 10px;
 }
 
 .calculator_buttons {
@@ -302,6 +319,10 @@
   width: 110px;
   height: 112px;
 }
+.calculator_buttons button[class~=disabled_button] {
+  background-color: rgb(231, 228, 228);
+  border: 1px solid rgb(206, 203, 203);
+}
 
 .calculator_button {
   background-color: white;
@@ -309,7 +330,8 @@
   border: none;
 }
 .calculator_button:hover {
-  background-color: rgb(182, 182, 182);
+  background-color: rgb(231, 228, 228);
+  border: 1px solid rgb(206, 203, 203);
 }
 
 .display_clock {
@@ -379,6 +401,7 @@
 .calendar_table {
   border: none;
   background-color: rgb(223, 224, 224);
+  cursor: pointer;
 }
 .calendar_table thead tr th {
   border: none;
@@ -391,30 +414,12 @@
   border: none;
   padding: 1px;
   font-size: 6pt;
+  font-weight: 800;
   color: black;
   text-align: center;
 }
 .calendar_table tbody td[class=anotherMonth] {
   font-weight: 100;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-#activeBtnEnter {
-  background-color: rgb(30, 192, 130);
-  border-color: rgb(30, 192, 130);
-}
-
-button:not([class~=onComputer]):hover {
-  background-color: rgb(82, 82, 82);
-  border-color: rgb(146, 140, 140);
-}
-
-button[class~=onComputer]:hover {
-  background-color: rgb(30, 192, 130);
-  border-color: rgb(30, 192, 130);
 }
 
 .computer__keyboard {
@@ -429,6 +434,17 @@ button[class~=onComputer]:hover {
   width: 700px;
   height: 300px;
   cursor: pointer;
+}
+.computer__keyboard button:not([class~=onComputer]):hover {
+  background-color: rgb(82, 82, 82);
+  border-color: rgb(146, 140, 140);
+}
+.computer__keyboard button[class~=onComputer]:hover {
+  background-color: rgb(30, 192, 130);
+  border-color: rgb(30, 192, 130);
+}
+.computer__keyboard .hidden {
+  visibility: hidden;
 }
 
 .keyboard__upPanel {
@@ -622,8 +638,7 @@ button[class~=onComputer]:hover {
 .blockEsc__btnClassF:nth-child(14) p, .blockEsc__btnClassF:nth-child(15) p {
   font-size: 7px;
 }
-
-.btn1F_F8 {
+.blockEsc__btnClassF .btn1F_F8 {
   display: flex;
 }
 
@@ -679,6 +694,11 @@ button[class~=onComputer]:hover {
   margin-top: 2px;
   width: 514px;
   height: 72px;
+}
+
+#activeBtnEnter {
+  background-color: rgb(30, 192, 130);
+  border-color: rgb(30, 192, 130);
 }
 
 .btnEnter {
