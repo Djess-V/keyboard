@@ -1,7 +1,7 @@
 import React from "react";
-import ModalDisplayBg from "./ModalDisplayBg";
+import MenuModalWindow from "./MenuModalWindow";
 
-export default function Menu({
+function Menu({
   info,
   isChangeBackground,
   closeModalDisplayBg = (f) => f,
@@ -33,7 +33,7 @@ export default function Menu({
         })}
       </ul>
       {isChangeBackground && (
-        <ModalDisplayBg
+        <MenuModalWindow
           closeModalDisplayBg={closeModalDisplayBg}
           handlerClickModalDisplayBg={handlerClickModalDisplayBg}
         />
@@ -41,3 +41,7 @@ export default function Menu({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Menu;

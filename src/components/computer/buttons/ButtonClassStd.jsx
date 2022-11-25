@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ButtonClassStd({
+function ButtonClassStd({
   onComputer,
   onShift,
   onCapsLock,
@@ -39,3 +39,7 @@ export default function ButtonClassStd({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default ButtonClassStd;

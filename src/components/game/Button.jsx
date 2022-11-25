@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Button(props) {
+function Button(props) {
   return (
     <button
       className={`game_table_button ${props.modify} ${
@@ -12,3 +12,7 @@ export default function Button(props) {
     </button>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Button;

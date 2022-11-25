@@ -3,7 +3,7 @@ import UpPanel from "./UpPanel";
 import CentralPanel from "./CentralPanel";
 import MousePanel from "./MousePanel";
 
-export default function Keyboard({
+function Keyboard({
   onMouse,
   onMusic,
   onLock,
@@ -60,3 +60,7 @@ export default function Keyboard({
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Keyboard;

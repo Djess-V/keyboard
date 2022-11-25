@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-export default function Info(props) {
+function Info(props) {
   return (
     <div className="game_info">
       <div className="game_info_status">{props.status}</div>
@@ -14,3 +14,7 @@ export default function Info(props) {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Info;

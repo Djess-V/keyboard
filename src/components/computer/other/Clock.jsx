@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Clock() {
+function Clock() {
   const [time, setTime] = React.useState(updateWatch());
 
   React.useEffect(() => {
@@ -12,7 +12,7 @@ export default function Clock() {
   );
 }
 
-/* ---------------------------------------------------------- */
+/* ---------------------------------------------------------------------------------- */
 
 function updateWatch() {
   const objTime = { hour: null, minutes: null, seconds: null };
@@ -32,3 +32,7 @@ function addZero(count) {
 
   return count;
 }
+
+/* ----------------------------------------------------------------------------------- */
+
+export default Clock;

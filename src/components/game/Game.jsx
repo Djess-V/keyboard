@@ -5,7 +5,7 @@ import Table from "./Table";
 import TableTrTd from "./TableTrTd";
 import { v4 } from "uuid";
 
-export default class Game extends React.Component {
+class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -149,7 +149,7 @@ export default class Game extends React.Component {
   }
 }
 
-// ==========================================================
+/* ---------------------------------------------------------------------------------- */
 
 function calculateWinner(squares) {
   const lines = [
@@ -212,3 +212,7 @@ function formatMovePosition(position) {
 
   return array[position];
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Game;

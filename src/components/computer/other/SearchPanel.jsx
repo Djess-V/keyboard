@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function SearchPanel({
+function SearchPanel({
   pressedButton,
   pressedButtonTab,
   pressedButtonBackspace,
@@ -123,3 +123,7 @@ export default function SearchPanel({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default SearchPanel;

@@ -11,7 +11,7 @@ import {
   btn5Space,
 } from "../../data/data";
 
-export default function CentralPanel({
+function CentralPanel({
   onComputer,
   onShift,
   onCapsLock,
@@ -222,3 +222,7 @@ export default function CentralPanel({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default CentralPanel;

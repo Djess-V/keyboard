@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ModalDisplayBg({
+function MenuModalWindow({
   closeModalDisplayBg = (f) => f,
   handlerClickModalDisplayBg = (f) => f,
 }) {
@@ -17,3 +17,7 @@ export default function ModalDisplayBg({
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default MenuModalWindow;

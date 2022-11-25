@@ -2,7 +2,7 @@ import React from "react";
 import { TfiApple } from "react-icons/tfi";
 import { btnUpP } from "../../data/data";
 
-export default function UpPanel({
+function UpPanel({
   onMouse,
   onMusic,
   onLock,
@@ -58,3 +58,7 @@ export default function UpPanel({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default UpPanel;

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MousePanel({ onCapsLock, onComputer }) {
+function MousePanel({ onCapsLock, onComputer }) {
   return (
     <>
       <div className="keyboard__downContainer__mousePanel">
@@ -26,3 +26,7 @@ export default function MousePanel({ onCapsLock, onComputer }) {
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default MousePanel;

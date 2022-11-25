@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./Square";
 import { v4 } from "uuid";
 
-export default class Board extends React.Component {
+class Board extends React.Component {
   renderSquare(i, status) {
     return (
       <Square
@@ -43,3 +43,7 @@ export default class Board extends React.Component {
     return <div>{divs}</div>;
   }
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Board;

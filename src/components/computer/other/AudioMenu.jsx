@@ -1,9 +1,9 @@
 import React from "react";
-import audio1 from "../../assets/mp3/lady_gaga_-_shallow.mp3";
-import audio2 from "../../assets/mp3/Michael_Jackson_-_Smooth_Criminal_47829994.mp3";
-import audio3 from "../../assets/mp3/DDT_-_Lyubov_ne_propala_56565425.mp3";
-import audio4 from "../../assets/mp3/Bremenskie_Muzykanty_-_Solnce_vzajjdet_62922182.mp3";
-import audio5 from "../../assets/mp3/Jackson_Wang_-_Blow_74011203.mp3";
+import audio1 from "../../../assets/mp3/lady_gaga_-_shallow.mp3";
+import audio2 from "../../../assets/mp3/Michael_Jackson_-_Smooth_Criminal_47829994.mp3";
+import audio3 from "../../../assets/mp3/DDT_-_Lyubov_ne_propala_56565425.mp3";
+import audio4 from "../../../assets/mp3/Bremenskie_Muzykanty_-_Solnce_vzajjdet_62922182.mp3";
+import audio5 from "../../../assets/mp3/Jackson_Wang_-_Blow_74011203.mp3";
 
 export const audioList = [
   { name: "Lady Gaga - Shallow", link: audio1 },
@@ -13,7 +13,7 @@ export const audioList = [
   { name: "Jackson Wang - Blow", link: audio5 },
 ];
 
-export default function AudioMenu({
+function AudioMenu({
   pressedButtonUpDown,
   pressedButtonEnter,
   raiseSelectionPositionAudio = (f) => f,
@@ -72,3 +72,7 @@ export default function AudioMenu({
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default AudioMenu;

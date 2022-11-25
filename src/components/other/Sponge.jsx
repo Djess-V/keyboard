@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Sponge() {
+function Sponge() {
   return (
     <>
       <div className="aquarium">
@@ -36,3 +36,7 @@ export default function Sponge() {
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Sponge;

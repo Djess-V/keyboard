@@ -1,7 +1,7 @@
 import React from "react";
 import Note from "./Note";
 
-export default function Papers({ info }) {
+function Papers({ info }) {
   return (
     <div className="papers">
       {info.map((item) => (
@@ -14,3 +14,7 @@ export default function Papers({ info }) {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Papers;

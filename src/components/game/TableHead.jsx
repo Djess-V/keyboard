@@ -1,7 +1,7 @@
 import React from "react";
 import { FcDown, FcUp } from "react-icons/fc";
 
-export default function TableHead(props) {
+function TableHead(props) {
   return (
     <thead>
       <tr>
@@ -26,3 +26,7 @@ export default function TableHead(props) {
     </thead>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default TableHead;

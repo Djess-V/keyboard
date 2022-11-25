@@ -1,12 +1,12 @@
 import React from "react";
-import SearchPanel from "./SearchPanel";
-import AudioMenu from "../other/AudioMenu";
-import Calculator from "../other/Calculator";
-import Clock from "../other/Clock";
-import Calendar from "../other/Calendar";
-import { audioList } from "../other/AudioMenu";
+import SearchPanel from "./other/SearchPanel";
+import AudioMenu from "./other/AudioMenu";
+import Calculator from "./other/Calculator";
+import Clock from "./other/Clock";
+import Calendar from "./other/Calendar";
+import { audioList } from "./other/AudioMenu";
 
-export default function Display({
+function Display({
   onMouse,
   onMusicList,
   onLock,
@@ -236,3 +236,7 @@ export default function Display({
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Display;

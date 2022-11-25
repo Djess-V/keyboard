@@ -2,7 +2,7 @@ import React from "react";
 import { v4 } from "uuid";
 import Button from "./Button";
 
-export default function TableTrTd(props) {
+function TableTrTd(props) {
   return (
     <tr key={v4()} style={{ backgroundColor: props.style }}>
       <td>
@@ -22,3 +22,7 @@ export default function TableTrTd(props) {
     </tr>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default TableTrTd;

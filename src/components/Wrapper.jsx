@@ -6,7 +6,7 @@ import Papers from "./other/Papers";
 import Sponge from "./other/Sponge";
 import { notesData, menuInfo } from "../data/data";
 
-export default function Wrapper() {
+function Wrapper() {
   const [buttonHidden, setButtonHidden] = React.useState(false);
   const [missingButtons, setMissingButtons] = React.useState([]);
   const [isChangeBackground, setIsChangeBackground] = React.useState(false);
@@ -72,3 +72,7 @@ export default function Wrapper() {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Wrapper;

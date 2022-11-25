@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function TableBody(props) {
+function TableBody(props) {
   return <tbody>{props.moves}</tbody>;
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default TableBody;

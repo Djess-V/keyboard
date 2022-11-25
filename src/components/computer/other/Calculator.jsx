@@ -1,4 +1,5 @@
 import React from "react";
+import calculateValue from "./functionsForCalculator";
 
 const numbers = {
   8: 7,
@@ -40,7 +41,7 @@ const symbolsCalculator = [
   "=",
 ];
 
-export default function Calculator() {
+function Calculator() {
   const [valueInput, setValueInput] = React.useState("");
   const [onMemory, setOnMemory] = React.useState(false);
   const [memory, setMemory] = React.useState(null);
@@ -80,60 +81,6 @@ export default function Calculator() {
         setValueInput("");
         setMinus(true);
       }
-  }
-
-  function formatResult(number) {
-    const string = String(number);
-    console.log(string);
-    if (string.includes(".")) {
-      const index = string.indexOf(".");
-      return index;
-    }
-    return string;
-  }
-
-  function calculateValue(string) {
-    const chars = ["/", "*", "+", "-"];
-    let result;
-
-    chars.forEach((item, i) => {
-      if (item !== "-") {
-        if (string.includes(item)) {
-          const numbers = string.split(item);
-
-          if (i === 0) {
-            if (+numbers[1] === 0) {
-              setTablo("На ноль делить нельзя!!!");
-              result = "";
-            } else {
-              result = +numbers[0] / +numbers[1];
-            }
-          } else if (i === 1) {
-            result = +numbers[0] * +numbers[1];
-          } else if (i === 2) {
-            result = +numbers[0] + +numbers[1];
-          }
-        }
-      } else {
-        if (string.includes(item)) {
-          const numbers = string.split(item);
-
-          if (numbers.length === 2) {
-            result = +numbers[0] - +numbers[1];
-          } else if (numbers.length === 3) {
-            if (numbers[0] === "") {
-              result = -+numbers[1] - +numbers[2];
-            } else if (numbers[1] === "") {
-              result = +numbers[0] - -+numbers[2];
-            }
-          } else if (numbers.length === 4) {
-            result = -+numbers[1] - -+numbers[3];
-          }
-        }
-      }
-    });
-
-    return formatResult(result);
   }
 
   function onClickButton(index) {
@@ -180,7 +127,7 @@ export default function Calculator() {
       }
     }
 
-    if (valueInput === "" || valueInput.length < 11) {
+    if (valueInput === "" || valueInput.length < 10) {
       for (let key in numbers) {
         if (index === +key) {
           if (+key === 21) {
@@ -204,7 +151,7 @@ export default function Calculator() {
       }
     }
 
-    if (valueInput.length <= 12) {
+    if (valueInput.length <= 11) {
       if (index === 20) {
         if (minus) {
           if (+valueInput !== 0) {
@@ -250,3 +197,7 @@ export default function Calculator() {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Calculator;

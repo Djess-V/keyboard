@@ -3,7 +3,7 @@ import Display from "./Display";
 import Keyboard from "./Keyboard";
 import { symbolId, serviceButtonsId } from "../../data/data";
 
-export default function Computer({
+function Computer({
   indexDisplayImage,
   missingButtons,
   buttonHidden,
@@ -261,7 +261,7 @@ export default function Computer({
   );
 }
 
-/* --------------------------------------------------------------*/
+/* -----------------------------------------------------------------------------------*/
 
 function printText(id, onShift, onCapsLock, onAlt) {
   for (let item of symbolId) {
@@ -303,3 +303,7 @@ function printText(id, onShift, onCapsLock, onAlt) {
   }
   return "";
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Computer;

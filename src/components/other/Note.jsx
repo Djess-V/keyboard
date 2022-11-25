@@ -6,7 +6,7 @@ import girls from "../../assets/girls-fly-peace-pigeons.png";
 
 const image = [cupidon, snowman, stars, girls];
 
-export default function Note({ data, modificator }) {
+function Note({ data, modificator }) {
   return (
     <div className={`note_${modificator}`}>
       {data.map((item) => (
@@ -20,3 +20,7 @@ export default function Note({ data, modificator }) {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Note;

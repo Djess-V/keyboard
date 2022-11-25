@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ButtonClassF({
+function ButtonClassF({
   onComputer,
   onFN,
   isHidden = (f) => f,
@@ -24,3 +24,7 @@ export default function ButtonClassF({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default ButtonClassF;

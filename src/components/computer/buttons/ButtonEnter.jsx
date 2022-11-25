@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ButtonEnter({
+function ButtonEnter({
   onComputer,
   onClick = (f) => f,
   isHidden = (f) => f,
@@ -73,3 +73,7 @@ export default function ButtonEnter({
     </>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default ButtonEnter;

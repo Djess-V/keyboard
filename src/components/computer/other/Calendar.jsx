@@ -17,7 +17,7 @@ const months = [
   "Декабрь",
 ];
 
-export default function Calendar() {
+function Calendar() {
   const dateNow = new Date();
   const firstNumberOfCurrentMonth = new Date(
     dateNow.getFullYear(),
@@ -202,3 +202,7 @@ export default function Calendar() {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------------------------- */
+
+export default Calendar;
