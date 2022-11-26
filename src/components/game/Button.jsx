@@ -3,8 +3,12 @@ import React from "react";
 function Button(props) {
   return (
     <button
-      className={`game_table_button ${props.modify} ${
-        props.moves && props.moves.length === 1 ? "start_game_hidden" : ""
+      className={`game-table-td__button game-table-td__button_mode_${
+        props.modify
+      } ${
+        props.moves && props.moves.length === 1
+          ? "game-table-td__button_hidden"
+          : ""
       }`}
       onClick={() => props.handle(props.index)}
     >

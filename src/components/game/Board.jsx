@@ -34,7 +34,7 @@ class Board extends React.Component {
         squares.push(this.renderSquare(current, status));
       }
       divs[i] = (
-        <div key={v4()} className="board_row">
+        <div key={v4()} className="board-row">
           {squares}
         </div>
       );

@@ -304,7 +304,9 @@
   user-select: none;
 }
 
-.calculator_tablo {
+#calculator_tablo {
+  display: flex;
+  justify-content: space-between;
   font-size: 6pt;
   color: black;
   text-align: right;
@@ -312,7 +314,24 @@
   height: 10px;
 }
 
+#calculator_tablo_charMemory {
+  font-size: 6pt;
+  color: rgb(30, 192, 130);
+  text-align: right;
+  width: 10px;
+  height: 10px;
+}
+
+#calculator_tablo_tablo {
+  font-size: 6pt;
+  color: black;
+  text-align: right;
+  width: 100px;
+  height: 10px;
+}
+
 .calculator_buttons {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, 26px);
   grid-template-rows: repeat(6, 17px);
@@ -324,6 +343,13 @@
   background-color: rgb(231, 228, 228);
   border: 1px solid rgb(206, 203, 203);
 }
+.calculator_buttons button[class~=onMemory] {
+  background-color: rgb(30, 192, 130);
+}
+.calculator_buttons button[class~=windowMemoryOpen] {
+  background-color: rgb(30, 192, 130);
+  border: 2px inset;
+}
 
 .calculator_button {
   background-color: white;
@@ -333,6 +359,21 @@
 .calculator_button:hover {
   background-color: rgb(231, 228, 228);
   border: 1px solid rgb(206, 203, 203);
+}
+
+#calculator_windowMemory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11pt;
+  color: black;
+  position: absolute;
+  top: 19px;
+  left: 0;
+  background-color: white;
+  width: 110px;
+  height: 17px;
+  z-index: 5;
 }
 
 .display_clock {
@@ -444,7 +485,8 @@
   background-color: rgb(30, 192, 130);
   border-color: rgb(30, 192, 130);
 }
-.computer__keyboard .hidden {
+
+.hidden {
   visibility: hidden;
 }
 
@@ -558,7 +600,7 @@
 }
 
 .upPanel_message_layout {
-  background-color: rgb(93, 182, 130);
+  background-color: rgb(30, 192, 130);
   border: 1px solid rgb(146, 140, 140);
   border-radius: 5px;
   color: black;
@@ -567,7 +609,7 @@
 }
 
 .upPanel_message_message {
-  background-color: rgb(93, 182, 130);
+  background-color: rgb(30, 192, 130);
   border: 1px solid rgb(146, 140, 140);
   border-radius: 5px;
   color: black;
@@ -1223,6 +1265,11 @@ div[class^=note] .image_4 {
   color: #fff;
   font-family: "Times New Roman", Times, serif;
   font-size: 9pt;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .suspense > h1 {

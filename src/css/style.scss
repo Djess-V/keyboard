@@ -12,6 +12,12 @@
   color: $colorWhite;
   font-family: "Times New Roman", Times, serif;
   font-size: 9pt;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .suspense > h1 {

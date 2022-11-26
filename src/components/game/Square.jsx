@@ -2,7 +2,10 @@ import React from "react";
 
 function Square(props) {
   return (
-    <button className={`square ${props.status}`} onClick={props.onClick}>
+    <button
+      className={`board-row__square board-row__square_status_${props.status}`}
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );

@@ -5,23 +5,23 @@ function TableHead(props) {
   return (
     <thead>
       <tr>
-        <th className="game_table_th">
-          <span className="game_table_span">История</span>
-          <span
-            className="game_table_sort"
+        <th className="game-table-th">
+          <span className="game-table-th__span">История</span>
+          <button
+            className="game-table-th-sort game-table-th-sort_mode_up"
             onClick={(e) => props.handleClick(e)}
           >
-            <FcUp id="sortUp" onClick={(e) => props.handleClick(e)} />
-          </span>
-          <span
-            className="game_table_sort"
+            <FcUp fill="#0ee8f8" />
+          </button>
+          <button
+            className="game-table-th-sort game-table-th-sort_mode_down"
             onClick={(e) => props.handleClick(e)}
           >
-            <FcDown id="sortDown" />
-          </span>
+            <FcDown fill="#0ee8f8" />
+          </button>
         </th>
-        <th>Позиция</th>
-        <th className="game_table_th">Выделить</th>
+        <th className="game-table-th game-table-th_style_short">Позиция</th>
+        <th className="game-table-th">Выделить</th>
       </tr>
     </thead>
   );

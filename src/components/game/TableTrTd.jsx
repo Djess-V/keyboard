@@ -5,7 +5,7 @@ import Button from "./Button";
 function TableTrTd(props) {
   return (
     <tr key={v4()} style={{ backgroundColor: props.style }}>
-      <td>
+      <td className="game-table-td">
         <Button
           modify=""
           index={props.index}
@@ -13,9 +13,13 @@ function TableTrTd(props) {
           handle={(index) => props.handleClickButton(index)}
         />
       </td>
-      <td>{props.position}</td>
-      <td>
-        <a href="#" onClick={(e) => props.handleClickA(e, props.index)}>
+      <td className="game-table-td">{props.position}</td>
+      <td className="game-table-td">
+        <a
+          className="game-table-td__link"
+          href="#"
+          onClick={(e) => props.handleClickA(e, props.index)}
+        >
           {props.strHl}
         </a>
       </td>

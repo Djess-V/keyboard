@@ -20,10 +20,10 @@
     background-color: $colorGreen;
     border-color: $colorGreen;
   }
+}
 
-  .hidden {
-    visibility: hidden;
-  }
+.hidden {
+  visibility: hidden;
 }
 
 .keyboard__upPanel {
@@ -136,7 +136,7 @@
 }
 
 .upPanel_message_layout {
-  background-color: rgb(93, 182, 130);
+  background-color: $colorGreen;
   border: 1px solid $colorGrey2;
   border-radius: 5px;
   color: black;
@@ -145,7 +145,7 @@
 }
 
 .upPanel_message_message {
-  background-color: rgb(93, 182, 130);
+  background-color: $colorGreen;
   border: 1px solid $colorGrey2;
   border-radius: 5px;
   color: black;

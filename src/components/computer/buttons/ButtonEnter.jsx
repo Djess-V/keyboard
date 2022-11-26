@@ -28,11 +28,10 @@ function ButtonEnter({
   return (
     <>
       <div
-        className={`btnEnter ${isHidden("86") ? "hidden" : ""} ${
+        className={`btnEnter ${isHidden(86) ? "hidden" : ""} ${
           onComputer ? "onComputer" : ""
         }`}
         onClick={() => onClick(86)}
-        data-id="86"
       >
         <div
           ref={refBtnEnterLU}

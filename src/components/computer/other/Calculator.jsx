@@ -15,7 +15,7 @@ const numbers = {
 };
 
 const symbolsCalculator = [
-  "M+",
+  "MS",
   "MR",
   "MC",
   "M",
@@ -48,21 +48,36 @@ function Calculator() {
   const [tablo, setTablo] = React.useState("");
   const [minus, setMinus] = React.useState(true);
   const [equallyPressed, setEquallyPressed] = React.useState(false);
-
-  const refTablo = React.useRef();
+  const [windowMemory, setWindowMemory] = React.useState(false);
 
   const buttons = symbolsCalculator.map((item, i) => (
     <button
       key={i}
       className={`calculator_button ${
         memoryButtonActivity(i) ? "disabled_button" : ""
+      } ${onMemory && i === 3 ? "onMemory" : ""} ${
+        windowMemory && i === 3 ? "windowMemoryOpen" : ""
       }`}
+      title={makeTitleMemory(i)}
       disabled={memoryButtonActivity(i)}
       onClick={() => onClickButton(i)}
     >
       {item}
     </button>
   ));
+
+  function makeTitleMemory(index) {
+    switch (index) {
+      case 0:
+        return "Сохранить значение";
+      case 1:
+        return "Извлечь значение из памяти";
+      case 2:
+        return "Очистить память";
+      case 3:
+        return "Просмотр сотояния памяти";
+    }
+  }
 
   function memoryButtonActivity(index) {
     if (index >= 1 && index <= 3) {
@@ -73,29 +88,58 @@ function Calculator() {
   }
 
   function installTablo(char) {
-    if ((valueInput || valueInput === 0) && valueInput.length > 0)
+    let value = valueInput;
+
+    if (valueInput[valueInput.length - 1] === ".") {
+      value = valueInput.slice(0, valueInput.length - 1);
+    }
+
+    if (valueInput && Number(valueInput) === 0) {
+      value = "0";
+    }
+    if (valueInput.length > 0 && !equallyPressed) {
       if (tablo) {
         setTablo(tablo.slice(0, tablo.length - 1) + char);
       } else {
-        setTablo(valueInput + char);
+        setTablo(value + char);
         setValueInput("");
         setMinus(true);
       }
+    }
+  }
+
+  function showMemory() {
+    setWindowMemory(!windowMemory);
   }
 
   function onClickButton(index) {
     if (index === 0) {
-      setOnMemory(true);
-      setMemory(valueInput);
+      let value = valueInput;
+
+      if (value !== "Oops!") {
+        if (Number(valueInput) === 0) {
+          value = "0";
+        }
+        setOnMemory(true);
+        setMemory(value);
+      }
     } else if (index === 1) {
-      setValueInput(memory);
+      if (!memory.includes("e")) {
+        setValueInput(memory);
+        setWindowMemory(false);
+      } else {
+        setValueInput("Oops!");
+      }
     } else if (index === 2) {
       setOnMemory(false);
       setMemory(null);
+      setWindowMemory(false);
     } else if (index === 3) {
-      setValueInput(memory);
+      showMemory();
     } else if (index === 4) {
-      setValueInput(valueInput.slice(0, valueInput.length - 1));
+      if (!equallyPressed) {
+        setValueInput(valueInput.slice(0, valueInput.length - 1));
+      }
     } else if (index === 5) {
       if (tablo && tablo[tablo.length - 1] === "=") {
         setTablo("");
@@ -117,17 +161,34 @@ function Calculator() {
     } else if (index === 19) {
       installTablo("+");
     } else if (index === 22) {
-      if (!valueInput.includes(".")) {
-        setValueInput(valueInput + ".");
+      if (valueInput !== "") {
+        if (!equallyPressed && !valueInput.includes(".")) {
+          setValueInput(valueInput + ".");
+        }
       }
     } else if (index === 23) {
-      if (!equallyPressed) {
-        setTablo(tablo + valueInput + "=");
-        setEquallyPressed(true);
+      let value = valueInput;
+
+      if (valueInput[valueInput.length - 1] === ".") {
+        value = valueInput.slice(0, valueInput.length - 1);
+      }
+
+      if (valueInput && Number(valueInput) === 0) {
+        value = "0";
+      }
+
+      if (tablo) {
+        if (!equallyPressed && valueInput !== "") {
+          setTablo(tablo + value + "=");
+          setEquallyPressed(true);
+        }
       }
     }
 
-    if (valueInput === "" || valueInput.length < 10) {
+    if (
+      !equallyPressed &&
+      (valueInput === "" || (valueInput && valueInput.length < 10))
+    ) {
       for (let key in numbers) {
         if (index === +key) {
           if (+key === 21) {
@@ -151,7 +212,10 @@ function Calculator() {
       }
     }
 
-    if (valueInput.length <= 11) {
+    if (
+      !equallyPressed &&
+      (valueInput === "" || (valueInput && valueInput.length <= 11))
+    ) {
       if (index === 20) {
         if (minus) {
           if (+valueInput !== 0) {
@@ -175,25 +239,17 @@ function Calculator() {
     }
   }, [tablo]);
 
-  React.useEffect(() => {
-    if (
-      tablo === "На ноль делить нельзя!!!" &&
-      valueInput &&
-      valueInput.length > 0
-    ) {
-      setTablo("");
-      setEquallyPressed(false);
-      setMinus(true);
-    }
-  }, [valueInput]);
-
   return (
     <div className="display_calculator">
-      <p className="calculator_tablo" ref={refTablo}>
-        {tablo}
-      </p>
+      <div id="calculator_tablo">
+        <div id="calculator_tablo_charMemory">{onMemory ? "M" : ""}</div>
+        <p id="calculator_tablo_tablo">{tablo}</p>
+      </div>
       <p id="field">{valueInput}</p>
-      <div className="calculator_buttons">{buttons}</div>
+      <div className="calculator_buttons">
+        {buttons}
+        {windowMemory && <div id="calculator_windowMemory">{memory}</div>}
+      </div>
     </div>
   );
 }

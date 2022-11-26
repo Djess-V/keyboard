@@ -3,15 +3,15 @@ import Button from "./Button";
 
 function Info(props) {
   return (
-    <div className="game_info">
-      <div className="game_info_status">{props.status}</div>
+    <>
+      <div className="game-info__status">{props.status}</div>
       <Button
-        modify="start_game"
+        modify="start"
         desc="Ещё разочек..."
         handle={() => props.onClick()}
         moves={props.moves}
       />
-    </div>
+    </>
   );
 }
 

@@ -59,14 +59,19 @@ class Game extends React.Component {
   }
 
   sortHistory(e) {
-    if (e.target.id === "sortUp" && this.state.sort === "down") {
-      this.setState({
-        sort: "up",
-      });
-    } else if (e.target.id === "sortDown" && this.state.sort === "up") {
-      this.setState({
-        sort: "down",
-      });
+    console.dir(e);
+    if (
+      (e.target.parentElement.classList[1] === "game-table-th-sort_mode_up" ||
+        e.target.classList[1] === "game-table-th-sort_mode_up") &&
+      this.state.sort === "down"
+    ) {
+      this.setState({ sort: "up" });
+    } else if (
+      (e.target.parentElement.classList[1] === "game-table-th-sort_mode_down" ||
+        e.target.classList[1] === "game-table-th-sort_mode_down") &&
+      this.state.sort === "up"
+    ) {
+      this.setState({ sort: "down" });
     }
   }
 
@@ -127,9 +132,9 @@ class Game extends React.Component {
 
     return (
       <div className="game">
-        <h1>Можно поиграть в крестики-нолики!</h1>
-        <h2>(ну, конечно можно и не играть...)</h2>
-        <div className="game_board">
+        <h1 className="game__header">Можно поиграть в крестики-нолики!</h1>
+        <h2 className="game__subhead">(ну, конечно можно и не играть...)</h2>
+        <div className="game-board">
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
@@ -137,12 +142,16 @@ class Game extends React.Component {
           />
         </div>
         <div>
-          <Info
-            moves={moves}
-            status={status}
-            onClick={() => this.handleClickToStartGame()}
-          />
-          <Table moves={moves} handleClick={(e) => this.sortHistory(e)} />
+          <div className="game-info">
+            <Info
+              moves={moves}
+              status={status}
+              onClick={() => this.handleClickToStartGame()}
+            />
+          </div>
+          <table className="game-table">
+            <Table moves={moves} handleClick={(e) => this.sortHistory(e)} />
+          </table>
         </div>
       </div>
     );
