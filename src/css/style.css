@@ -444,6 +444,7 @@
   border: none;
   background-color: rgb(223, 224, 224);
   cursor: pointer;
+  margin: auto;
 }
 .calendar_table thead tr th {
   border: none;
@@ -1256,6 +1257,30 @@ div[class^=note] .image_4 {
   height: 63px;
   top: 150px;
   left: 50px;
+}
+
+.wrapper_field {
+  grid-column: 1;
+  grid-row: 2;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 3px black;
+  top: 350px;
+  left: 450px;
+  width: 640px;
+  height: 310px;
+  background-color: rgb(205, 191, 109);
+}
+
+.wrapper_map {
+  position: absolute;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: black;
+  top: 30px;
+  left: 30px;
+  width: 322px;
+  height: 242px;
 }
 
 * {

@@ -2,6 +2,7 @@ import React from "react";
 import Game from "./game/Game";
 import Computer from "./computer/Computer";
 import Menu from "./other/Menu";
+import MyMap from "./field/MyMap";
 import Papers from "./other/Papers";
 import Sponge from "./other/Sponge";
 import { notesData, menuInfo } from "../data/data";
@@ -66,6 +67,9 @@ function Wrapper() {
           handleClick={onClickMenuButton}
           handlerClickModalDisplayBg={handlerClickModalDisplayBg}
         />
+      </div>
+      <div id="YMapsID" className="wrapper_field">
+        <MyMap />
       </div>
       <Papers info={notesData} />
       <Sponge />
