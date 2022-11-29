@@ -1,26 +1,25 @@
 import React from "react";
 import { v4 } from "uuid";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
+import { handleClickA } from "../../store/reducerGame/gameSlice";
 
-function TableTrTd(props) {
+function TableTrTd({ index, style, desc, position, strHl }) {
+  const dispatch = useDispatch();
+
   return (
-    <tr key={v4()} style={{ backgroundColor: props.style }}>
+    <tr key={v4()} style={{ backgroundColor: style }}>
       <td className="game-table-td">
-        <Button
-          modify=""
-          index={props.index}
-          desc={props.desc}
-          handle={(index) => props.handleClickButton(index)}
-        />
+        <Button modify="" index={index} desc={desc} />
       </td>
-      <td className="game-table-td">{props.position}</td>
+      <td className="game-table-td">{position}</td>
       <td className="game-table-td">
         <a
           className="game-table-td__link"
           href="#"
-          onClick={(e) => props.handleClickA(e, props.index)}
+          onClick={(e) => dispatch(handleClickA(e, index))}
         >
-          {props.strHl}
+          {strHl}
         </a>
       </td>
     </tr>

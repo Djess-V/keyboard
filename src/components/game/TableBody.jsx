@@ -1,7 +1,7 @@
 import React from "react";
 
-function TableBody(props) {
-  return <tbody>{props.moves}</tbody>;
+function TableBody({ moves }) {
+  return <tbody>{moves}</tbody>;
 }
 
 /* ---------------------------------------------------------------------------------- */

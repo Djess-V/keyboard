@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import App from "./components/App";
+import { Provider } from "react-redux";
+import store from "./store/store";
 import "./css/style.css";
 import "./css/game.css";
 import "./css/parts/sponge.css";
@@ -23,7 +25,9 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Suspense className="suspense" fallback={<h1>Loading profile...</h1>}>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </Suspense>
   </React.StrictMode>
 );

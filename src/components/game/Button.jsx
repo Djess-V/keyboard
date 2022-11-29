@@ -1,18 +1,20 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { jumpTo, startGame } from "../../store/reducerGame/gameSlice";
 
-function Button(props) {
+function Button({ modify, moves, index, desc }) {
+  const dispatch = useDispatch();
+
   return (
     <button
-      className={`game-table-td__button game-table-td__button_mode_${
-        props.modify
-      } ${
-        props.moves && props.moves.length === 1
-          ? "game-table-td__button_hidden"
-          : ""
+      className={`game-table-td__button game-table-td__button_mode_${modify} ${
+        moves && moves.length === 1 ? "game-table-td__button_hidden" : ""
       }`}
-      onClick={() => props.handle(props.index)}
+      onClick={
+        modify ? () => dispatch(startGame()) : () => dispatch(jumpTo(index))
+      }
     >
-      {props.desc}
+      {desc}
     </button>
   );
 }

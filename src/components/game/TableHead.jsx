@@ -1,7 +1,11 @@
 import React from "react";
 import { FcDown, FcUp } from "react-icons/fc";
+import { useDispatch } from "react-redux";
+import { clickHistory } from "../../store/reducerGame/gameSlice";
 
-function TableHead(props) {
+function TableHead() {
+  const dispatch = useDispatch();
+
   return (
     <thead>
       <tr>
@@ -9,13 +13,13 @@ function TableHead(props) {
           <span className="game-table-th__span">История</span>
           <button
             className="game-table-th-sort game-table-th-sort_mode_up"
-            onClick={(e) => props.handleClick(e)}
+            onClick={(e) => dispatch(clickHistory(e))}
           >
             <FcUp fill="#0ee8f8" />
           </button>
           <button
             className="game-table-th-sort game-table-th-sort_mode_down"
-            onClick={(e) => props.handleClick(e)}
+            onClick={(e) => dispatch(clickHistory(e))}
           >
             <FcDown fill="#0ee8f8" />
           </button>
