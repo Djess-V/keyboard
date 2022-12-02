@@ -1,6 +1,6 @@
 import React from "react";
 
-function ButtonClassStd({
+let ButtonClassStd = ({
   onComputer,
   onShift,
   onCapsLock,
@@ -13,7 +13,7 @@ function ButtonClassStd({
   block = "",
   onClick = (f) => f,
   pressedButton,
-}) {
+}) => {
   return (
     <>
       <button
@@ -38,8 +38,10 @@ function ButtonClassStd({
       </button>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+ButtonClassStd = React.memo(ButtonClassStd);
 
 export default ButtonClassStd;

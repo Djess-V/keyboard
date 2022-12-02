@@ -6,7 +6,7 @@ import Clock from "./other/Clock";
 import Calendar from "./other/Calendar";
 import { audioList } from "./other/AudioMenu";
 
-function Display({
+let Display = ({
   onMouse,
   onMusicList,
   onLock,
@@ -35,7 +35,7 @@ function Display({
   raiseSelectionPositionAudio = (f) => f,
   raiseButtonCode = (f) => f,
   returnFocusToSelectedSong = (f) => f,
-}) {
+}) => {
   const [audioChoice, setAudioChoice] = React.useState(null);
   const [onAudio, setOnAudio] = React.useState(false);
   const [audioPause, setAudioPause] = React.useState(false);
@@ -235,8 +235,10 @@ function Display({
       )}
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Display = React.memo(Display);
 
 export default Display;

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ButtonClassF({
+let ButtonClassF = ({
   onComputer,
   onFN,
   isHidden = (f) => f,
@@ -9,7 +9,7 @@ function ButtonClassF({
   block = "",
   onClick = (f) => f,
   pressedButton,
-}) {
+}) => {
   return (
     <>
       <button
@@ -23,8 +23,10 @@ function ButtonClassF({
       </button>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+ButtonClassF = React.memo(ButtonClassF);
 
 export default ButtonClassF;

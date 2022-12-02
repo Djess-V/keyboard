@@ -11,7 +11,7 @@ import {
   btn5Space,
 } from "../../data/data";
 
-function CentralPanel({
+let CentralPanel = ({
   onComputer,
   onShift,
   onCapsLock,
@@ -22,7 +22,7 @@ function CentralPanel({
   isHidden = (f) => f,
   codeButtonDown,
   codeButtonUp,
-}) {
+}) => {
   return (
     <>
       <div className="keyboard__downContainer__centralPanel">
@@ -221,8 +221,10 @@ function CentralPanel({
       </div>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+CentralPanel = React.memo(CentralPanel);
 
 export default CentralPanel;

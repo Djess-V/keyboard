@@ -6,7 +6,7 @@ import girls from "../../assets/girls-fly-peace-pigeons.png";
 
 const image = [cupidon, snowman, stars, girls];
 
-function Note({ data, modificator }) {
+let Note = ({ data, modificator }) => {
   return (
     <div className={`note_${modificator}`}>
       {data.map((item) => (
@@ -19,8 +19,10 @@ function Note({ data, modificator }) {
       />
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Note = React.memo(Note);
 
 export default Note;

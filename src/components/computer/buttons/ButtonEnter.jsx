@@ -1,11 +1,11 @@
 import React from "react";
 
-function ButtonEnter({
+let ButtonEnter = ({
   onComputer,
   onClick = (f) => f,
   isHidden = (f) => f,
   pressedButton,
-}) {
+}) => {
   const [active, setActive] = React.useState("notActive");
   const refBtnEnterLU = React.useRef();
   const refBtnEnterRU = React.useRef();
@@ -71,8 +71,10 @@ function ButtonEnter({
       </div>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+ButtonEnter = React.memo(ButtonEnter);
 
 export default ButtonEnter;

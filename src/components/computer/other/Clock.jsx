@@ -1,6 +1,6 @@
 import React from "react";
 
-function Clock() {
+let Clock = () => {
   const [time, setTime] = React.useState(updateWatch());
 
   React.useEffect(() => {
@@ -10,7 +10,7 @@ function Clock() {
   return (
     <div className="display_clock">{`${time.hour}:${time.minutes}:${time.seconds}`}</div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
 
@@ -34,5 +34,7 @@ function addZero(count) {
 }
 
 /* ----------------------------------------------------------------------------------- */
+
+Clock = React.memo(Clock);
 
 export default Clock;

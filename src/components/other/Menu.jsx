@@ -1,14 +1,14 @@
 import React from "react";
 import MenuModalWindow from "./MenuModalWindow";
 
-function Menu({
+let Menu = ({
   info,
   isChangeBackground,
   closeModalDisplayBg = (f) => f,
   handleClick = (f) => f,
   handlerClickModalDisplayBg = (f) => f,
   buttonHidden,
-}) {
+}) => {
   return (
     <>
       <p>Меню</p>
@@ -40,8 +40,10 @@ function Menu({
       )}
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Menu = React.memo(Menu);
 
 export default Menu;

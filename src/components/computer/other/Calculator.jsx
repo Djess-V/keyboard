@@ -41,7 +41,7 @@ const symbolsCalculator = [
   "=",
 ];
 
-function Calculator() {
+let Calculator = () => {
   const [valueInput, setValueInput] = React.useState("");
   const [onMemory, setOnMemory] = React.useState(false);
   const [memory, setMemory] = React.useState(null);
@@ -252,8 +252,10 @@ function Calculator() {
       </div>
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Calculator = React.memo(Calculator);
 
 export default Calculator;

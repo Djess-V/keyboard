@@ -1,7 +1,7 @@
 import React from "react";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 
-function MyMap() {
+let MyMap = () => {
   const [zoom, setZoom] = React.useState(10);
   const mapState = React.useMemo(
     () => ({ center: [56.02081101239866, 92.8571793681262], zoom }),
@@ -28,6 +28,10 @@ function MyMap() {
       </div>
     </YMaps>
   );
-}
+};
+
+/* ---------------------------------------------------------------------------------- */
+
+MyMap = React.memo(MyMap);
 
 export default MyMap;

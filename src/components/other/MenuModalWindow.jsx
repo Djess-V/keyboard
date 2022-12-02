@@ -1,9 +1,9 @@
 import React from "react";
 
-function MenuModalWindow({
+let MenuModalWindow = ({
   closeModalDisplayBg = (f) => f,
   handlerClickModalDisplayBg = (f) => f,
-}) {
+}) => {
   return (
     <div className="menu_modalDisplayBg">
       <span onClick={closeModalDisplayBg}>х</span>
@@ -16,8 +16,10 @@ function MenuModalWindow({
       ))}
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+MenuModalWindow = React.memo(MenuModalWindow);
 
 export default MenuModalWindow;

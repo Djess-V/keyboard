@@ -2,7 +2,7 @@ import React from "react";
 import { makeAStep } from "../../store/reducerGame/gameSlice";
 import { useDispatch } from "react-redux";
 
-function Square({ index, value, status }) {
+let Square = ({ index, value, status }) => {
   const dispatch = useDispatch();
 
   return (
@@ -13,8 +13,10 @@ function Square({ index, value, status }) {
       {value}
     </button>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Square = React.memo(Square);
 
 export default Square;

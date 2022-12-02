@@ -13,14 +13,14 @@ export const audioList = [
   { name: "Jackson Wang - Blow", link: audio5 },
 ];
 
-function AudioMenu({
+let AudioMenu = ({
   pressedButtonUpDown,
   pressedButtonEnter,
   raiseSelectionPositionAudio = (f) => f,
   raiseAudio = (f) => f,
   onAudio = (f) => f,
   lossOfFocusAudioMenu = (f) => f,
-}) {
+}) => {
   const [songActive, setSongActive] = React.useState(0);
 
   const lis = audioList.map((item, i) => (
@@ -71,8 +71,10 @@ function AudioMenu({
       <ul>{lis}</ul>
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+AudioMenu = React.memo(AudioMenu);
 
 export default AudioMenu;

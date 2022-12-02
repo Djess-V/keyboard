@@ -3,7 +3,7 @@ import UpPanel from "./UpPanel";
 import CentralPanel from "./CentralPanel";
 import MousePanel from "./MousePanel";
 
-function Keyboard({
+let Keyboard = ({
   onMouse,
   onMusic,
   onLock,
@@ -17,7 +17,7 @@ function Keyboard({
   onClickButton = (f) => f,
   codeButtonDown,
   codeButtonUp,
-}) {
+}) => {
   const isHidden = (id) => {
     for (let item of missingButtons) {
       if (item === id) {
@@ -59,8 +59,10 @@ function Keyboard({
       </div>
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Keyboard = React.memo(Keyboard);
 
 export default Keyboard;

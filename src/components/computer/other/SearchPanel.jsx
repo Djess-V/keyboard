@@ -1,6 +1,6 @@
 import React from "react";
 
-function SearchPanel({
+let SearchPanel = ({
   pressedButton,
   pressedButtonTab,
   pressedButtonBackspace,
@@ -9,7 +9,7 @@ function SearchPanel({
   pressedButtonRight,
   symbol,
   raiseButtonCode = (f) => f,
-}) {
+}) => {
   const [valueInput, setValueInput] = React.useState("Hello, friends!");
   const [cursorPosition, setCursorPosition] = React.useState(0);
   const refInput = React.useRef();
@@ -122,8 +122,10 @@ function SearchPanel({
       </button>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+SearchPanel = React.memo(SearchPanel);
 
 export default SearchPanel;

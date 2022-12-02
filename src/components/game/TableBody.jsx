@@ -1,9 +1,11 @@
 import React from "react";
 
-function TableBody({ moves }) {
+let TableBody = ({ moves }) => {
   return <tbody>{moves}</tbody>;
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+TableBody = React.memo(TableBody);
 
 export default TableBody;

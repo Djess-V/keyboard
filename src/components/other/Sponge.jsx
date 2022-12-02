@@ -1,6 +1,6 @@
 import React from "react";
 
-function Sponge() {
+let Sponge = () => {
   return (
     <>
       <div className="aquarium">
@@ -35,8 +35,10 @@ function Sponge() {
       </div>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Sponge = React.memo(Sponge);
 
 export default Sponge;

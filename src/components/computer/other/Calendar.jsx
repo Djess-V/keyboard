@@ -17,7 +17,7 @@ const months = [
   "Декабрь",
 ];
 
-function Calendar() {
+let Calendar = () => {
   const dateNow = new Date();
   const firstNumberOfCurrentMonth = new Date(
     dateNow.getFullYear(),
@@ -201,8 +201,10 @@ function Calendar() {
       </table>
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Calendar = React.memo(Calendar);
 
 export default Calendar;

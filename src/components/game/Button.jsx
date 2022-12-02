@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { jumpTo, startGame } from "../../store/reducerGame/gameSlice";
 
-function Button({ modify, moves, index, desc }) {
+let Button = ({ modify, moves, index, desc }) => {
   const dispatch = useDispatch();
 
   return (
@@ -17,8 +17,10 @@ function Button({ modify, moves, index, desc }) {
       {desc}
     </button>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Button = React.memo(Button);
 
 export default Button;

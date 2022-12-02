@@ -3,7 +3,7 @@ import { FcDown, FcUp } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { clickHistory } from "../../store/reducerGame/gameSlice";
 
-function TableHead() {
+let TableHead = () => {
   const dispatch = useDispatch();
 
   return (
@@ -29,8 +29,10 @@ function TableHead() {
       </tr>
     </thead>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+TableHead = React.memo(TableHead);
 
 export default TableHead;

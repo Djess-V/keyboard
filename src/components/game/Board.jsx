@@ -2,7 +2,7 @@ import React from "react";
 import Square from "./Square";
 import { v4 } from "uuid";
 
-function Board({ squares, modify }) {
+let Board = ({ squares, modify }) => {
   let divs = [],
     status = "ordinary",
     lines = modify;
@@ -33,8 +33,10 @@ function Board({ squares, modify }) {
   }
 
   return <div>{divs}</div>;
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Board = React.memo(Board);
 
 export default Board;

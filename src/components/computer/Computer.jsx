@@ -3,12 +3,12 @@ import Display from "./Display";
 import Keyboard from "./Keyboard";
 import { symbolId, serviceButtonsId } from "../../data/data";
 
-function Computer({
+let Computer = ({
   indexDisplayImage,
   missingButtons,
   buttonHidden,
   startMissingButtons = (f) => f,
-}) {
+}) => {
   const [onComputer, setOnComputer] = React.useState(true);
   const [onShift, setOnShift] = React.useState(false);
   const [onFN, setOnFN] = React.useState(false);
@@ -259,7 +259,7 @@ function Computer({
       />
     </div>
   );
-}
+};
 
 /* -----------------------------------------------------------------------------------*/
 
@@ -305,5 +305,7 @@ function printText(id, onShift, onCapsLock, onAlt) {
 }
 
 /* ---------------------------------------------------------------------------------- */
+
+Computer = React.memo(Computer);
 
 export default Computer;

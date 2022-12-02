@@ -2,7 +2,7 @@ import React from "react";
 import { TfiApple } from "react-icons/tfi";
 import { btnUpP } from "../../data/data";
 
-function UpPanel({
+let UpPanel = ({
   onMouse,
   onMusic,
   onLock,
@@ -10,7 +10,7 @@ function UpPanel({
   onAlt,
   isHidden = (f) => f,
   onClick = (f) => f,
-}) {
+}) => {
   return (
     <>
       <div className="keyboard__upPanel">
@@ -57,8 +57,10 @@ function UpPanel({
       </div>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+UpPanel = React.memo(UpPanel);
 
 export default UpPanel;

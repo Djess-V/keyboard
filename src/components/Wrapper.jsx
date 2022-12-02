@@ -7,7 +7,7 @@ import Papers from "./other/Papers";
 import Sponge from "./other/Sponge";
 import { notesData, menuInfo } from "../data/data";
 
-function Wrapper() {
+let Wrapper = () => {
   const [buttonHidden, setButtonHidden] = React.useState(false);
   const [missingButtons, setMissingButtons] = React.useState([]);
   const [isChangeBackground, setIsChangeBackground] = React.useState(false);
@@ -75,8 +75,10 @@ function Wrapper() {
       <Sponge />
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Wrapper = React.memo(Wrapper);
 
 export default Wrapper;

@@ -1,7 +1,7 @@
 import React from "react";
 import Note from "./Note";
 
-function Papers({ info }) {
+let Papers = ({ info }) => {
   return (
     <div className="papers">
       {info.map((item) => (
@@ -13,8 +13,10 @@ function Papers({ info }) {
       ))}
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Papers = React.memo(Papers);
 
 export default Papers;

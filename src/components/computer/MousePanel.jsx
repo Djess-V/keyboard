@@ -1,6 +1,6 @@
 import React from "react";
 
-function MousePanel({ onCapsLock, onComputer }) {
+let MousePanel = ({ onCapsLock, onComputer }) => {
   return (
     <>
       <div className="keyboard__downContainer__mousePanel">
@@ -25,8 +25,10 @@ function MousePanel({ onCapsLock, onComputer }) {
       </div>
     </>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+MousePanel = React.memo(MousePanel);
 
 export default MousePanel;

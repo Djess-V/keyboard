@@ -4,7 +4,7 @@ import Button from "./Button";
 import { useDispatch } from "react-redux";
 import { handleClickA } from "../../store/reducerGame/gameSlice";
 
-function TableTrTd({ index, style, desc, position, strHl }) {
+let TableTrTd = ({ index, style, desc, position, strHl }) => {
   const dispatch = useDispatch();
 
   return (
@@ -24,8 +24,10 @@ function TableTrTd({ index, style, desc, position, strHl }) {
       </td>
     </tr>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+TableTrTd = React.memo(TableTrTd);
 
 export default TableTrTd;

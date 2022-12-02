@@ -11,7 +11,7 @@ import {
 } from "../../store/reducerGame/gameAPI";
 import { v4 } from "uuid";
 
-function Game() {
+let Game = () => {
   const stateGame = useSelector(selectState).game;
   const history = stateGame.history;
   const current = history[stateGame.stepNumber];
@@ -67,8 +67,10 @@ function Game() {
       </div>
     </div>
   );
-}
+};
 
 /* ---------------------------------------------------------------------------------- */
+
+Game = React.memo(Game);
 
 export default Game;
