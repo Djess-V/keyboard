@@ -14,6 +14,7 @@ import store from "./store/store";
 import "./css/style.css";
 import "./css/game.css";
 import "./css/parts/sponge.css";
+import "./css/adaptive/adaptive.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

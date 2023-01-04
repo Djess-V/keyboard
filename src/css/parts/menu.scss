@@ -31,6 +31,10 @@
         background-color: lightpink;
       }
     }
+    & > li a {
+      color: inherit;
+      font-size: inherit;
+    }
   }
 }
 

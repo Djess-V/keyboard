@@ -27,9 +27,6 @@ let Wrapper = () => {
       case 0:
         setButtonHidden(!buttonHidden);
         break;
-      case 1:
-        //...
-        break;
       case 2:
         setIsChangeBackground(true);
         break;

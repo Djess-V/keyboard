@@ -27,7 +27,8 @@ let Menu = ({
           }
           return (
             <li key={item} onClick={() => handleClick(i)}>
-              {str}
+              {i === 1 && <a href="adaptive">{str}</a>}
+              {i !== 1 && str}
             </li>
           );
         })}
