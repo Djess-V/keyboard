@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import MenuModalWindow from "./MenuModalWindow";
 
 let Menu = ({
@@ -27,7 +28,7 @@ let Menu = ({
           }
           return (
             <li key={item} onClick={() => handleClick(i)}>
-              {i === 1 && <a href="adaptive">{str}</a>}
+              {i === 1 && <Link to="/adaptive">{str}</Link>}
               {i !== 1 && str}
             </li>
           );
