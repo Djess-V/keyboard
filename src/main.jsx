@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import App from "./components/App";
+import AdaptiveDesign from "./components/adaptiveDesign/AdaptiveDesign";
 import { Provider } from "react-redux";
 import store from "./store/store";
 import "./css/style.css";
@@ -16,9 +17,10 @@ import "./css/parts/sponge.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />} errorElement={<ErrorPage />}>
-      <Route errorElement={<ErrorPage />}></Route>
-    </Route>
+    <>
+      <Route path="/" element={<App />} errorElement={<ErrorPage />}></Route>
+      <Route path="/adaptive" element={<AdaptiveDesign />} />
+    </>
   )
 );
 

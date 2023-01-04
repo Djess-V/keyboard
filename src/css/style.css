@@ -434,6 +434,11 @@
   width: 80px;
 }
 
+#sortUp,
+#sortDown {
+  cursor: pointer;
+}
+
 #today {
   background-color: rgb(107, 203, 228);
   color: white;
@@ -1168,6 +1173,7 @@
   width: 500px;
   height: 100px;
   background-color: rgb(93, 182, 130);
+  z-index: 5;
 }
 .menu_modalDisplayBg > span {
   position: absolute;
@@ -1281,6 +1287,11 @@ div[class^=note] .image_4 {
   left: 30px;
   width: 322px;
   height: 242px;
+}
+
+.adaptive-design {
+  color: black;
+  font-size: 20px;
 }
 
 * {

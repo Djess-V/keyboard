@@ -124,7 +124,7 @@ let Calendar = () => {
             key={index}
             id={`${
               dateNow.getFullYear() === firstNumberOfMonth.getFullYear() &&
-              dateNow.getMonth() === firstNumberOfMonth.getMonth() &&
+              dateNow.getMonth() === searchDate.getMonth() &&
               dateNow.getDate() === searchDay
                 ? "today"
                 : ""

@@ -11,7 +11,7 @@ let SearchPanel = ({
   raiseButtonCode = (f) => f,
 }) => {
   const [valueInput, setValueInput] = React.useState("Hello, friends!");
-  const [cursorPosition, setCursorPosition] = React.useState(0);
+  const [cursorPosition, setCursorPosition] = React.useState(15);
   const refInput = React.useRef();
 
   const createQueryString = () => {

@@ -429,6 +429,11 @@
   }
 }
 
+#sortUp,
+#sortDown {
+  cursor: pointer;
+}
+
 #today {
   background-color: rgb(107, 203, 228);
   color: white;
