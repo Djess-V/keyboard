@@ -39,31 +39,22 @@ let AdaptiveDesign = () => {
     <div className="wrapper_adaptive">
       <header className="header">
         <div className="header__container _container">
-          <a className="header__container_image" href="">
+          <a className="header__container_image">
             <img src={santaClausLogo} alt="santa-claus-logo" />
           </a>
           <nav className="header__menu menu">
             <ul className="menu__list">
               <li className="menu__item">
-                <a href="" className="menu__link">
-                  Home
-                </a>
+                <a className="menu__link">Home</a>
               </li>
               <li className="menu__item">
-                <a href="" className="menu__link">
-                  {" "}
-                  About
-                </a>
+                <a className="menu__link"> About</a>
               </li>
               <li className="menu__item">
-                <a href="" className="menu__link">
-                  Presents
-                </a>
+                <a className="menu__link">Presents</a>
               </li>
               <li className="menu__item">
-                <a href="" className="menu__link">
-                  Contacts
-                </a>
+                <a className="menu__link">Contacts</a>
               </li>
             </ul>
           </nav>
@@ -78,16 +69,10 @@ let AdaptiveDesign = () => {
                 Happy New Year! Happiness and peace in every home!
               </div>
               <div className="main-block__buttons">
-                <a
-                  href=""
-                  className="main-block__button main-block__button_orange"
-                >
+                <a className="main-block__button main-block__button_orange">
                   Leave a message
                 </a>
-                <a
-                  href=""
-                  className="main-block__button main-block__button_border"
-                >
+                <a className="main-block__button main-block__button_border">
                   Get a gift
                 </a>
               </div>
@@ -198,7 +183,7 @@ let AdaptiveDesign = () => {
               <div className="presents__column">
                 <article className="presents__item item-presents">
                   <div className="item-presents__content">
-                    <a href="" className="item-presents__link">
+                    <a className="item-presents__link">
                       <h4 className="item-presents__title">Fairy worlds</h4>
                     </a>
                     <div className="item-presents__text">
@@ -206,7 +191,7 @@ let AdaptiveDesign = () => {
                       of the universe...
                     </div>
                   </div>
-                  <a href="" className="item-presents__image _ibg">
+                  <a className="item-presents__image _ibg">
                     <img src={kosmosImage} alt="Cosmos" />
                   </a>
                 </article>
@@ -214,7 +199,7 @@ let AdaptiveDesign = () => {
               <div className="presents__column">
                 <article className="presents__item item-presents">
                   <div className="item-presents__content">
-                    <a href="" className="item-presents__link">
+                    <a className="item-presents__link">
                       <h4 className="item-presents__title">
                         Inspirational music
                       </h4>
@@ -224,7 +209,7 @@ let AdaptiveDesign = () => {
                       year!
                     </div>
                   </div>
-                  <a href="" className="item-presents__image _ibg">
+                  <a className="item-presents__image _ibg">
                     <img src={gitaryImage} alt="Music" />
                   </a>
                 </article>
@@ -232,14 +217,14 @@ let AdaptiveDesign = () => {
               <div className="presents__column">
                 <article className="presents__item item-presents">
                   <div className="item-presents__content">
-                    <a href="" className="item-presents__link">
+                    <a className="item-presents__link">
                       <h4 className="item-presents__title">Amazing desserts</h4>
                     </a>
                     <div className="item-presents__text">
                       You will have to fight the temptation!
                     </div>
                   </div>
-                  <a href="" className="item-presents__image _ibg">
+                  <a className="item-presents__image _ibg">
                     <img src={macaronsImage} alt="Eat" />
                   </a>
                 </article>
@@ -247,7 +232,7 @@ let AdaptiveDesign = () => {
               <div className="presents__column">
                 <article className="presents__item item-presents">
                   <div className="item-presents__content">
-                    <a href="" className="item-presents__link">
+                    <a className="item-presents__link">
                       <h4 className="item-presents__title">
                         Mind blowing games
                       </h4>
@@ -256,7 +241,7 @@ let AdaptiveDesign = () => {
                       Play, play and play again...
                     </div>
                   </div>
-                  <a href="" className="item-presents__image _ibg">
+                  <a className="item-presents__image _ibg">
                     <img src={pandyImage} alt="Game" />
                   </a>
                 </article>
@@ -401,9 +386,7 @@ let AdaptiveDesign = () => {
                   </a>
                 </div>
                 <div className="item-get-in-touch__label">Get Support</div>
-                <a href="" className="item-get-in-touch__button">
-                  Submit Request
-                </a>
+                <a className="item-get-in-touch__button">Submit Request</a>
               </div>
               <div className="get-in-touch__item item-get-in-touch item-get-in-touch_active">
                 <div className="item-get-in-touch__icon">
@@ -424,9 +407,7 @@ let AdaptiveDesign = () => {
                   </a>
                 </div>
                 <div className="item-get-in-touch__label">Get Support</div>
-                <a href="" className="item-get-in-touch__button">
-                  Submit Request
-                </a>
+                <a className="item-get-in-touch__button">Submit Request</a>
               </div>
               <div className="get-in-touch__item item-get-in-touch">
                 <div className="item-get-in-touch__icon">
@@ -447,9 +428,7 @@ let AdaptiveDesign = () => {
                   </a>
                 </div>
                 <div className="item-get-in-touch__label">Get Support</div>
-                <a href="" className="item-get-in-touch__button">
-                  Submit Request
-                </a>
+                <a className="item-get-in-touch__button">Submit Request</a>
               </div>
             </div>
           </div>
@@ -465,9 +444,7 @@ let AdaptiveDesign = () => {
                   We offer gift delivery services for your children
                 </div>
               </div>
-              <a href="" className="contact__button">
-                Contact Us
-              </a>
+              <a className="contact__button">Contact Us</a>
             </div>
           </div>
         </section>
@@ -481,24 +458,16 @@ let AdaptiveDesign = () => {
                 <nav className="footer__menu menu-footer">
                   <ul className="menu-footer__list">
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        About Us
-                      </a>
+                      <a className="menu-footer__link">About Us</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Carrier
-                      </a>
+                      <a className="menu-footer__link">Carrier</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        We are hiring
-                      </a>
+                      <a className="menu-footer__link">We are hiring</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Blog
-                      </a>
+                      <a className="menu-footer__link">Blog</a>
                     </li>
                   </ul>
                 </nav>
@@ -508,24 +477,16 @@ let AdaptiveDesign = () => {
                 <nav className="footer__menu menu-footer">
                   <ul className="menu-footer__list">
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        About Us
-                      </a>
+                      <a className="menu-footer__link">About Us</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Carrier
-                      </a>
+                      <a className="menu-footer__link">Carrier</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        We are hiring
-                      </a>
+                      <a className="menu-footer__link">We are hiring</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Blog
-                      </a>
+                      <a className="menu-footer__link">Blog</a>
                     </li>
                   </ul>
                 </nav>
@@ -535,24 +496,16 @@ let AdaptiveDesign = () => {
                 <nav className="footer__menu menu-footer">
                   <ul className="menu-footer__list">
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        About Us
-                      </a>
+                      <a className="menu-footer__link">About Us</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Carrier
-                      </a>
+                      <a className="menu-footer__link">Carrier</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        We are hiring
-                      </a>
+                      <a className="menu-footer__link">We are hiring</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Blog
-                      </a>
+                      <a className="menu-footer__link">Blog</a>
                     </li>
                   </ul>
                 </nav>
@@ -562,24 +515,16 @@ let AdaptiveDesign = () => {
                 <nav className="footer__menu menu-footer">
                   <ul className="menu-footer__list">
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        About Us
-                      </a>
+                      <a className="menu-footer__link">About Us</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Carrier
-                      </a>
+                      <a className="menu-footer__link">Carrier</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        We are hiring
-                      </a>
+                      <a className="menu-footer__link">We are hiring</a>
                     </li>
                     <li className="menu-footer__item">
-                      <a href="" className="menu-footer__link">
-                        Blog
-                      </a>
+                      <a className="menu-footer__link">Blog</a>
                     </li>
                   </ul>
                 </nav>
@@ -600,7 +545,7 @@ let AdaptiveDesign = () => {
                       <div className="item-contact__img">
                         <img src={locationFooterImage} alt="icons" />
                       </div>
-                      <a href="" className="item-contact__link">
+                      <a className="item-contact__link">
                         4517 Washington Avenu
                       </a>
                     </li>

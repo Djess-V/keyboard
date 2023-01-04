@@ -310,12 +310,13 @@
     border-style: solid solid none none;
     border-radius: 0 3px 0 0;
     padding-top: 7px;
-    font-size: 9pt;
     grid-column: 2;
     grid-row: 1;
 
     & > p {
+      font-size: 8.5pt;
       margin-left: -5px;
+      margin-top: 3px;
     }
   }
 
