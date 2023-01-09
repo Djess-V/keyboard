@@ -53,7 +53,9 @@ let Game = () => {
   return (
     <div className="game">
       <h1 className="game__header">Можно поиграть в крестики-нолики!</h1>
-      <h2 className="game__subhead">(ну, конечно можно и не играть...)</h2>
+      <h2 className="game__subhead">
+        чтобы начать игру - сделайте первый ход!!!
+      </h2>
       <div className="game-board">
         <Board squares={current.squares} modify={lines} />
       </div>

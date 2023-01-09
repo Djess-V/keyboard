@@ -2,12 +2,12 @@ import React from "react";
 import Game from "./game/Game";
 import Computer from "./computer/Computer";
 import Menu from "./other/Menu";
-import MyMap from "./field/MyMap";
+import Field from "./other/Field";
 import Papers from "./other/Papers";
 import Sponge from "./other/Sponge";
 import { notesData, menuInfo } from "../data/data";
 
-let Wrapper = () => {
+let Wrapper = ({ opacity }) => {
   const [buttonHidden, setButtonHidden] = React.useState(false);
   const [missingButtons, setMissingButtons] = React.useState([]);
   const [isChangeBackground, setIsChangeBackground] = React.useState(false);
@@ -45,7 +45,7 @@ let Wrapper = () => {
   }, [buttonHidden]);
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${opacity ? "wrapper__opacity" : ""}`}>
       <div className="wrapper_game_computer">
         <Game />
         <Computer
@@ -65,9 +65,7 @@ let Wrapper = () => {
           handlerClickModalDisplayBg={handlerClickModalDisplayBg}
         />
       </div>
-      <div id="YMapsID" className="wrapper_field">
-        <MyMap />
-      </div>
+      <Field />
       <Papers info={notesData} />
       <Sponge />
     </div>

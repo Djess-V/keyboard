@@ -21,6 +21,7 @@ let Computer = ({
   const [onMouse, setOnMouse] = React.useState(false);
   const [mouseDirection, setMouseDirection] = React.useState("");
   const [timerCanselMouse, setTimerCanselMouse] = React.useState(0);
+  const [onF1, setOnF1] = React.useState(false);
   const [onCalculator, setOnCalculator] = React.useState(false);
   const [onClock, setOnClock] = React.useState(false);
   const [onCalendar, setOnCalendar] = React.useState(false);
@@ -92,6 +93,7 @@ let Computer = ({
       setOnHome(!onHome);
       setOnMusic(false);
       setOnMouse(false);
+      setOnF1(false);
       setOnCalculator(false);
       setOnClock(false);
       setOnCalendar(false);
@@ -107,11 +109,11 @@ let Computer = ({
       setPressedButtonBackspace(0);
       setPressedButtonEnter(0);
     } else if (id === 7) {
-      window.open("https://www.vk.com/", "_blank");
+      setOnF1(!onF1);
     } else if (id === 8) {
       window.open("https://www.youtube.com/", "_blank");
     } else if (id === 9) {
-      window.open("https://github.com/Djess-V/", "_blank");
+      window.open("https://github.com/Djess-V/djess-v.github.io", "_blank");
     } else if (id === 10) {
       setOnCalculator(!onCalculator);
     } else if (id === 11) {
@@ -216,6 +218,7 @@ let Computer = ({
         onMusicList={onMusic}
         onLock={onLock}
         onComputer={onComputer}
+        onF1={onF1}
         onCalculator={onCalculator}
         onClock={onClock}
         onCalendar={onCalendar}
@@ -247,6 +250,11 @@ let Computer = ({
         onMusic={onMusic}
         onLock={onLock}
         onComputer={onComputer}
+        onF1={onF1}
+        onCalculator={onCalculator}
+        onClock={onClock}
+        onCalendar={onCalendar}
+        onF10={onF10}
         onCapsLock={onCapsLock}
         onAlt={onAlt}
         onCtrl={onCtrl}

@@ -13,6 +13,11 @@ import {
 
 let CentralPanel = ({
   onComputer,
+  onF1,
+  onCalculator,
+  onClock,
+  onCalendar,
+  onF10,
   onShift,
   onCapsLock,
   onAlt,
@@ -43,6 +48,11 @@ let CentralPanel = ({
               <ButtonClassF
                 key={i}
                 onComputer={onComputer}
+                onF1={onF1}
+                onCalculator={onCalculator}
+                onClock={onClock}
+                onCalendar={onCalendar}
+                onF10={onF10}
                 data={item.data}
                 id={item.id}
                 block="blockEsc"

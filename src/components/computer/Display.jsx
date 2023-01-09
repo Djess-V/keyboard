@@ -1,6 +1,7 @@
 import React from "react";
 import SearchPanel from "./other/SearchPanel";
 import AudioMenu from "./other/AudioMenu";
+import YandexMap from "../other/YandexMap";
 import Calculator from "./other/Calculator";
 import Clock from "./other/Clock";
 import Calendar from "./other/Calendar";
@@ -14,6 +15,7 @@ let Display = ({
   pressedButton,
   indexDisplayImage,
   onComputer,
+  onF1,
   onCalculator,
   onClock,
   onCalendar,
@@ -120,85 +122,89 @@ let Display = ({
     <div className={`computer__display`}>
       {onComputer && !onLock && (
         <div className={`display_background displayImage_${indexDisplayImage}`}>
-          {onCalculator && <Calculator />}
-          {onClock && <Clock />}
-          {onCalendar && <Calendar />}
-          {!onMusicList && (
-            <SearchPanel
-              pressedButton={pressedButton}
-              pressedButtonTab={pressedButtonTab}
-              pressedButtonBackspace={pressedButtonBackspace}
-              pressedButtonDelete={pressedButtonDelete}
-              pressedButtonLeft={pressedButtonLeft}
-              pressedButtonRight={pressedButtonRight}
-              symbol={symbol}
-              raiseButtonCode={raiseButtonCode}
-            />
-          )}
-          {onMusicList && (
-            <AudioMenu
-              pressedButtonUpDown={pressedButtonUpDown}
-              pressedButtonEnter={pressedButtonEnter}
-              raiseAudio={(choice) => {
-                if (typeof choice === "string") {
-                  setAudioChoice(choice);
-                } else {
-                  setAudioChoice(choice.target.href);
-                  updateButtonEnter();
-                }
-              }}
-              raiseSelectionPositionAudio={raiseSelectionPositionAudio}
-              onAudio={() => setOnAudio(true)}
-              lossOfFocusAudioMenu={lossOfFocusAudioMenu}
-            />
-          )}
-          {audioChoice &&
-            (pressedButtonEnter > 0 || onAudio) &&
-            onMusicList && (
-              <audio
-                ref={refAudio}
-                controls
-                src={audioChoice}
-                autoPlay
-                onPause={() => setAudioPause(true)}
-                onPlay={() => setAudioPause(false)}
+          <>
+            {onF1 && (
+              <div id="YMapsID" className="display__map">
+                <YandexMap />
+              </div>
+            )}
+            {onCalculator && <Calculator />}
+            {onClock && <Clock />}
+            {onCalendar && <Calendar />}
+            {!onMusicList && !onF1 && (
+              <SearchPanel
+                pressedButton={pressedButton}
+                pressedButtonTab={pressedButtonTab}
+                pressedButtonBackspace={pressedButtonBackspace}
+                pressedButtonDelete={pressedButtonDelete}
+                pressedButtonLeft={pressedButtonLeft}
+                pressedButtonRight={pressedButtonRight}
+                symbol={symbol}
+                raiseButtonCode={raiseButtonCode}
               />
             )}
-          {onMouse && (
-            <div
-              ref={refMouse}
-              className={`display_mouse ${onMouse ? mouseDirection : ""}`}
-              onPointerOver={() => {
-                if (!mouseDirection) {
-                  timerMoveMouse = setTimeout(() => {
-                    mouseMove("moveRightMouse");
+            {onMusicList && !onF1 && (
+              <AudioMenu
+                pressedButtonUpDown={pressedButtonUpDown}
+                pressedButtonEnter={pressedButtonEnter}
+                raiseAudio={(choice) => {
+                  if (typeof choice === "string") {
+                    setAudioChoice(choice);
+                  } else {
+                    setAudioChoice(choice.target.href);
+                    updateButtonEnter();
+                  }
+                }}
+                raiseSelectionPositionAudio={raiseSelectionPositionAudio}
+                onAudio={() => setOnAudio(true)}
+                lossOfFocusAudioMenu={lossOfFocusAudioMenu}
+              />
+            )}
+            {audioChoice &&
+              (pressedButtonEnter > 0 || onAudio) &&
+              onMusicList && (
+                <audio
+                  ref={refAudio}
+                  controls
+                  src={audioChoice}
+                  autoPlay
+                  onPause={() => setAudioPause(true)}
+                  onPlay={() => setAudioPause(false)}
+                />
+              )}
+            {onMouse && (
+              <div
+                ref={refMouse}
+                className={`display_mouse ${onMouse ? mouseDirection : ""}`}
+                onPointerOver={() => {
+                  if (!mouseDirection) {
                     timerMoveMouse = setTimeout(() => {
-                      mouseMove("rotateMouseUp");
+                      mouseMove("moveRightMouse");
                       timerMoveMouse = setTimeout(() => {
-                        mouseMove("moveUpMouse");
+                        mouseMove("rotateMouseUp");
                         timerMoveMouse = setTimeout(() => {
-                          mouseMove("rotateMouseLeft");
+                          mouseMove("moveUpMouse");
                           timerMoveMouse = setTimeout(() => {
-                            mouseMove("moveLeftMouse");
+                            mouseMove("rotateMouseLeft");
                             timerMoveMouse = setTimeout(() => {
-                              mouseMove("rotateMouseDown");
+                              mouseMove("moveLeftMouse");
                               timerMoveMouse = setTimeout(() => {
-                                mouseMove("moveDownMouse");
+                                mouseMove("rotateMouseDown");
                                 timerMoveMouse = setTimeout(() => {
-                                  mouseMove("rotateMouseRight");
+                                  mouseMove("moveDownMouse");
                                   timerMoveMouse = setTimeout(() => {
-                                    mouseMove("");
-                                  }, 4100);
+                                    mouseMove("rotateMouseRight");
+                                    timerMoveMouse = setTimeout(() => {
+                                      mouseMove("");
+                                    }, 4100);
+                                  }, 4000);
                                 }, 4000);
-                              }, 4000);
-                            }, 8000);
+                              }, 8000);
+                            }, 4000);
                           }, 4000);
                         }, 4000);
-                      }, 4000);
-                    }, 8000);
-                  }, 0);
-                  setTimeout(() => {
-                    canselMouseMove(timerMoveMouse);
+                      }, 8000);
+                    }, 0);
                     setTimeout(() => {
                       canselMouseMove(timerMoveMouse);
                       setTimeout(() => {
@@ -213,18 +219,21 @@ let Display = ({
                                 canselMouseMove(timerMoveMouse);
                                 setTimeout(() => {
                                   canselMouseMove(timerMoveMouse);
+                                  setTimeout(() => {
+                                    canselMouseMove(timerMoveMouse);
+                                  }, 4500);
                                 }, 4500);
-                              }, 4500);
-                            }, 8500);
+                              }, 8500);
+                            }, 4500);
                           }, 4500);
                         }, 4500);
-                      }, 4500);
-                    }, 8500);
-                  }, 500);
-                }
-              }}
-            ></div>
-          )}
+                      }, 8500);
+                    }, 500);
+                  }
+                }}
+              ></div>
+            )}
+          </>
         </div>
       )}
       {onComputer && onLock && (

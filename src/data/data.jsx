@@ -15,7 +15,7 @@ import {
 } from "react-icons/tfi";
 
 import {
-  SlSocialVkontakte,
+  SlPicture,
   SlSocialYoutube,
   SlSocialGithub,
   SlCalculator,
@@ -77,7 +77,7 @@ const F8 = (
 
 const btn1F = [
   { data: ["Esc", ""], id: 6, code: "Escape" },
-  { data: [<SlSocialVkontakte style={styleSVG} />, "F1"], id: 7, code: "F1" },
+  { data: [<SlPicture style={styleSVG} />, "F1"], id: 7, code: "F1" },
   { data: [<SlSocialYoutube style={styleSVG} />, "F2"], id: 8, code: "F2" },
   { data: [<SlSocialGithub style={styleSVG} />, "F3"], id: 9, code: "F3" },
   { data: [<SlCalculator style={styleSVG} />, "F4"], id: 10, code: "F4" },
@@ -277,8 +277,6 @@ const menuInfo = [
   "Пусть кнопки на клавиатуре",
   "Перейти на страницу с адаптивным дизайном",
   "Поменять фон  рабочего стола компьютера",
-  "Запросить данные с сервера и отобразить на компьютере",
-  "Скинуться на чай...",
 ];
 
 const symbolId = [

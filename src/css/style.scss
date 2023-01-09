@@ -47,3 +47,51 @@
   display: flex;
   grid-column: 1;
 }
+
+.podlogka {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  background: rgb(255, 255, 255);
+  opacity: 0.6;
+  z-index: 100;
+}
+
+.startModalWindow {
+  position: fixed;
+  background-color: rgb(172, 213, 100);
+  width: 20vw;
+  height: 30vh;
+  padding: 5px 10px 10px;
+  top: 35vh;
+  left: 40vw;
+  border: 2px solid $colorGrey2;
+  border-radius: 10px;
+  box-shadow: 0 0 15px 8px $colorGrey2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease 0s;
+  z-index: 101;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  & > * {
+    color: $colorBlack;
+    font-size: 20pt;
+  }
+  & > span {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    text-align: right;
+    cursor: pointer;
+  }
+  & > h1 {
+    font-size: 20pt;
+    text-align: center;
+  }
+}

@@ -8,6 +8,11 @@ let Keyboard = ({
   onMusic,
   onLock,
   onComputer,
+  onF1,
+  onCalculator,
+  onClock,
+  onCalendar,
+  onF10,
   onCapsLock,
   onAlt,
   onCtrl,
@@ -44,6 +49,11 @@ let Keyboard = ({
       <div className="keyboard__downContainer">
         <CentralPanel
           onComputer={onComputer}
+          onF1={onF1}
+          onCalculator={onCalculator}
+          onClock={onClock}
+          onCalendar={onCalendar}
+          onF10={onF10}
           onShift={onShift}
           onCapsLock={onCapsLock}
           onAlt={onAlt}

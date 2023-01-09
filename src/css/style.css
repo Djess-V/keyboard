@@ -1,4 +1,5 @@
 .computer__display {
+  position: relative;
   box-shadow: 0 0 7px 2px rgb(146, 140, 140);
   background-color: #000;
   border: 2px solid rgb(30, 192, 130);
@@ -24,7 +25,7 @@
   color: #000;
   border-color: rgb(82, 82, 82);
   font-size: 16pt;
-  width: 680px;
+  width: 676px;
   height: 276px;
 }
 .display_background > audio {
@@ -260,6 +261,20 @@
   bottom: 0px;
   -webkit-animation: rotateRight 4s infinite alternate;
           animation: rotateRight 4s infinite alternate;
+}
+
+.display__map {
+  position: absolute;
+  border-radius: 20px;
+  top: 18px;
+  left: 163px;
+  width: 350px;
+  height: 240px;
+  overflow: hidden;
+}
+
+ymaps {
+  color: #000;
 }
 
 .display_calculator {
@@ -685,10 +700,15 @@
   padding-left: 3px;
 }
 .blockEsc__btnClassF:nth-child(14) p, .blockEsc__btnClassF:nth-child(15) p {
-  font-size: 7px;
+  font-size: 6.5px;
 }
 .blockEsc__btnClassF .btn1F_F8 {
   display: flex;
+}
+
+.buttonOn {
+  background-color: rgb(30, 192, 130);
+  border: 2px inset;
 }
 
 .centralPanel__blockNumbers {
@@ -786,7 +806,7 @@
   grid-row: 1;
 }
 .btnEnter .btnEnter__RU > p {
-  font-size: 8.5pt;
+  font-size: 8pt;
   margin-left: -5px;
   margin-top: 3px;
 }
@@ -1081,6 +1101,7 @@
 }
 
 .downContainer__mousePanel__board {
+  position: relative;
   background-image: url(../assets/abstract.jpg);
   background-size: 100%;
   border: 2px grey;
@@ -1137,7 +1158,7 @@
   top: 330px;
   left: 50px;
   width: 310px;
-  height: 350px;
+  height: 250px;
   background-color: rgb(189, 103, 117);
 }
 .wrapper_menu > p {
@@ -1146,7 +1167,7 @@
   color: black;
 }
 .wrapper_menu > ul {
-  margin: 10px 10px 0px 25px;
+  margin: 25px 10px 0px 25px;
 }
 .wrapper_menu > ul > li {
   color: black;
@@ -1270,28 +1291,62 @@ div[class^=note] .image_4 {
   left: 50px;
 }
 
-.wrapper_field {
+.wrapper__field {
   grid-column: 1;
   grid-row: 2;
   position: relative;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 3px black;
-  top: 350px;
+  top: 330px;
   left: 450px;
   width: 640px;
-  height: 310px;
-  background-color: rgb(205, 191, 109);
+  height: 350px;
+  background-color: rgb(161, 205, 103);
+  overflow-y: scroll;
+}
+.wrapper__field > * {
+  font-family: Montserrat, sans-serif;
+  color: #000;
+  line-height: 110%;
+  font-weight: 600;
+}
+.wrapper__field > h2 {
+  text-align: center;
+  font-size: 20pt;
+  padding: 10px 0px;
+}
+.wrapper__field > p {
+  padding-left: 10px;
+  font-size: 14pt;
+}
+.wrapper__field > ul {
+  list-style: none;
+  padding: 20px 15px 5px 20px;
+}
+.wrapper__field > ul > li {
+  font-family: inherit;
+  color: inherit;
+  line-height: 150%;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+.wrapper__field > ul li::before {
+  color: #000;
+  padding: 5px;
+  font-size: 12pt;
+  content: "- ";
 }
 
-.wrapper_map {
-  position: absolute;
-  border: 1px solid black;
-  border-radius: 3px;
-  color: black;
-  top: 30px;
-  left: 30px;
-  width: 322px;
-  height: 242px;
+.field__ul-2Level {
+  color: inherit;
+  padding-left: 30px;
+  line-height: 150%;
+}
+.field__ul-2Level > li {
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  color: inherit;
+  line-height: inherit;
 }
 
 * {
@@ -1333,4 +1388,51 @@ div[class^=note] .image_4 {
 .wrapper_game_computer {
   display: flex;
   grid-column: 1;
+}
+
+.podlogka {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  background: rgb(255, 255, 255);
+  opacity: 0.6;
+  z-index: 100;
+}
+
+.startModalWindow {
+  position: fixed;
+  background-color: rgb(172, 213, 100);
+  width: 20vw;
+  height: 30vh;
+  padding: 5px 10px 10px;
+  top: 35vh;
+  left: 40vw;
+  border: 2px solid rgb(146, 140, 140);
+  border-radius: 10px;
+  box-shadow: 0 0 15px 8px rgb(146, 140, 140);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease 0s;
+  z-index: 101;
+}
+.startModalWindow:hover {
+  transform: scale(1.05);
+}
+.startModalWindow > * {
+  color: #000;
+  font-size: 20pt;
+}
+.startModalWindow > span {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  text-align: right;
+  cursor: pointer;
+}
+.startModalWindow > h1 {
+  font-size: 20pt;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

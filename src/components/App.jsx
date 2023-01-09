@@ -1,9 +1,21 @@
 import React from "react";
+import StartModalWindow from "./other/StartModalWindow";
 
 import Wrapper from "./Wrapper";
 
 let App = () => {
-  return <Wrapper />;
+  const [start, setStart] = React.useState(true);
+
+  const closeModalWindow = () => {
+    setStart(false);
+  };
+
+  return (
+    <>
+      <Wrapper />
+      {start && <StartModalWindow closeModalWindow={closeModalWindow} />}
+    </>
+  );
 };
 
 /* ---------------------------------------------------------------------------------- */

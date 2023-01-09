@@ -214,13 +214,18 @@
     padding-left: 3px;
 
     p {
-      font-size: 7px;
+      font-size: 6.5px;
     }
   }
 
   .btn1F_F8 {
     display: flex;
   }
+}
+
+.buttonOn {
+  background-color: $colorGreen;
+  border: 2px inset;
 }
 
 .centralPanel__blockNumbers {
@@ -314,7 +319,7 @@
     grid-row: 1;
 
     & > p {
-      font-size: 8.5pt;
+      font-size: 8pt;
       margin-left: -5px;
       margin-top: 3px;
     }
@@ -616,6 +621,7 @@
 }
 
 .downContainer__mousePanel__board {
+  position: relative;
   background-image: url(../assets/abstract.jpg);
   background-size: 100%;
   border: 2px grey;
