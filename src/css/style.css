@@ -1402,13 +1402,13 @@ div[class^=note] .image_4 {
 }
 
 .startModalWindow {
-  position: fixed;
+  position: absolute;
   background-color: rgb(172, 213, 100);
-  width: 20vw;
-  height: 30vh;
+  width: 250px;
+  height: 250px;
   padding: 5px 10px 10px;
-  top: 35vh;
-  left: 40vw;
+  top: calc((100vh - 250px) / 2);
+  left: calc((100vw - 250px) / 2);
   border: 2px solid rgb(146, 140, 140);
   border-radius: 10px;
   box-shadow: 0 0 15px 8px rgb(146, 140, 140);
