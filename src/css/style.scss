@@ -88,6 +88,8 @@
     0px 19px 60px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   text-align: left;
+  transition: all 0.6s;
+  transform: scale(1);
 
   & > p {
     text-align: center;
@@ -96,6 +98,10 @@
   }
 }
 
+.dm-modal:hover {
+  transition: all 0.6s;
+  transform: scale(1.1);
+}
 .close {
   position: absolute;
   top: 5px;

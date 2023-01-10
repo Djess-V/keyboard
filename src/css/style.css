@@ -1428,11 +1428,18 @@ div[class^=note] .image_4 {
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   text-align: left;
+  transition: all 0.6s;
+  transform: scale(1);
 }
 .dm-modal > p {
   text-align: center;
   font-size: 20pt;
   color: #455359;
+}
+
+.dm-modal:hover {
+  transition: all 0.6s;
+  transform: scale(1.1);
 }
 
 .close {
