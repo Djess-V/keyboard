@@ -2,13 +2,16 @@ import React from "react";
 
 let StartModalWindow = ({ closeModalWindow }) => {
   return (
-    <>
-      <div className="podlogka"></div>
-      <div className="startModalWindow">
-        <span onClick={closeModalWindow}>X</span>
-        <h1>Прочитайте памятку под клавиатурой!</h1>
+    <div class="dm-overlay">
+      <div class="dm-table">
+        <div class="dm-cell">
+          <div class="dm-modal">
+            <span class="close" onClick={closeModalWindow}></span>
+            <p>Прочитайте памятку под клавиатурой!</p>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
